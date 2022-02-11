@@ -5,6 +5,9 @@ site_name: Boling's Whiteboard
 
 nav:
     - Home: index.md
+    - Blog: blog/index.md
+    - Translation: translation/index.md
+    - essay: essay/index.md
     - About: about.md
 
 theme:
