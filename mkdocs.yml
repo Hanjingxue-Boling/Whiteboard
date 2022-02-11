@@ -1,0 +1,12 @@
+site_name: Boling's Whiteboard
+#site_url: 
+repo_url: https://github.com/Hanjingxue-Boling/Whiteboard  #仓库链接
+#repo_name: GitHub  #仓库名称
+
+nav:
+    - Home: index.md
+    - About: about.md
+
+theme:
+    name: mkdocs  #主题名称
+    navigation_depth: 3  #侧边栏中导航树的最大深度
