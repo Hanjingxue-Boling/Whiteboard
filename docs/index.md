@@ -1,17 +1,14 @@
-# Welcome to MkDocs
+## 陋室
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+>R：这博客怎么如此简陋？  
+>B：又不是不能用，不能用再说。🍵
 
-## Commands
+## 主要内容
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+- 博文
+- 翻译文稿
+- 随想
 
-## Project layout
+---
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
