@@ -1,15 +1,26 @@
 site_name: Boling's Whiteboard
-#site_url: 
-#repo_url: https://github.com/Hanjingxue-Boling/Whiteboard  #仓库链接
-#repo_name: GitHub  #仓库名称
+site_url: https://hanjingxue-boling.github.io/Whiteboard/
+site_description: Hanjingxue Boling's web blog.
+site_author: Hanjingxue Boling
 
-nav:
-    - Home: index.md
-    - Blog: blog/index.md
-    - Translation: translation/index.md
-    - essay: essay/index.md
-    - About: about.md
+repo_url: https://github.com/Hanjingxue-Boling/Whiteboard  #仓库链接
+edit_uri: ""
 
 theme:
-    name: mkdocs  #主题名称
+    name: mkdocs
+    locale: zh_CN  #站点文字设置为中文
+    highlightjs: true
     navigation_depth: 3  #侧边栏中导航树的最大深度
+
+nav:
+    - 主页: index.md
+    - 博客: 
+      - 目录: blog/index.md
+      - blog/hellow-world.md
+    - 翻译文稿: 
+      - Index: translation/index.md
+    - 随想: 
+      - Index: essay/index.md
+    - 关于: about.md
+
+copyright: Copyright &copy; 2022 <a href="https://github.com/Hanjingxue-Boling">Hanjingxue Boling</a>.
