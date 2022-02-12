@@ -1,6 +1,6 @@
 ## 这是哪
 
-这里是 Hanjingxue Boling 的博客。
+这里是 [Hanjingxue Boling](https://github.com/Hanjingxue-Boling/Whiteboard) 的博客。
 
 ## 主要内容
 
