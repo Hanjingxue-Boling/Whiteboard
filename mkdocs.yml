@@ -22,6 +22,9 @@ nav:
     - 博客: 
       - 目录: blog/index.md
       - blog/hellow-world.md
+    - 青周刊:
+      - weekly/index.md
+      - weekly/22/02-12.md
     - 翻译文稿: 
       - 目录: translation/index.md
     - 随想: 
