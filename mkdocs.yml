@@ -18,7 +18,7 @@ nav:
       - 目录: blog/index.md
       - blog/hellow-world.md
     - 翻译文稿: 
-      - Index: translation/index.md
+      - 目录: translation/index.md
     - 随想: 
       - Index: essay/index.md
     - 关于: about.md
