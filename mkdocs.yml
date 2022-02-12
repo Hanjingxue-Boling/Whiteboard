@@ -7,10 +7,15 @@ repo_url: https://github.com/Hanjingxue-Boling/Whiteboard  #仓库链接
 edit_uri: ""
 
 theme:
-    name: mkdocs
-    locale: zh_CN  #站点文字设置为中文
+    name: material
+    language: zh    #material 的语言设置
+    #locale: zh_CN  #站点文字设置为中文；适用于默认主题
     highlightjs: true
-    navigation_depth: 3  #侧边栏中导航树的最大深度
+    #navigation_depth: 3  #侧边栏中导航树的最大深度；适用于默认主题
+    palette:  #material 的主题色设置
+      scheme: default
+      primary: blue grey
+      accent: light blue
 
 nav:
     - 主页: index.md
@@ -20,7 +25,5 @@ nav:
     - 翻译文稿: 
       - 目录: translation/index.md
     - 随想: 
-      - Index: essay/index.md
+      - 目录: essay/index.md
     - 关于: about.md
-
-copyright: Copyright &copy; 2022 <a href="https://github.com/Hanjingxue-Boling">Hanjingxue Boling</a>.
