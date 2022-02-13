@@ -4,6 +4,7 @@
 
 - [GIMP’s official mirrors and mirror policy](https://www.gimp.org/news/2021/10/06/official-mirror-policy/) 的作者是 [Wilber](https://www.gimp.org/author/wilber.html)；于 2022 年 10 月 6 日发布于 GIMP 的新闻页面上，以 [cc-by-sa 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 协议进行授权分发。
 - 配图由 [Aryeom](https://film.zemarmot.net/) 提供，以 [cc-by-sa 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 协议进行授权分发。
+- 翻译者：Hanjingxue Boling
 
 ----
 
