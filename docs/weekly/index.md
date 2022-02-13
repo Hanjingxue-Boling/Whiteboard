@@ -1,4 +1,4 @@
-# 青周刊
+# 首页
 
 ## 关于
 
@@ -8,6 +8,7 @@
 
 - Linux 社区新闻；
 - 软件新闻；
+- 翻译文档；
 - 其他有趣或值得关注的事情。
 
 ## 主要来源
@@ -19,6 +20,7 @@
 - [Phoronix](https://www.phoronix.com/scan.php?page=home)
 - [机核](https://www.gcores.com/)
 - [GitHub](https://github.com/)
+- [奇客](https://www.solidot.org/)
 
 ## 许可证
 
