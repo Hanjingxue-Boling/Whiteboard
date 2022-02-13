@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Deploy docs
-        uses: Hanjingxue-Boling/mkdocs-deploy-gh-pages@master
+        uses: Hanjingxue-Boling/Whiteboard@gh-pages
         # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
