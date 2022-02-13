@@ -22,6 +22,10 @@
 - [GitHub](https://github.com/)
 - [奇客](https://www.solidot.org/)
 
+## 反馈
+
+你可以向我的 GitHub 仓库提交 [issue](https://github.com/Hanjingxue-Boling/Whiteboard/issues)、[pr](https://github.com/Hanjingxue-Boling/Whiteboard/pulls) 或开启新的 [discussion](https://github.com/Hanjingxue-Boling/Whiteboard/discussions)。
+
 ## 许可证
 
 如果没有特别声明，周刊的所有文章都是基于 [CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/) 进行分发授权。
