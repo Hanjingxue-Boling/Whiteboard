@@ -21,6 +21,7 @@
 - [机核](https://www.gcores.com/)
 - [GitHub](https://github.com/)
 - [奇客](https://www.solidot.org/)
+- [Nature](https://www.nature.com/)
 
 ## 反馈
 
