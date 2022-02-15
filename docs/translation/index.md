@@ -9,3 +9,7 @@
 ### 来自 GitHub
 
 我翻译过的文稿大部分都存储在这个[项目](https://github.com/Hanjingxue-Boling/Documentation-archive)中。这里就不重复列举了。
+
+### 本站
+
+- [GIMP 官方镜像和镜像政策](./gimp-mirror-policy.md)
