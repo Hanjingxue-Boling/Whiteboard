@@ -26,6 +26,7 @@ nav:
       - weekly/index.md
       - weekly/22/02-12.md
       - weekly/22/02-19.md
+      #- weekly/22/02-20.md
     - 翻译文稿: 
       - translation/index.md
       - translation/gimp-mirror-policy.md
