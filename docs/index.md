@@ -5,7 +5,6 @@
 ## 主要内容
 
 - [博文](./blog/index.md)
-<!-- - [青周刊](./weekly/index.md) -->
 - [翻译文稿](./translation/index.md)
 - [随想](./essay/index.md)
 
