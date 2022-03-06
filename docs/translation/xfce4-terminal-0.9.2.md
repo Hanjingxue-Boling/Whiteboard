@@ -20,7 +20,7 @@
 
 ### 未来的计划
 
-如果没有发现重大错误，我将在几周内发布 xfce4-terminal 1.0.0。之后，专注于有关 Thunar 的一长串问题。
+如果没有发现重大错误，我将在几周内发布 xfce4-terminal 1.0.0 之后，专注于有关 Thunar 的一长串问题。
 
 - 相关：  
     [Xfce Terminal: Development Release 0.9.2 | Youtube](https://www.youtube.com/watch?v=jQsmE0k1LdM)
