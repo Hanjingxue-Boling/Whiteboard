@@ -1,26 +1,37 @@
-site_name: Boling's Whiteboard
+site_name: 寒晶雪的白板
 site_url: https://hanjingxue-boling.github.io/Whiteboard/
 site_description: Hanjingxue Boling's web blog.
 site_author: Hanjingxue Boling
 
+repo_name: 博客源码仓库
 repo_url: https://github.com/Hanjingxue-Boling/Whiteboard  #仓库链接
 edit_uri: ""
 
 theme:
     name: material
-    language: zh    #material 的语言设置
-    #locale: zh_CN  #站点文字设置为中文；适用于默认主题
+    language: zh    
     highlightjs: true
-    #navigation_depth: 3  #侧边栏中导航树的最大深度；适用于默认主题
-    palette:  #material 的主题色设置
-      scheme: default
-      primary: blue grey
-      accent: light blue
+    palette:
+      - scheme: default
+        primary: green
+        accent: light blue
+        toggle:
+          icon: material/weather-sunny
+          name: 切换到日间模式
+      - scheme: slate
+        primary: blue
+        accent: light green
+        toggle:
+          icon: material/weather-night
+          name: 切换至夜间模式
+    features:
+      - navigation.tabs
 
 nav:
     - 主页: index.md
     - 博客: 
       - blog/index.md
+      #- blog/goodies.md
       - blog/hellow-world.md
     - 翻译文稿: 
       - translation/index.md
@@ -31,4 +42,13 @@ nav:
       - essay/index.md
       - essay/2022-02-12.md
       - essay/2022-03-05.md
-    - 关于: about.md
+    - 关于: 
+      - about/about-me.md
+      - about/license.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Hanjingxue-Boling
+
+copyright: Some copyright reserved. 2021-2022 Hanjingxue Boling.
