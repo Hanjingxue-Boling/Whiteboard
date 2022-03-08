@@ -31,7 +31,7 @@ nav:
     - 主页: index.md
     - 博客: 
       - blog/index.md
-      #- blog/goodies.md
+      - blog/goodies.md
       - blog/hellow-world.md
     - 翻译文稿: 
       - translation/index.md

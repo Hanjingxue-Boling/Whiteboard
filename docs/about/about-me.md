@@ -1,6 +1,6 @@
 # 关于我 👋
 
-我是 Hanjingxue Boling (寒晶雪•铂灵)，openSUSE Linux 社区新闻的翻译者之一。我通常使用 Windows 10，但同时也会在虚拟机环境中使用 [Fedora Linux](https://getfedora.org/) 或 [openSUSE Linux](https://www.opensuse.org/)（这也是我喜爱的两个 Linux 发行版）。
+我是 Hanjingxue Boling (寒晶雪•铂灵)，openSUSE Linux 社区新闻的翻译者之一。我通常使用 Windows 11，但同时也会在虚拟机环境中使用 [Fedora Linux](https://getfedora.org/) 或 [openSUSE Linux](https://www.opensuse.org/)（这也是我喜爱的两个 Linux 发行版）。
 
 ## 主要事务
 
