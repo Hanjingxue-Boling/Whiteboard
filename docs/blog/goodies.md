@@ -18,7 +18,7 @@
 - [XIU2/TrackersListCollection](https://trackerslist.com/#/zh)  
     每天更新！全网热门 BitTorrent Tracker 列表！  
     同时包含了对于 tracker 和 BT 的介绍。
-- [中文博客聚合订阅](https://box.othing.xyz/i/)
+- [中文博客聚合订阅](https://box.othing.xyz/i/)  
     由 [Save The Web](https://github.com/saveweb) 搭建的中文独立博客 RSS 订阅
 
 ## 工具
