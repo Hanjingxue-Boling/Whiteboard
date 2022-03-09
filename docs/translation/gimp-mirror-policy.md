@@ -64,7 +64,7 @@
 这与 GNOME 镜像的[申请流程](https://wiki.gnome.org/Infrastructure/Mirrors)相同，但你必须明确要求成为 GIMP 镜像：
 
 1. 在[基础设施跟踪器](https://gitlab.gnome.org/Infrastructure/Infrastructure/issues/new?issuable_template=new-mirror)上创建镜像请求；
-2. 在标题和介绍中写下您特别想成为 GIMP 的镜像；
+2. 在标题和介绍中写下你特别想成为 GIMP 的镜像；
 3. 在请求描述或评论中添加 `/cc @Jehan`；
 4. 填写新镜像模板中的相关字段；
 5. 如果你希望在镜像赞助商列表中显示特定名称和 URL，请在报告中明确写出（否则我们将选择与你所写内容最相关的任何组织名称和 URL）；
