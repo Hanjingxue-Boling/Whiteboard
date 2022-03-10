@@ -16,3 +16,4 @@
 - [文档基金会：捐款如何在 2021 年帮助我们](./donation-help-us.md)
 - [xfce4-terminal 0.9.2 开发版](./xfce4-terminal-0.9.2.md)
 - [GIMP 是 GSoC 2022 导师组织](./gimp-gsoc-2022.md)
+- [Blender 3.1 已发布](./blender-3.1.md)
