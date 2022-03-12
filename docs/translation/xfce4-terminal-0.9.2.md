@@ -2,9 +2,11 @@
 
 ## 作品信息
 
-- 时间：2022 年 3 月 6 日
-- 翻译者：Hanjingxue Boling
 - 原文：[xfce4-terminal 0.9.2 development release](http://users.uoa.gr/~sdi1800073/sources/xfce_blog11.html)
+- 作者：Anestis Kefalidis
+- 许可证：不明
+- 翻译者：Hanjingxue Boling
+- 时间：2022 年 3 月 6 日
 
 ----
 

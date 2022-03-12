@@ -2,8 +2,11 @@
 
 ## 作品信息
 
-- [How donations helped us in 2021](https://blog.documentfoundation.org/blog/2022/02/16/how-donations-helped-us-in-2021/) 一文由 [Mike Saunders](https://blog.documentfoundation.org/blog/author/mikesaunders/) 于 2022 年 2 月 16 日发布于 [Document Foundation Blog](https://blog.documentfoundation.org/)，以 [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) 进行授权。
-- 翻译者：Hanjingxue Boling，以 CC-BY-SA 3.0 进行发布。
+- 原文：[How donations helped us in 2021](https://blog.documentfoundation.org/blog/2022/02/16/how-donations-helped-us-in-2021/)
+- 作者：[Mike Saunders](https://blog.documentfoundation.org/blog/author/mikesaunders/)
+- 许可证：[CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
+- 译者：Hanjingxue Boling
+- 日期：2022 年 3 月 12 日
 
 ----
 

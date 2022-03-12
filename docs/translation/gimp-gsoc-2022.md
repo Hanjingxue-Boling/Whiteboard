@@ -6,7 +6,7 @@
 - 原文：[GIMP is a GSoC 2022 mentor organization](https://www.gimp.org/news/2022/03/08/gimp-in-gsoc-2022/)
 - 许可证：[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 - 译者：Hanjingxue Boling
-- 日期：2022年3月9日
+- 日期：2022 年 3 月 9 日
 
 ----
 

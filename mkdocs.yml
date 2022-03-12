@@ -33,13 +33,17 @@ nav:
       - blog/index.md
       - blog/goodies.md
       - blog/hellow-world.md
-    - 翻译文稿: 
-      - translation/index.md
-      - translation/gimp-mirror-policy.md
-      - translation/donation-help-us.md
-      - translation/xfce4-terminal-0.9.2.md
-      - translation/gimp-gsoc-2022.md
-      - translation/blender-3.1.md
+    - 翻译文稿:
+      - translation/index.md 
+      - 2021-10:
+        - translation/gimp-mirror-policy.md
+      - 2022-02:
+        - translation/donation-help-us.md
+      - 2022-03:
+        - translation/xfce4-terminal-0.9.2.md
+        - translation/gimp-gsoc-2022.md
+        - translation/blender-3.1.md
+        - translation/xfce-gsoc-2022.md
     - 随想: 
       - essay/index.md
       - essay/2022-02-12.md

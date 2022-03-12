@@ -1,19 +1,7 @@
-# 首页
+# 关于
 
-## 关于
+此页面主要包含我写的翻译文稿。主要的内容是一些开源组织的新闻稿或者博客，偶尔包含一些我自己觉得有趣的文章。所有的文章按发布时间顺序进行分类。
 
-此页面主要包含我写的翻译文稿。一般是一些我自己觉得有趣的文章。
+## 注意
 
-## 目录
-
-### 来自 GitHub
-
-我翻译过的文稿大部分都存储在这个[项目](https://github.com/Hanjingxue-Boling/Documentation-archive)中。这里就不重复列举了。
-
-### 本站
-
-- [GIMP 官方镜像和镜像政策](./gimp-mirror-policy.md)
-- [文档基金会：捐款如何在 2021 年帮助我们](./donation-help-us.md)
-- [xfce4-terminal 0.9.2 开发版](./xfce4-terminal-0.9.2.md)
-- [GIMP 是 GSoC 2022 导师组织](./gimp-gsoc-2022.md)
-- [Blender 3.1 已发布](./blender-3.1.md)
+未标注许可证的文章默认以 CC-BY-SA 4.0 进行授权。标注为 `不明` 的文章请勿二次转载。

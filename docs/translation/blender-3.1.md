@@ -6,7 +6,7 @@
 - 原文：[Blender 3.1 Release](https://www.blender.org/press/blender-3-1-release/)
 - 许可证：CC-BY-SA 3.0
 - 译者：Hanjingxue Boling
-- 日期：2022年3月10日
+- 日期：2022 年 3 月 10 日
 
 ----
 
