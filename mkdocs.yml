@@ -53,6 +53,11 @@ nav:
       - about/friends.md
       - about/license.md
 
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
 extra:
   social:
     - icon: fontawesome/brands/github
