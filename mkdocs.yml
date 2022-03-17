@@ -32,6 +32,8 @@ nav:
     - 博客: 
       - blog/index.md
       
+      #- blog/portable-software.md
+      - blog/adjust-win11-for-popurse.md
       - blog/use-rss-sub.md
       - blog/goodies.md
       - blog/hellow-world.md
