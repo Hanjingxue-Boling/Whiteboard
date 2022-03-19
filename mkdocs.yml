@@ -48,6 +48,7 @@ nav:
         - translation/blender-3.1.md
         - translation/xfce-gsoc-2022.md
         - translation/libreoffice-gsoc-2022.md
+        - translation/plan-to-drop-soft.o.o.md
     - 随想: 
       - essay/index.md
       - essay/2022-02-12.md
@@ -58,9 +59,28 @@ nav:
       - about/license.md
 
 markdown_extensions:
+  - abbr
+  - pymdownx.snippets #启用缩写
   - admonition
   - pymdownx.details
+  - pymdownx.superfences #启用警告
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences #启用分页
+  - attr_list #启用按钮
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true #启用内容页
+  - footnotes #启用脚注
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde #启用文本格式化
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true #启用高级列表
+
 
 extra:
   social:
