@@ -81,6 +81,15 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true #启用高级列表
 
+plugins:
+  - git-revision-date-localized: #启用时间戳
+      type: iso_date
+      enable_creation_date: true
+      exclude:
+        - index.md
+        - translation/index.md
+        - essay/index.md
+        - blog/index.md
 
 extra:
   social:
