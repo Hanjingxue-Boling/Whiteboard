@@ -77,7 +77,8 @@ $ sudo zypper in kvantum-manager kvantum-manager-lang
 
 
 !!! note
-    由于个人认为 Kvantum Manager 默认配置的样式效果已经很完善了，所以不作过多的修改。如果希望进行更为精细的配置，可自行搜索相关的文章和教程。
+    - 由于个人认为 Kvantum Manager 默认配置的样式效果已经很完善了，所以不作过多的修改。如果希望进行更为精细的配置，可自行搜索相关的文章和教程。  
+    - 安装脚本已经自动安装好 Kvantum 主题了，如果你选用了其他的 Kvantum 主题，你需要先解压文件，然后再用 Kvantum Manager 安装此 Kvantum 主题。
 
 在**应用程序风格**中，选择 `Kvantum` 作为应用程序风格。打开 Kvantum Manager，点击**变更和删除主题**，选择你需要的 Kvantum 主题样式，确认并应用主题，如下：
 
