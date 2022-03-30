@@ -1,3 +1,7 @@
+![hexagons](./images/hexagons.png)
+
+*Powered By [openSUSE Tumbleweed](https://zh.opensuse.org/%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9_openSUSE) and others!*
+
 ## 这是哪
 
 !!! note
