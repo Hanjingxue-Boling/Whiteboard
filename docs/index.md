@@ -13,4 +13,4 @@
 
 - [博文](./blog/index.md)
 - [翻译文稿](./translation/index.md)
-- [随想](./essay/index.md)
+- [随笔](./essay/index.md)

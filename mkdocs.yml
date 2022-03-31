@@ -51,11 +51,14 @@ nav:
         - translation/libreoffice-gsoc-2022.md
         - translation/plan-to-drop-soft.o.o.md
         - translation/openSUSE-code-of-conduct.md
-    - 随想: 
+    - 随笔: 
       - essay/index.md
-      - essay/2022-02-12.md
-      - essay/2022-03-05.md
-      - essay/2022-03-30.md
+      - 备忘录: 
+        - essay/memo-opensuse.md
+      - 随想:
+        - essay/2022-02-12.md
+        - essay/2022-03-05.md
+        - essay/2022-03-30.md
     - 关于: 
       - about/about-me.md
       - about/friends.md
