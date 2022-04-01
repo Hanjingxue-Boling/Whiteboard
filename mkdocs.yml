@@ -51,6 +51,8 @@ nav:
         - translation/libreoffice-gsoc-2022.md
         - translation/plan-to-drop-soft.o.o.md
         - translation/openSUSE-code-of-conduct.md
+      - 2022-04:
+        - translation/yast-d-installer.md
     - 随笔: 
       - essay/index.md
       - 备忘录: 
