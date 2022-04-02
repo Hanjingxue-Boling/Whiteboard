@@ -11,7 +11,7 @@ theme:
     name: material
     language: zh    
     highlightjs: true
-    palette:
+    palette: #切换日夜间模式
       - scheme: default
         primary: green
         accent: light blue
@@ -26,6 +26,8 @@ theme:
           name: 切换至夜间模式
     features:
       - navigation.tabs
+      - content.tabs.link #启用内容页
+    logo: assets/fox.png
 
 nav:
     - 主页: index.md
@@ -37,7 +39,7 @@ nav:
       - blog/use-rss-sub.md
       - blog/goodies.md
       - blog/hellow-world.md
-    - 翻译文稿:
+    - 译文:
       - translation/index.md 
       - 2021-10:
         - translation/gimp-mirror-policy.md
@@ -53,11 +55,11 @@ nav:
         - translation/openSUSE-code-of-conduct.md
       - 2022-04:
         - translation/yast-d-installer.md
-    - 随笔: 
+    - 随想: 
       - essay/index.md
       - 备忘录: 
         - essay/memo-opensuse.md
-      - 随想:
+      - 随笔:
         - essay/2022-02-12.md
         - essay/2022-03-05.md
         - essay/2022-03-30.md
@@ -68,27 +70,42 @@ nav:
       - about/license.md
 
 markdown_extensions:
+  #启用缩略语
   - abbr
-  - pymdownx.snippets #启用缩写
+  - pymdownx.snippets
+  #启用警示标识
   - admonition
   - pymdownx.details
-  - pymdownx.superfences #启用警告
+  - pymdownx.superfences 
+  #启用注释
   - attr_list
   - md_in_html
-  - pymdownx.superfences #启用分页
-  - attr_list #启用按钮
+  - pymdownx.superfences
+  #启用按钮
+  - attr_list
+  #启用内容页
   - pymdownx.superfences
   - pymdownx.tabbed:
-      alternate_style: true #启用内容页
-  - footnotes #启用脚注
+      alternate_style: true
+  #启用脚注
+  - footnotes
+  #启用文本格式化
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys
   - pymdownx.mark
-  - pymdownx.tilde #启用文本格式化
+  - pymdownx.tilde
+  #启用图片
+  - attr_list
+  - md_in_html
+  #启用列表
   - def_list
   - pymdownx.tasklist:
-      custom_checkbox: true #启用高级列表
+      custom_checkbox: true
+  #启用图标 https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 plugins:
   - git-revision-date-localized: #启用时间戳
@@ -101,8 +118,6 @@ plugins:
         - blog/index.md
 
 extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/Hanjingxue-Boling
+  homepage: https://hanjingxue-boling.github.io/Whiteboard/
 
 copyright: Some copyright reserved. 2021-2022 Hanjingxue Boling.
