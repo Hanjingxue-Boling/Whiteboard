@@ -3,7 +3,7 @@
 ## 作品信息
 
 - 原文：[Xfce Terminal 1.0.0 stable release](http://users.uoa.gr/~sdi1800073/sources/xfce_blog12.html)
-- 作者：
+- 作者：[Anestis Kefalidis](http://users.uoa.gr/~sdi1800073/) 
 - 许可证：未知
 - 译者：Hanjingxue Boling
 - 日期：2022-04-03
