@@ -193,7 +193,7 @@ sudo rpm --import linux_signing_key.pub
 sudo zypper ref && sudo zypper in google-chrome-stable
 ```
 
-[美化 KDE](../blog/eyecandy-kde.md)
+[美化 KDE](../../blog/eyecandy-kde.md)
 
 启动 tlp:
 

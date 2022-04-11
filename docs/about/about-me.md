@@ -1,6 +1,6 @@
 # 关于我 👋
 
-我是 Hanjingxue Boling (寒晶雪•铂灵)，openSUSE Linux 中文维基和社区新闻的翻译者之一。我当前是 Windows 10 和 [openSUSE tumbleweed](https://www.opensuse.org/#Tumbleweed) 双系统用户。
+我是 [Hanjingxue Boling](https://github.com/Hanjingxue-Boling/) (寒晶雪•铂灵)，openSUSE Linux 中文维基和社区新闻的翻译者之一。我当前是 Windows 10 和 [openSUSE tumbleweed](https://www.opensuse.org/#Tumbleweed) 双系统用户。
 
 [Fedora Linux](https://getfedora.org/) 和 [openSUSE Linux](https://www.opensuse.org/) 是我喜爱的两个 Linux 发行版。
 
@@ -23,6 +23,7 @@
 - [Aui - openSUSE 中文论坛](https://forum.suse.org.cn/u/aui/summary)
 - [Aua0880 - openSUSE Wiki](https://zh.opensuse.org/User:Aua0880)
 - [bh - AskFedora](https://ask.fedoraproject.org/u/bh)
+- bolingh # outlook.com
 
 ## 其他
 

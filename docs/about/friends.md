@@ -15,7 +15,7 @@
 
 如果你要将我的博客添加至友链中，参考信息如下：
 
->标题: 寒晶雪的白板  
->链接: https://hanjingxue-boling.github.io/Whiteboard/  
->头像: https://avatars.githubusercontent.com/u/87272716?v=4  
->简介: openSUSE 新闻译者（英→简中）
+- 标题: 寒晶雪的文档站  
+- 链接: https://hanjingxue-boling.github.io/Whiteboard/  
+- 头像: https://avatars.githubusercontent.com/u/87272716?v=4  
+- 简介: 这是 Hanjingxue 的个人在线文档站点；主要包含站长所写的各种译文/文档/杂谈，同时兼任 Hanjingxue 的个人博客。

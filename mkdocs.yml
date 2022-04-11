@@ -1,9 +1,9 @@
-site_name: 寒晶雪的白板
+site_name: 寒晶雪的文档站
 site_url: https://hanjingxue-boling.github.io/Whiteboard/
-site_description: Hanjingxue Boling's web blog.
+site_description: Hanjingxue 的个人在线文档站点；主要包含站长所写的各种译文/杂谈，同时兼任 Hanjingxue 的个人博客。
 site_author: Hanjingxue Boling
 
-repo_name: 博客源码仓库
+repo_name: GitHub Repo
 repo_url: https://github.com/Hanjingxue-Boling/Whiteboard  #仓库链接
 edit_uri: ""
 
@@ -31,17 +31,10 @@ theme:
 
 nav:
     - 主页: index.md
-    - 博客: 
-      - blog/index.md
-      
-      - blog/alias-tips.md
-      - blog/eyecandy-kde.md
-      - blog/adjust-win11-for-popurse.md
-      - blog/use-rss-sub.md
-      - blog/goodies.md
-      - blog/hellow-world.md
     - 译文:
-      - translation/index.md 
+      - translation/about.md 
+      - 归档:
+        - translation/archives/about.md
       - 2021-10:
         - translation/gimp-mirror-policy.md
       - 2022-02:
@@ -57,17 +50,32 @@ nav:
       - 2022-04:
         - translation/yast-d-installer.md
         - translation/xfce4-terminal-1.0.0.md
-    - 随想: 
-      - essay/index.md
+    - 杂谈: 
+      - essay/about.md
       - 备忘录: 
-        - essay/memo-opensuse.md
+        - essay/memo/opensuse.md
       - 随笔:
-        - essay/2022-02-12.md
-        - essay/2022-03-05.md
-        - essay/2022-03-30.md
-        - essay/2022-04-01.md
-        - essay/2022-04-09.md
-        - essay/2022-04-11.md
+        - essay/main/2022-02-12.md
+        - essay/main/2022-03-05.md
+        - essay/main/2022-03-30.md
+        - essay/main/2022-04-01.md
+        - essay/main/2022-04-09.md
+        - essay/main/2022-04-11.md
+        - essay/main/2022-04-12.md
+      - 贡献者指南:
+        - essay/contributor/about.md
+        - essay/contributor/01-git.md
+        - essay/contributor/02-github.md
+        - essay/contributor/03-vscode.md
+    - 博客: 
+      - blog/about.md
+      
+      - blog/alias-tips.md
+      - blog/eyecandy-kde.md
+      - blog/adjust-win11-for-popurse.md
+      - blog/use-rss-sub.md
+      - blog/goodies.md
+      - blog/hellow-world.md
     - 关于: 
       - about/about-me.md
       - about/friends.md
@@ -117,9 +125,10 @@ plugins:
       enable_creation_date: true
       exclude:
         - index.md
-        - translation/index.md
-        - essay/index.md
-        - blog/index.md
+        - translation/about.md
+        - essay/about.md
+        - blog/about.md
+        - translation/archives/about.md
 
 extra:
   homepage: https://hanjingxue-boling.github.io/Whiteboard/
