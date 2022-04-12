@@ -32,9 +32,52 @@ theme:
 nav:
     - 主页: index.md
     - 译文:
-      - translation/about.md 
-      - 归档:
+      - translation/about.md
+      - 新闻归档:
         - translation/archives/about.md
+        - 2021-07:
+          - translation/archives/xfce-gsoc-2021.md
+          - translation/archives/opensuse-cc.md
+          - translation/archives/fedora-dpg.md
+          - translation/archives/github-2021-07-27.md
+        - 2021-08:
+          - translation/archives/xfce-2021-08-02.md
+          - translation/archives/google-2021-08-04.md
+          - translation/archives/xfce-2021-08-17.md
+          - translation/archives/xfce-2021-08-17-02.md
+          - translation/archives/fedora-dpg-02.md
+        - 2021-09:
+          - translation/archives/xfce-2021-09-12.md
+          - translation/archives/xfce-09-17.md
+          - translation/archives/fedora-nest-2021.md
+        - 2021-10:
+          - translation/archives/kde-network-china-2021.md
+        - 2021-11:
+          - translation/archives/fedora35-released.md
+          - translation/archives/xfce-2021-11-26.md
+        - 2021-12:
+          - translation/archives/xfce-2021-12-10.md
+          - translation/archives/eff-chrome-manifestv3.md
+        - 2022-01:
+          - translation/archives/xfce-2022-01-21.md
+      - OpenBSD 文档归档:
+        - translation/OpenBSD-zh/about.md
+        - FAQ:
+          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Building the System from Source.md
+          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Disk Setup.md
+          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Installation Guide.md
+          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Keyboard and Display Controls.md
+          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Multimedia.md
+          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Networking.md
+          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Package Management.md
+          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - The X Window System.md
+          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Virtual Private Networks (VPN) .md
+          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Virtualization.md
+        - Others:
+          - translation/OpenBSD-zh/other/OpenBSD - Following -current and using snapshots.md
+          - translation/OpenBSD-zh/other/OpenBSD - Mailing Lists .md
+          - translation/OpenBSD-zh/other/OpenBSD - Problem Reports.md
+          - translation/OpenBSD-zh/other/OpenBSD - Upgrade Guide 6.9 to 7.0.md
       - 2021-10:
         - translation/gimp-mirror-policy.md
       - 2022-02:
@@ -55,6 +98,7 @@ nav:
       - 备忘录: 
         - essay/memo/opensuse.md
       - 随笔:
+        - essay/main/2021-08.md
         - essay/main/2022-02-12.md
         - essay/main/2022-03-05.md
         - essay/main/2022-03-30.md
@@ -62,6 +106,7 @@ nav:
         - essay/main/2022-04-09.md
         - essay/main/2022-04-11.md
         - essay/main/2022-04-12.md
+        
       - 贡献者指南:
         - essay/contributor/about.md
         - essay/contributor/01-git.md
