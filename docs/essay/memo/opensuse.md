@@ -1,4 +1,4 @@
-# openSUSE Tumbleweed
+# Tumbleweed 配置小记
 
 ## 准备
 
@@ -15,6 +15,7 @@ wget https://opentuna.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-
 ```
 /etc/proxychains.conf
 /etc/tlp.d/*
+/etc/v2raya
 ```
 
 ## 安装系统
@@ -138,6 +139,15 @@ sudo zypper addrepo https://download.opensuse.org/repositories/home:fusionfuture
 ```
 ```
 sudo zypper refresh && sudo zypper install wps-office
+```
+
+安装代理工具：
+
+```
+rpm -i /home/bh/下载/VMShare/installer_redhat_*.rpm
+```
+```
+sudo zypper in v2ray-core && sudo systemctl enable v2ray v2raya --now
 ```
 
 配置代理工具：

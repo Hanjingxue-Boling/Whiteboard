@@ -99,10 +99,11 @@ nav:
         - essay/memo/opensuse.md
       - 其他:
         - essay/others/2021-08.md
-      - 贡献者指南:
-        - essay/contribute/about.md
-        - essay/contribute/base-01.md
-        - essay/contribute/base-02.md
+        - essay/others/anime-recommad.md
+        - 贡献者指南:
+          - essay/others/contribute/about.md
+          - essay/others/contribute/base-01.md
+          - essay/others/contribute/base-02.md
       - 随笔:
         - essay/main/2022-02-12.md
         - essay/main/2022-03-05.md
@@ -165,6 +166,7 @@ markdown_extensions:
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
 plugins:
+  - search
   - git-revision-date-localized: #启用时间戳
       type: iso_date
       enable_creation_date: true
