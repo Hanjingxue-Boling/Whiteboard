@@ -14,6 +14,10 @@
 - 了解 Shell 的基本用法和简单的概念。
 - 了解 Linux 和其他一些知识（比如 ffmpeg 解码和编码方法，你要写文章总得先有东西可写吧）。
 
+### 代理服务
+
+我们默认贡献者已经配置了代理服务，并可以正常访问 https://www.google.com
+
 ### Markdown
 
 掌握 Markdown 语法规则。
@@ -32,7 +36,7 @@
 
 ### GitHub 账户
 
-你可以参考《ProGit》第六章，注册一个 GitHub 账户，然后将 THGLG fork 到自己的账户中，再 clone 到本地。
+你可以参考《ProGit》第六章，注册一个 GitHub 账户，然后将 [THGLG](https://github.com/linuxhitchhiker/THGLG/) fork 到自己的账户中，再 clone 到本地。
 
 ### 文档排版规范
 
@@ -53,7 +57,28 @@ $ sudo dnf in git-core #在 Fedora 上安装 git
 
 ### VScode
 
-文本编辑工具推荐使用 [vscode](https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions)。它是一个功能丰富，易于使用的文本编辑器。而且有丰富的扩展（其中包括图形化的 git 管理工具）。
+推荐使用 [vscode](https://code.visualstudio.com/)。它是一个功能丰富，易于使用的文本编辑器。而且有丰富的扩展（其中包括图形化的 git 管理工具）。
+
+- 在 Fedora 上安装：  
+    添加软件源：
+    ```
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+    ```
+    然后检查更新，并安装 vscode：
+    ```
+    sudo dnf check-update && sudo dnf install code
+    ```
+- 在 openSUSE 上安装：  
+    添加软件源：
+    ```
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/vscode.repo'
+    ```
+    刷新软件源，并安装 vscode：  
+    ```
+    sudo zypper ref && sudo zypper in code
+    ```
 
 ### Python
 
@@ -65,6 +90,6 @@ Mkdocs-material 支持许多实用的 markdown 扩展语法：
 
 - [Reference - mkdocs-material](https://squidfunk.github.io/mkdocs-material/reference/)
 
-你还需要了解一下 Mdkocs 的一些配置信息，以方便将你的文档添加到合适的位置。
+你还需要了解一下 Mdkocs 的一些配置信息，以方便将你的文档和链接添加到合适的位置：
 
-- [Getting-started - mkdocs-material](https://squidfunk.github.io/mkdocs-material/getting-started/)
+- **[Mkdocs User Guide](https://www.mkdocs.org/user-guide/)**
