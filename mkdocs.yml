@@ -97,8 +97,9 @@ nav:
       - essay/about.md
       - 备忘录: 
         - essay/memo/opensuse.md
+      - 其他:
+        - essay/others/2021-08.md
       - 随笔:
-        - essay/main/2021-08.md
         - essay/main/2022-02-12.md
         - essay/main/2022-03-05.md
         - essay/main/2022-03-30.md
@@ -106,12 +107,7 @@ nav:
         - essay/main/2022-04-09.md
         - essay/main/2022-04-11.md
         - essay/main/2022-04-12.md
-        
-      - 贡献者指南:
-        - essay/contributor/about.md
-        - essay/contributor/01-git.md
-        - essay/contributor/02-github.md
-        - essay/contributor/03-vscode.md
+        - essay/main/2022-04-13.md
     - 博客: 
       - blog/about.md
       
@@ -171,9 +167,10 @@ plugins:
       exclude:
         - index.md
         - translation/about.md
+        - translation/archives/about.md
+        - translation/OpenBSD-zh/about.md
         - essay/about.md
         - blog/about.md
-        - translation/archives/about.md
 
 extra:
   homepage: https://hanjingxue-boling.github.io/Whiteboard/
