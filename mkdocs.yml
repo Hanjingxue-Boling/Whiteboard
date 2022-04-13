@@ -99,6 +99,10 @@ nav:
         - essay/memo/opensuse.md
       - 其他:
         - essay/others/2021-08.md
+      - 贡献者指南:
+        - essay/contribute/about.md
+        - essay/contribute/base-01.md
+        - essay/contribute/base-02.md
       - 随笔:
         - essay/main/2022-02-12.md
         - essay/main/2022-03-05.md
