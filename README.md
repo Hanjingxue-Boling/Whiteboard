@@ -1,3 +1,3 @@
 # Whiteboard
 
-My Blog
+My online documentation site.
