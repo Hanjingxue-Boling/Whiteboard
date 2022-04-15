@@ -114,6 +114,9 @@ nav:
         - essay/main/2022-04-12.md
         - essay/main/2022-04-13.md
         - essay/main/2022-04-14.md
+    - 归档:
+      - archives/about.md
+      - archives/glob-expression.md
     - 博客: 
       - blog/about.md
       
@@ -178,6 +181,7 @@ plugins:
         - translation/OpenBSD-zh/about.md
         - essay/about.md
         - blog/about.md
+        - archives/about.md
 
 extra:
   homepage: https://hanjingxue-boling.github.io/Whiteboard/
