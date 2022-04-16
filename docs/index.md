@@ -12,3 +12,7 @@
 [译文](./translation/about.md){ .md-button }
 [杂谈](./essay/about.md){ .md-button }
 [署名与许可](./about/license.md){ .md-button }
+
+相关：
+
+[Linux 漫游指南](https://linuxhitchhiker.github.io/THGLG/){ .md-button }
