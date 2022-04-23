@@ -1,4 +1,4 @@
-# Xfce 设置界面
+# Xfce 设置的图形界面
 
 - 原文：[Settings GUI](http://users.uoa.gr/~sdi1800073/sources/xfce_blog13.html)
 - 作者：Sergios - Anestis Kefalidis
