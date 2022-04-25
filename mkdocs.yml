@@ -173,17 +173,6 @@ markdown_extensions:
 
 plugins:
   - search
-  - git-revision-date-localized: #启用时间戳
-      type: iso_date
-      enable_creation_date: true
-      exclude:
-        - index.md
-        - translation/about.md
-        - translation/archives/about.md
-        - translation/OpenBSD-zh/about.md
-        - essay/about.md
-        - blog/about.md
-        - archives/about.md
 
 extra:
   homepage: https://hanjingxue-boling.github.io/Whiteboard/
