@@ -14,7 +14,7 @@ wget https://opentuna.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-
 
 ```
 /etc/proxychains.conf
-/etc/tlp.d/*
+/etc/tlp.d
 /etc/v2raya
 ```
 
@@ -30,7 +30,7 @@ wget https://opentuna.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-
 |/home|-|xfs|仅挂载|
 |/bt|-|xfs|bt 做种文件存储分区|
 
-- 需要删除的软件包：`ibus`、`fcitx`、`opensuse-welcome`、`kompare`、`discover`、`PackageKit`、`konversation`、`kmousetool`
+- 需要删除的软件包：`ibus`、`fcitx`、`opensuse-welcome`、`kompare`、`discover`、`PackageKit`、`konversation`、`kmousetool`、`vlc`、`skanlite`
 - 需要禁用的模组：`pattern:games`、`pattern:kde_pim`、`pattern:office`
 - 需要安装的软件包：`git-core`
 
