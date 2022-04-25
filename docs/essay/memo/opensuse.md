@@ -121,10 +121,12 @@ chown -R bh:users /home/bh
 
 安装软件：
 
-```
-sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch htop FreeFileSync telegram-desktop gimp filelight deadbeef obs-studio minigalaxy gh opi
-```
+!!! note
+    FreeFileSync 可能需要使用 flatpak 版以保证稳定运行。
 
+```
+sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef obs-studio minigalaxy gh opi
+```
 ```
 sudo zypper in fcitx5 fcitx5-configtool fcitx5-chinese-addons
 ```
