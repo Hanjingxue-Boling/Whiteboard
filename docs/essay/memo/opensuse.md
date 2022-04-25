@@ -103,6 +103,7 @@ mv /home/bh /home/bh.old
 /home/bh.old/.local/share/TelegramDesktop
 /home/bh.old/.bashrc
 /home/bh.old/.gitconfig
+/home/bh.old/.var
 ```
 
 检查权限：
@@ -119,13 +120,39 @@ chown -R bh:users /home/bh
 
 ## 以普通用户身份登陆系统
 
-安装软件：
+软件列表：
 
-!!! note
-    FreeFileSync 可能需要使用 flatpak 版以保证稳定运行。
+|包名/名称|源|描述|子包/Flatpak 包名|
+|---|---|---|---|
+|`keepassxc`|发行版仓库|密码管理|
+|`proxychains-ng`|发行版仓库|网络代理|
+|`smplayer`|发行版仓库|多媒体播放器|`smplayer-themes`|
+|`neofetch`|发行版仓库|概览信息输出工具|
+|`telegram-desktop`|发行版仓库|即时通讯软件|
+|`gimp`|发行版仓库|图片编辑|
+|`filelight`|发行版仓库|磁盘/文件夹容量分析|
+|`deadbeef`|发行版仓库|音乐播放器|
+|`fcitx5`|发行版仓库|输入法|`fcitx5-configtool`、`fcitx5-chinese-addons`|
+|`git-core`|发行版仓库|版本控制系统工具|
+|`obs-studio`|发行版仓库|录屏|
+|`gh`|发行版仓库|GitHub CLI|
+|`opi`|发行版仓库|OBS 仓库助手|
+|`wps-office`|OBS 仓库|文档办公|
+|`flatpak`|发行版仓库|Flatpak 基础包|
+|FreeFileSync|Flatpak Remote|文件同步/比对|`com.calibre_ebook.calibre`|
+|Calibre|Flatpak Remote|电子书阅读器|`org.freefilesync.FreeFileSync`|
+|Draw.io|Flatpak Remote|思维导图工具|`com.jgraph.drawio.desktop`|
+|v2rayA|[GitHub](https://github.com/v2rayA/v2rayA/releases)|网络代理|`v2ray-core`|
+|`patterns-server-kvm`|发行版仓库|KVM 虚拟化模组|
+|`goldendict`|发行版仓库|字典|
+|`google-chrome-stable`|Google|网络浏览器|
+|`code`|Microsoft|源代码编辑器|
+|Fluent Reader|Flatpak Remote|RSS 阅读器|`me.hyliu.fluentreader`|
+|Icalingua++|[GitHub Appimage](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus/releases)|即时通讯软件|
+|Ventoy|[GitHub](https://github.com/ventoy/Ventoy/releases)|启动 U 盘刻录工具|
 
 ```
-sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef obs-studio minigalaxy gh opi
+sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef obs-studio gh opi
 ```
 ```
 sudo zypper in fcitx5 fcitx5-configtool fcitx5-chinese-addons
@@ -164,9 +191,9 @@ socks5  127.0.0.1 7890
 配置 `git`
 
 ```
-$ git config --global user.name "John Doe"
-$ git config --global user.email johndoe@example.com
-$ git config --global http.proxy http://proxyserver.com:port
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+git config --global http.proxy http://proxyserver.com:port
 ```
 
 使用 `gh` 配置 `git`
