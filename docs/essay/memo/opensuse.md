@@ -1,5 +1,8 @@
 # Tumbleweed 配置小记
 
+!!! warning
+    施工中……
+
 ## 准备
 
 下载 ISO 文件：
@@ -150,6 +153,7 @@ chown -R bh:users /home/bh
 |Fluent Reader|Flatpak Remote|RSS 阅读器|`me.hyliu.fluentreader`|
 |Icalingua++|[GitHub Appimage](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus/releases)|即时通讯软件|
 |Ventoy|[GitHub](https://github.com/ventoy/Ventoy/releases)|启动 U 盘刻录工具|
+|Czkawka|Flatpak Remote|文件查重工具|`com.github.qarmin.czkawka`|
 
 ```
 sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef obs-studio gh opi
