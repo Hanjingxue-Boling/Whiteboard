@@ -149,13 +149,13 @@ chown -R bh:users /home/bh
 |Draw.io|Flatpak Remote|思维导图工具|`com.jgraph.drawio.desktop`|
 |v2rayA|[GitHub](https://github.com/v2rayA/v2rayA/releases)|网络代理|`v2ray-core`|
 |`patterns-server-kvm`|发行版仓库|KVM 虚拟化模组|
-|`goldendict`|发行版仓库|字典|
+|`goldendict`|发行版仓库|字典| 
 |`google-chrome-stable`|Google|网络浏览器|
 |`code`|Microsoft|源代码编辑器|
 |Fluent Reader|Flatpak Remote|RSS 阅读器|`me.hyliu.fluentreader`|
 |Icalingua++|[GitHub Appimage](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus/releases)|即时通讯软件|
 |Ventoy|[GitHub](https://github.com/ventoy/Ventoy/releases)|启动 U 盘刻录工具|
-|Czkawka|Flatpak Remote|文件查重工具|`com.github.qarmin.czkawka`|
+|dupeguru|[GitHub](https://github.com/arsenetar/dupeguru/releases)|文件查重工具|`python38-mutagen`、`python38-qt5`|
 
 ```
 sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef obs-studio gh opi
