@@ -1,8 +1,5 @@
 # Tumbleweed 配置小记
 
-!!! warning
-    施工中……
-
 ## 准备
 
 下载 ISO 文件：
@@ -79,12 +76,22 @@ zypper install --from packman ffmpeg gstreamer-plugins-{good,bad,ugly,libav} lib
 mv /home/bh /home/bh.old
 ```
 
-使用 `yast` 添加新用户，并将新用户添加至 `wheel` 与 `libvirt` 用户组。
-
-移动应用程序数据：
+新建用户：
 
 ```
-/home/bh.old/{桌面,文档,下载,视频,图片,音乐,Applications}
+adduser bh
+```
+```
+passwd bh
+```
+```
+usermod -aG wheel bh && usermod -aG libvirtd bh
+```
+
+需要重新装入的应用程序数据：
+
+```
+/home/bh.old/{模板,文档,下载,视频,图片,音乐,Applications}
 /home/bh.old/.fonts
 /home/bh.old/.pip
 /home/bh.old/.vscode
@@ -115,17 +122,18 @@ mv /home/bh /home/bh.old
 
 ```
 ls -lat /home/bh
+id
 ```
 
 矫正权限：
 
 ```
-chown -R bh:users /home/bh
+chown -R bh:bh /home/bh
 ```
 
 ## 以普通用户身份登陆系统
 
-软件列表：
+需要安装的软件列表：
 
 |包名/名称|源|描述|子包/Flatpak 包名|
 |---|---|---|---|
@@ -155,16 +163,38 @@ chown -R bh:users /home/bh
 |Fluent Reader|Flatpak Remote|RSS 阅读器|`me.hyliu.fluentreader`|
 |Icalingua++|[GitHub Appimage](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus/releases)|即时通讯软件|
 |Ventoy|[GitHub](https://github.com/ventoy/Ventoy/releases)|启动 U 盘刻录工具|
-|dupeguru|[GitHub](https://github.com/arsenetar/dupeguru/releases)|文件查重工具|`python38-mutagen`、`python38-qt5`|
+|Czkawka|Flatpak Remote|文件查重工具|`com.github.qarmin.czkawka`|
+|`kvantum-manager`|发行版仓库|主题美化工具|`kvantum-manager-lang`|
 
 ```
-sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef obs-studio gh opi
-```
-```
-sudo zypper in fcitx5 fcitx5-configtool fcitx5-chinese-addons
+sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef fcitx5 obs-studio gh opi flatpak v2ray-core goldendict fcitx5 fcitx5-configtool fcitx5-chinese-addons kvantum-manager kvantum-manager-lang
 ```
 ```
 sudo reboot
+```
+
+配置 Flatpak：
+
+```
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+```
+
+安装相关的软件包：
+
+```
+flatpak install com.calibre_ebook.calibre
+```
+```
+flatpak install org.freefilesync.FreeFileSync
+```
+```
+flatpak install com.jgraph.drawio.desktop
+```
+```
+flatpak install me.hyliu.fluentreader
+```
+```
+flatpak install com.github.qarmin.czkawka
 ```
 
 安装 WPS：
@@ -181,28 +211,14 @@ sudo zypper refresh && sudo zypper install wps-office
 ```
 rpm -i /home/bh/下载/VMShare/installer_redhat_*.rpm
 ```
-```
-sudo zypper in v2ray-core && sudo systemctl enable v2ray v2raya --now
-```
 
-配置代理工具：
+启动 v2rayA 服务
 
 ```
-sudo nano /etc/proxychains.conf
------
-quiet_mode
-socks5  127.0.0.1 7890
+sudo systemctl enable v2ray v2raya --now
 ```
 
-配置 `git`
-
-```
-git config --global user.name "John Doe"
-git config --global user.email johndoe@example.com
-git config --global http.proxy http://proxyserver.com:port
-```
-
-使用 `gh` 配置 `git`
+使用 `gh` 登陆 GitHub 账户
 
 ```
 gh auth status

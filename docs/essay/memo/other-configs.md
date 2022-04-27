@@ -1,8 +1,5 @@
 # 其他配置文件
 
-!!! warning
-    施工中……
-
 ## Alias
 
 在 `~/.bashrc` 中设置别名：
@@ -36,6 +33,30 @@ alias pip-upgrade="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
 
 ## git
 
+配置 `git`
+
+```
+git config --global user.name "Hanjingxue Boling"
+```
+```
+git config --global user.email bolingh@outlook.com
+```
+```
+git config --global http.proxy http://127.0.0.1:20171
+```
+
+## proxychains-ng
+
+配置代理工具：
+
+```
+sudo nano /etc/proxychains.conf
+```
+```
+quiet_mode
+socks5  127.0.0.1 7890
+```
+
 ## Python3
 
 配置软件源（`~/.pip/pip.conf`）：
@@ -61,3 +82,40 @@ alias pyc="proxychains4"
 $ export PATH=~/.local/bin:$PATH
 ```
 
+## TLP
+
+```
+cd /etc/tlp.d && ls
+```
+
+01-cpu.conf
+
+```
+CPU_SCALING_GOVERNOR_ON_AC=powersave
+CPU_SCALING_GOVERNOR_ON_BAT=powersave
+
+CPU_ENERGY_PERF_POLICY_ON_AC=balance_performance
+CPU_ENERGY_PERF_POLICY_ON_BAT=power
+
+CPU_BOOST_ON_AC=1
+CPU_BOOST_ON_BAT=0
+
+SCHED_POWERSAVE_ON_AC=0
+SCHED_POWERSAVE_ON_BAT=1
+```
+
+02-usb.conf
+
+```
+USB_AUTOSUSPEND=1
+```
+
+03-battery.conf
+
+```
+START_CHARGE_THRESH_BAT0=50
+# 开始充电阈值
+STOP_CHARGE_THRESH_BAT0=80
+# 停止充电阈值
+bh@c004-h0:/et
+```
