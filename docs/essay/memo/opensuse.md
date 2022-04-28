@@ -32,7 +32,7 @@ wget https://opentuna.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-
 
 - 需要删除的软件包：`ibus`、`fcitx`、`opensuse-welcome`、`kompare`、`discover`、`PackageKit`、`konversation`、`kmousetool`、`vlc`、`skanlite`
 - 需要禁用的模组：`pattern:games`、`pattern:kde_pim`、`pattern:office`
-- 需要安装的软件包：`git-core`
+- 需要安装的软件包：`git-core`、`flatpak`
 
 重装时不必导入旧用户数据或新建普通账户。
 
@@ -49,10 +49,10 @@ zypper mr -da
 添加第三方软件源并更新系统：
 
 ```
-sudo zypper ar -fcg https://opentuna.cn/opensuse/tumbleweed/repo/oss/ opentuna-oss
+zypper ar -fcg https://opentuna.cn/opensuse/tumbleweed/repo/oss/ opentuna-oss
 ```
 ```
-sudo zypper ar -fcg https://opentuna.cn/opensuse/tumbleweed/repo/non-oss/ opentuna-non-oss
+zypper ar -fcg https://opentuna.cn/opensuse/tumbleweed/repo/non-oss/ opentuna-non-oss
 ```
 ```
 zypper ref && zypper dup -y
@@ -68,6 +68,12 @@ zypper refresh && zypper dist-upgrade --from packman --allow-vendor-change
 ```
 ```
 zypper install --from packman ffmpeg gstreamer-plugins-{good,bad,ugly,libav} libavcodec-full
+```
+
+配置 Flatpak：
+
+```
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 
 将旧用户目录重命名：
@@ -86,6 +92,18 @@ passwd bh
 ```
 ```
 usermod -aG wheel bh && usermod -aG libvirtd bh
+```
+
+检查权限：
+
+```
+ls -lat /home/bh && id bh
+```
+
+矫正权限：
+
+```
+chown -R bh:bh /home/bh.old
 ```
 
 需要重新装入的应用程序数据：
@@ -118,19 +136,6 @@ usermod -aG wheel bh && usermod -aG libvirtd bh
 /home/bh.old/.local/share/TelegramDesktop
 ```
 
-检查权限：
-
-```
-ls -lat /home/bh
-id
-```
-
-矫正权限：
-
-```
-chown -R bh:bh /home/bh
-```
-
 ## 以普通用户身份登陆系统
 
 需要安装的软件列表：
@@ -157,7 +162,7 @@ chown -R bh:bh /home/bh
 |Draw.io|Flatpak Remote|思维导图工具|`com.jgraph.drawio.desktop`|
 |v2rayA|[GitHub](https://github.com/v2rayA/v2rayA/releases)|网络代理|`v2ray-core`|
 |`patterns-server-kvm`|发行版仓库|KVM 虚拟化模组|
-|`goldendict`|发行版仓库|字典| 
+|`goldendict`|发行版仓库|字典|`goldendict-lang`|
 |`google-chrome-stable`|Google|网络浏览器|
 |`code`|Microsoft|源代码编辑器|
 |Fluent Reader|Flatpak Remote|RSS 阅读器|`me.hyliu.fluentreader`|
@@ -167,34 +172,28 @@ chown -R bh:bh /home/bh
 |`kvantum-manager`|发行版仓库|主题美化工具|`kvantum-manager-lang`|
 
 ```
-sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef fcitx5 obs-studio gh opi flatpak v2ray-core goldendict fcitx5 fcitx5-configtool fcitx5-chinese-addons kvantum-manager kvantum-manager-lang
+sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef fcitx5 obs-studio gh opi flatpak v2ray-core goldendict goldendict-lang fcitx5 fcitx5-configtool fcitx5-chinese-addons kvantum-manager kvantum-manager-lang gnome-keyring
 ```
 ```
 sudo reboot
 ```
 
-配置 Flatpak：
-
-```
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-```
-
 安装相关的软件包：
 
 ```
-flatpak install com.calibre_ebook.calibre
+flatpak install flathub com.calibre_ebook.calibre
 ```
 ```
-flatpak install org.freefilesync.FreeFileSync
+flatpak install flathub org.freefilesync.FreeFileSync
 ```
 ```
-flatpak install com.jgraph.drawio.desktop
+flatpak install flathub com.jgraph.drawio.desktop
 ```
 ```
-flatpak install me.hyliu.fluentreader
+flatpak install flathub me.hyliu.fluentreader
 ```
 ```
-flatpak install com.github.qarmin.czkawka
+flatpak install flathub com.github.qarmin.czkawka
 ```
 
 安装 WPS：
