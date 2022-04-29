@@ -38,9 +38,7 @@ wget https://opentuna.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-
 
 ## 初次启动
 
-以 `root` 身份登陆系统
-
-禁用全部的软件源：
+以 `root` 身份登陆系统。禁用全部的软件源：
 
 ```
 zypper mr -da
@@ -58,7 +56,7 @@ zypper ar -fcg https://opentuna.cn/opensuse/tumbleweed/repo/non-oss/ opentuna-no
 zypper ref && zypper dup -y
 ```
 
-安装解码器：
+安装多媒体解码器：
 
 ```
 zypper ar -cfp 90 https://mirrors.ustc.edu.cn/packman/suse/openSUSE_Tumbleweed/ packman
@@ -91,7 +89,7 @@ adduser bh
 passwd bh
 ```
 ```
-usermod -aG wheel bh && usermod -aG libvirtd bh
+usermod -aG wheel $USER && usermod -aG libvirtd $USER
 ```
 
 检查权限：
@@ -109,7 +107,7 @@ chown -R bh:bh /home/bh.old
 需要重新装入的应用程序数据：
 
 ```
-/home/bh.old/{模板,文档,下载,视频,图片,音乐,Applications}
+/home/bh.old/{公共,模板,文档,下载,视频,图片,音乐,Applications}
 /home/bh.old/.fonts
 /home/bh.old/.pip
 /home/bh.old/.vscode
@@ -130,6 +128,7 @@ chown -R bh:bh /home/bh.old
 /home/bh.old/.config/Kvantum
 /home/bh.old/.config/obs-studio
 /home/bh.old/.config/smplayer
+/home/bh.old/.config/VirtualBox
 
 /home/bh.old/.local/share/fcitx5
 /home/bh.old/.local/share/konsole
@@ -161,7 +160,7 @@ chown -R bh:bh /home/bh.old
 |Calibre|Flatpak Remote|电子书阅读器|`org.freefilesync.FreeFileSync`|
 |Draw.io|Flatpak Remote|思维导图工具|`com.jgraph.drawio.desktop`|
 |v2rayA|[GitHub](https://github.com/v2rayA/v2rayA/releases)|网络代理|`v2ray-core`|
-|`patterns-server-kvm`|发行版仓库|KVM 虚拟化模组|
+|`virtualbox`|发行版仓库|虚拟机|
 |`goldendict`|发行版仓库|字典|`goldendict-lang`|
 |`google-chrome-stable`|Google|网络浏览器|
 |`code`|Microsoft|源代码编辑器|
@@ -172,7 +171,10 @@ chown -R bh:bh /home/bh.old
 |`kvantum-manager`|发行版仓库|主题美化工具|`kvantum-manager-lang`|
 
 ```
-sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef fcitx5 obs-studio gh opi flatpak v2ray-core goldendict goldendict-lang fcitx5 fcitx5-configtool fcitx5-chinese-addons kvantum-manager kvantum-manager-lang gnome-keyring
+sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef fcitx5 obs-studio gh opi flatpak v2ray-core goldendict goldendict-lang fcitx5 fcitx5-configtool fcitx5-chinese-addons kvantum-manager kvantum-manager-lang gnome-keyring virtualbox
+```
+```
+sudo usermod -aG vboxusers $USER
 ```
 ```
 sudo reboot
@@ -205,23 +207,14 @@ sudo zypper addrepo https://download.opensuse.org/repositories/home:fusionfuture
 sudo zypper refresh && sudo zypper install wps-office
 ```
 
-安装代理工具：
+安装并启用代理工具：
 
 ```
-rpm -i /home/bh/下载/VMShare/installer_redhat_*.rpm
-```
-
-启动 v2rayA 服务
-
-```
-sudo systemctl enable v2ray v2raya --now
+sudo rpm -i /home/bh/下载/packages/installer_redhat_*.rpm; sudo systemctl enable v2ray v2raya --now
 ```
 
 使用 `gh` 登陆 GitHub 账户
 
-```
-gh auth status
-```
 ```
 gh auth login
 ```
@@ -264,7 +257,7 @@ sudo systemctl enable tlp --now
 tlp-stat -s #依照提示，手动屏蔽相关内容
 ```
 ```
-systemctl status power-profiles-daemon.service tlp.service
+sudo systemctl status power-profiles-daemon.service tlp.service
 ```
 ```
 sudo systemctl mask power-profiles-daemon.service

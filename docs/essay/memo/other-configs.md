@@ -27,7 +27,7 @@ alias clean="clear; exit"
 #适用于 vscode 内置终端的退出命令
 alias font-ref="fc-cache -fv"
 #刷新字体
-alias pip-upgrade="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
+#alias pip-upgrade="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
 #更新全部的 Python 包
 ```
 
@@ -52,9 +52,12 @@ git config --global http.proxy http://127.0.0.1:20171
 ```
 sudo nano /etc/proxychains.conf
 ```
-```
+```shell
 quiet_mode
+#clash for windows
 socks5  127.0.0.1 7890
+#v2raya
+#socks5  127.0.0.1 20170
 ```
 
 ## Python3
@@ -68,18 +71,10 @@ index-url = http://mirrors.aliyun.com/pypi/simple/
 trusted-host=mirrors.aliyun.com
 ```
 
-设置相关的别名（`~/.bashrc`）：
-
-```
-alias pipp="pip -m --proxy-server=http://127.0.0.1:7890"
-alias mkdocs="python3 -m mkdocs serve"
-alias pyc="proxychains4"
-```
-
 安装后，需要将一些目录（python 模块的可执行文件目录）添加到 `$PATH` 中：
 
 ```
-$ export PATH=~/.local/bin:$PATH
+export PATH=~/.local/bin:$PATH
 ```
 
 ## TLP
