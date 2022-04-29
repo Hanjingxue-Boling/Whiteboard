@@ -137,6 +137,13 @@ chown -R bh:bh /home/bh.old
 
 ## 以普通用户身份登陆系统
 
+设置主机名：
+
+```
+sudo hostnamectl set-hostname --pretty "Hanjingxue Boling's Laptop"
+sudo hostnamectl set-hostname --static c004-h0
+```
+
 需要安装的软件列表：
 
 |包名/名称|源|描述|子包/Flatpak 包名|
