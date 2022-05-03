@@ -141,6 +141,8 @@ chown -R bh:bh /home/bh.old
 
 ```
 sudo hostnamectl set-hostname --pretty "Hanjingxue Boling's Laptop"
+```
+```
 sudo hostnamectl set-hostname --static c004-h0
 ```
 
