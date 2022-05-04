@@ -178,6 +178,7 @@ sudo hostnamectl set-hostname --static c004-h0
 |Ventoy|[GitHub](https://github.com/ventoy/Ventoy/releases)|启动 U 盘刻录工具|
 |Czkawka|Flatpak Remote|文件查重工具|`com.github.qarmin.czkawka`|
 |`kvantum-manager`|发行版仓库|主题美化工具|`kvantum-manager-lang`|
+|Cider|Flatpak Remote|Apple Music 开源客户端|`sh.cider.Cider`|
 
 ```
 sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef fcitx5 obs-studio gh opi flatpak v2ray-core goldendict goldendict-lang fcitx5 fcitx5-configtool fcitx5-chinese-addons kvantum-manager kvantum-manager-lang gnome-keyring virtualbox
@@ -205,6 +206,9 @@ flatpak install flathub me.hyliu.fluentreader
 ```
 ```
 flatpak install flathub com.github.qarmin.czkawka
+```
+```
+flatpak install flathub sh.cider.Cider
 ```
 
 安装 WPS：
