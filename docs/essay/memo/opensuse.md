@@ -173,7 +173,7 @@ sudo hostnamectl set-hostname --static c004-h0
 |`goldendict`|发行版仓库|字典|`goldendict-lang`|
 |`google-chrome-stable`|Google|网络浏览器|
 |`code`|Microsoft|源代码编辑器|
-|Fluent Reader|Flatpak Remote|RSS 阅读器|`me.hyliu.fluentreader`|
+|Fluent Reader|[GitHub Appimage](https://github.com/yang991178/fluent-reader/releases)|RSS 阅读器|
 |Icalingua++|[GitHub Appimage](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus/releases)|即时通讯软件|
 |Ventoy|[GitHub](https://github.com/ventoy/Ventoy/releases)|启动 U 盘刻录工具|
 |Czkawka|Flatpak Remote|文件查重工具|`com.github.qarmin.czkawka`|
