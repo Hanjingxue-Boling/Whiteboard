@@ -8,10 +8,12 @@
 
 ### 思源字体
 
-- [Source Han Sans | 思源黑体](https://github.com/adobe-fonts/source-han-sans)
-- [Source Han Serif | 思源宋体](https://github.com/adobe-fonts/source-han-serif)
-- [Source Han Mono | 思源等宽](https://github.com/adobe-fonts/source-han-mono)
-- [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
+|名称|包名|
+|---|---|
+|[Source Han Sans 思源黑体](https://github.com/adobe-fonts/source-han-sans)|`adobe-sourcehansans-cn-fonts`|
+|[Source Han Serif 思源宋体](https://github.com/adobe-fonts/source-han-serif)|`adobe-sourcehanserif-cn-fonts`|
+|[Source Han Mono 思源等宽](https://github.com/adobe-fonts/source-han-mono)|-|
+|[Source Code Pro](https://github.com/adobe-fonts/source-code-pro)|`adobe-sourcecodepro-fonts`|
 
 
 ## 计量单位
