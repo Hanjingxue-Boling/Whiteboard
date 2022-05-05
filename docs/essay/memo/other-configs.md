@@ -116,5 +116,4 @@ START_CHARGE_THRESH_BAT0=50
 # 开始充电阈值
 STOP_CHARGE_THRESH_BAT0=80
 # 停止充电阈值
-bh@c004-h0:/et
 ```
