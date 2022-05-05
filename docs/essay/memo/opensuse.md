@@ -196,9 +196,6 @@ sudo reboot
 flatpak install flathub com.calibre_ebook.calibre
 ```
 ```
-flatpak install flathub org.freefilesync.FreeFileSync
-```
-```
 flatpak install flathub com.jgraph.drawio.desktop
 ```
 ```
