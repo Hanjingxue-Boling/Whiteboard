@@ -157,6 +157,7 @@ sudo hostnamectl set-hostname --static c004-h0
 |`telegram-desktop`|发行版仓库|即时通讯软件|
 |`gimp`|发行版仓库|图片编辑|
 |`filelight`|发行版仓库|磁盘/文件夹容量分析|
+|`htop`|发行版仓库|应用进程管理|
 |`deadbeef`|发行版仓库|音乐播放器|
 |`fcitx5`|发行版仓库|输入法|`fcitx5-configtool`、`fcitx5-chinese-addons`|
 |`git-core`|发行版仓库|版本控制系统工具|
@@ -181,7 +182,7 @@ sudo hostnamectl set-hostname --static c004-h0
 |Cider|Flatpak Remote|Apple Music 开源客户端|`sh.cider.Cider`|
 
 ```
-sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef fcitx5 obs-studio gh opi flatpak v2ray-core goldendict goldendict-lang fcitx5 fcitx5-configtool fcitx5-chinese-addons kvantum-manager kvantum-manager-lang gnome-keyring virtualbox
+sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef fcitx5 obs-studio gh opi flatpak v2ray-core goldendict goldendict-lang fcitx5 fcitx5-configtool fcitx5-chinese-addons kvantum-manager kvantum-manager-lang gnome-keyring virtualbox htop
 ```
 ```
 sudo usermod -aG vboxusers $USER
