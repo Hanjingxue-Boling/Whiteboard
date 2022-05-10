@@ -191,24 +191,6 @@ sudo usermod -aG vboxusers $USER
 sudo reboot
 ```
 
-安装相关的软件包：
-
-```
-flatpak install flathub com.calibre_ebook.calibre
-```
-```
-flatpak install flathub com.jgraph.drawio.desktop
-```
-```
-flatpak install flathub me.hyliu.fluentreader
-```
-```
-flatpak install flathub com.github.qarmin.czkawka
-```
-```
-flatpak install flathub sh.cider.Cider
-```
-
 安装 WPS：
 
 ```
@@ -258,6 +240,27 @@ sudo zypper ref && sudo zypper in google-chrome-stable
 ```
 
 [美化 KDE](../../blog/eyecandy-kde.md)
+
+安装相关的 Flatpak 软件包：
+
+!!! note
+    建议最好在美化系统完成后再安装 Flatpak，以防止出现一些奇怪的问题。
+
+```
+flatpak install flathub com.calibre_ebook.calibre
+```
+```
+flatpak install flathub com.jgraph.drawio.desktop
+```
+```
+flatpak install flathub me.hyliu.fluentreader
+```
+```
+flatpak install flathub com.github.qarmin.czkawka
+```
+```
+flatpak install flathub sh.cider.Cider
+```
 
 启动 tlp:
 
