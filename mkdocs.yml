@@ -94,6 +94,8 @@ nav:
         - translation/yast-d-installer.md
         - translation/xfce4-terminal-1.0.0.md
         - translation/xfce-setting-gui.md
+      - 2022-05:
+        - translation/fedora36-released.md
     - 杂谈: 
       - essay/about.md
       - 备忘录: 
