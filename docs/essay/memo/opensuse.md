@@ -27,8 +27,8 @@ wget https://opentuna.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-
 |/boot/efi|512MB|efi|挂载，格式化|
 |SWAP|8GB|swap|挂载，格式化|
 |/|50GB|btrfs|格式化，并勾选启用系统快照。|
-|/home|-|xfs|仅挂载|
-|/bt|-|xfs|bt 做种文件存储分区|
+|/home|-|xfs|仅挂载，手动清理文件|
+|/bt|-|xfs|仅挂载，bt 做种文件存储分区|
 
 - 需要删除的软件包：`ibus`、`fcitx`、`opensuse-welcome`、`kompare`、`discover`、`PackageKit`、`konversation`、`kmousetool`、`vlc`、`skanlite`
 - 需要禁用的模组：`pattern:games`、`pattern:kde_pim`、`pattern:office`
