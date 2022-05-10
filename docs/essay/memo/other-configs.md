@@ -35,6 +35,8 @@ alias ping="ping bing.com"
 #测试网络连通性
 alias yt-dlp="proxychains4 yt-dlp"
 #为下载工具设置代理
+export EDITOR=nano
+#将默认文本编辑器指定为 nano
 ```
 
 ## git
