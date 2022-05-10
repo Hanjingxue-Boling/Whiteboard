@@ -121,3 +121,10 @@ START_CHARGE_THRESH_BAT0=50
 STOP_CHARGE_THRESH_BAT0=80
 # 停止充电阈值
 ```
+
+## Cron
+
+```shell
+bh@c004-h0:~> crontab -l
+0 2 * * *  /home/bh/Applications/qb-nox/qbittorrent-nox
+```
