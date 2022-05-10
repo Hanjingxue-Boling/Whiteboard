@@ -10,6 +10,8 @@
 
 ----
 
+![image](./assets/f36-final.jpg)
+
 ## 正文
 
 今天，我很高兴与大家分享成千上万的 Fedora 项目贡献者辛勤工作的成果：我们的最新版本 Fedora Linux 36 已经发布！
