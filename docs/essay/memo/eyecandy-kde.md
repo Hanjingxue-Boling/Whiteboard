@@ -6,19 +6,19 @@
 
 桌面：
 
-![start](./image/KDE/start.png)
+![start](./images/KDE/start.png)
 
 文件管理器：
 
-![file-manager](./image/KDE/file-manager.png)
+![file-manager](./images/KDE/file-manager.png)
 
 浏览器：
 
-![chrome](./image/KDE/chrome.png)
+![chrome](./images/KDE/chrome.png)
 
 终端：
 
-![neofetch](./imager/../image/KDE/neofetch.png)
+![neofetch](./images/KDE/neofetch.png)
 
 ## 配置主题
 
@@ -82,11 +82,11 @@ $ sudo zypper in kvantum-manager kvantum-manager-lang
 
 在**应用程序风格**中，选择 `Kvantum` 作为应用程序风格。打开 Kvantum Manager，点击**变更和删除主题**，选择你需要的 Kvantum 主题样式，确认并应用主题，如下：
 
-![01](./image/KDE/settings-01.png)
+![01](./images/KDE/settings-01.png)
 
 在**应用程序风格**中，点击右下方的**配置 GNOME/GTK 应用程序风格**，然后点击**从文件安装**，选择你下载好的 `Qogir Theme` GTK 主题压缩包文件；再点击上方的 **GTK 应用程序风格**，在列表中选中你刚刚安装的主题，保存确认，如下：
 
-![02](./image/KDE/settings-02.png)
+![02](./images/KDE/settings-02.png)
 
 最后，重启系统以应用新主题。
 
@@ -102,7 +102,7 @@ grub 和登陆界面的主题样式虽然可以自定义，但不必更改。因
 
 打开 Konsole，点击菜单栏的 **设置**>**配置 Konsole**>**配置方案**，新建一个新的配置方案。然后在**外观**页面中，选择一种你喜欢的配色方案和字体，点击右方的**编辑**，勾选**模糊背景**，并设置背景透明度（推荐 20%～30%）。其余内容请按照自身需要自行调整。如下：
 
-![neofetch](./image/KDE/neofetch-02.png)
+![neofetch](./images/KDE/neofetch-02.png)
 
 #### 浏览器
 

@@ -1,6 +1,6 @@
 site_name: 寒晶雪的文档站
 site_url: https://hanjingxue-boling.github.io/Whiteboard/
-site_description: Hanjingxue 的个人在线文档站点；主要包含站长所写的各种译文/杂谈，同时兼任 Hanjingxue 的个人博客。
+site_description: Hanjingxue 的个人在线文档站。
 site_author: Hanjingxue Boling
 
 repo_name: GitHub Repo
@@ -101,12 +101,18 @@ nav:
       - 备忘录: 
         - essay/memo/opensuse.md
         - essay/memo/other-configs.md
-        - essay/memo/fonts-and-measurement.md
+        - essay/memo/eyecandy-kde.md
+        - essay/memo/alias-tips.md
+
       - 其他:
         - essay/others/2021-08.md
+        - essay/others/goodies.md
         - essay/others/anime-recommad.md
+        - essay/others/adjust-win11-for-popurse.md
+        - essay/others/fonts-and-measurement.md
         - essay/others/about-why.md
-        - 贡献者指南:
+        - essay/others/use-rss-sub.md
+        - 贡献者指南（已归档）:
           - essay/others/contribute/about.md
           - essay/others/contribute/base-01.md
           - essay/others/contribute/base-02.md
@@ -129,15 +135,6 @@ nav:
     - 归档:
       - archives/about.md
       - archives/glob-expression.md
-    - 博客: 
-      - blog/about.md
-      
-      - blog/alias-tips.md
-      - blog/eyecandy-kde.md
-      - blog/adjust-win11-for-popurse.md
-      - blog/use-rss-sub.md
-      - blog/goodies.md
-      - blog/hellow-world.md
     - 关于: 
       - about/about-me.md
       - about/friends.md

@@ -239,7 +239,7 @@ sudo rpm --import linux_signing_key.pub
 sudo zypper ref && sudo zypper in google-chrome-stable
 ```
 
-[美化 KDE](../../blog/eyecandy-kde.md)
+[美化 KDE](./eyecandy-kde.md)
 
 安装相关的 Flatpak 软件包：
 
