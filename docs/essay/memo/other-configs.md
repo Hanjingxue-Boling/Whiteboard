@@ -21,9 +21,9 @@ alias ustc="wget https://mirrors.ustc.edu.cn/opensuse/tumbleweed/iso/openSUSE-Tu
 #从 USTC 下载最新的 tumbleweed DVD 镜像
 alias flatpak="proxychains4 flatpak"
 #对 flatpak 使用代理
-alias nvidia="prime-select nvidia"
+alias nvidia="sudo prime-select nvidia"
 #简化显卡切换命令
-alias intel="prime-select intel"
+alias intel="sudo prime-select intel"
 #简化显卡切换命令
 alias clean="clear; exit"
 #适用于 vscode 内置终端的退出命令
