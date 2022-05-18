@@ -12,6 +12,8 @@ alias sudo="sudo "
 alias zypper="proxychains4 zypper"
 #对 zypper 使用代理
 alias mkdocs="python3 -m mkdocs serve"
+alias mkdocs-lh="cd /home/bh/文档/GitHub/THGLG/ ; python3 -m mkdocs serve"
+alias mkdocs-wb="cd /home/bh/文档/GitHub/Whiteboard/ ; python3 -m mkdocs serve"
 #更短的别名
 alias pyc="proxychains4"
 #更短的别名
