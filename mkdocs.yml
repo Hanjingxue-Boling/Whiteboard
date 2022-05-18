@@ -99,13 +99,13 @@ nav:
         - translation/2022-05-17-theevilskeleton.md
     - 杂谈: 
       - essay/about.md
-      - 备忘录: 
+      - Linux 备忘录: 
         - essay/memo/opensuse.md
         - essay/memo/other-configs.md
         - essay/memo/eyecandy-kde.md
         - essay/memo/alias-tips.md
-
-      - 其他:
+        - essay/memo/opencc.md
+      - 其他杂谈:
         - essay/others/2021-08.md
         - essay/others/goodies.md
         - essay/others/anime-recommad.md
