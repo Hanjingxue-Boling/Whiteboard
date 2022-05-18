@@ -8,6 +8,8 @@
     Fedora 用户，但同时也在维护某些 AUR 的包，dipper 机型的 crDroid Official Maintainer。
 - [杨蕙芷](https://qvshuo.art/)  
     如果有人欺负你呢，就报我的名字。 
+- [Karuboniru's Blog](https://yanqiyu.info)  
+    就是个学物理的，懂个屁的计算机。
 
 ## 添加友链
 
