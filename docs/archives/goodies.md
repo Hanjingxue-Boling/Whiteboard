@@ -1,4 +1,4 @@
-# 好物推荐
+# 实用工具与站点
 
 一些有趣或实用的站点或工具
 
@@ -19,7 +19,9 @@
     每天更新！全网热门 BitTorrent Tracker 列表！  
     同时包含了对于 tracker 和 BT 的介绍。
 - [中文博客聚合订阅](https://box.othing.xyz/i/)  
-    由 [Save The Web](https://github.com/saveweb) 搭建的中文独立博客 RSS 订阅
+    由 [Save The Web](https://github.com/saveweb) 搭建的中文独立博客 RSS 订阅  
+- [OpenCC Online](https://opencc.byvoid.com/)  
+    在线简繁中文转换。
 
 ## 工具
 

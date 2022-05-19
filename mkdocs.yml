@@ -108,7 +108,6 @@ nav:
         - essay/memo/opencc.md
       - 其他杂谈:
         - essay/others/2021-08.md
-        - essay/others/goodies.md
         - essay/others/anime-recommad.md
         - essay/others/adjust-win11-for-popurse.md
         - essay/others/fonts-and-measurement.md
@@ -137,6 +136,8 @@ nav:
         - essay/main/2022-05-19.md
     - 归档:
       - archives/about.md
+      - archives/goodies.md
+      - archives/index.md
       - archives/glob-expression.md
     - 关于: 
       - about/about-me.md
