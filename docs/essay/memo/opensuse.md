@@ -32,7 +32,7 @@ wget https://opentuna.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-
 
 - 需要删除的软件包：`ibus`、`fcitx`、`opensuse-welcome`、`kompare`、`discover`、`PackageKit`、`konversation`、`kmousetool`、`vlc`、`skanlite`
 - 需要禁用的模组：`pattern:games`、`pattern:kde_pim`、`pattern:office`
-- 需要安装的软件包：`git-core`、`flatpak`
+- 需要安装的软件包：`git-core`、`flatpak`、`libksysguard5-plugins`
 
 重装时不必导入旧用户数据或新建普通账户。
 
@@ -180,9 +180,10 @@ sudo hostnamectl set-hostname --static c004-h0
 |Czkawka|Flatpak Remote|文件查重工具|`com.github.qarmin.czkawka`|
 |`kvantum-manager`|发行版仓库|主题美化工具|`kvantum-manager-lang`|
 |Cider|Flatpak Remote|Apple Music 开源客户端|`sh.cider.Cider`|
+|`libksysguard5-plugins`|发行版仓库|系统资源管理器插件|
 
 ```
-sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef fcitx5 obs-studio gh opi flatpak v2ray-core goldendict goldendict-lang fcitx5 fcitx5-configtool fcitx5-chinese-addons kvantum-manager kvantum-manager-lang gnome-keyring virtualbox htop
+sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef fcitx5 obs-studio gh opi flatpak v2ray-core goldendict goldendict-lang fcitx5 fcitx5-configtool fcitx5-chinese-addons kvantum-manager kvantum-manager-lang gnome-keyring virtualbox htop libksysguard5-plugins
 ```
 ```
 sudo usermod -aG vboxusers $USER
