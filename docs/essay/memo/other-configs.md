@@ -33,7 +33,7 @@ alias font-ref="fc-cache -fv"
 #刷新字体
 #alias pip-upgrade="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
 #更新全部的 Python 包
-alias ipp="ping opentuna.cn -c 6"
+alias ipp="ping opentuna.cn -c 6; ping baidu.com -c 6"
 #测试网络连通性
 alias yt-dlp="proxychains4 yt-dlp"
 #为下载工具设置代理
