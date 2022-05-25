@@ -32,7 +32,7 @@ wget https://opentuna.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-
 
 - 需要删除的软件包：`ibus`、`fcitx`、`opensuse-welcome`、`kompare`、`discover`、`PackageKit`、`konversation`、`kmousetool`、`vlc`、`skanlite`
 - 需要禁用的模组：`pattern:games`、`pattern:kde_pim`、`pattern:office`
-- 需要安装的软件包：`git-core`、`flatpak`、`libksysguard5-plugins`
+- 需要安装的软件包：`git-core`、`flatpak`
 
 重装时不必导入旧用户数据或新建普通账户。
 
