@@ -39,7 +39,7 @@ alias yt-dlp="proxychains4 yt-dlp"
 #为下载工具设置代理
 export EDITOR=nano
 #将默认文本编辑器指定为 nano
-alias sys-dup="sudo zypper dup -y; flatpak update -y"
+alias sys-dup="sudo zypper ref; sudo zypper dup -y; flatpak update -y"
 #alias sys-dup="sudo dnf up -y; flatpak update -y"
 #更新整个系统
 ```
