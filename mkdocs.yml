@@ -3,27 +3,32 @@ site_url: https://hanjingxue-boling.github.io/Whiteboard/
 site_description: Hanjingxue 的个人在线文档站。
 site_author: Hanjingxue Boling
 
-repo_name: GitHub Repo
+repo_name: Whiteboard
 repo_url: https://github.com/Hanjingxue-Boling/Whiteboard  #仓库链接
 edit_uri: ""
+
+theme:
+
 
 theme:
     name: material
     language: zh    
     highlightjs: true
-    palette: #切换日夜间模式
-      - scheme: default
+    palette:
+      - media: "(prefers-color-scheme: light)" 
+        scheme: default
         primary: green
         accent: light blue
         toggle:
-          icon: material/weather-sunny
-          name: 切换到日间模式
-      - scheme: slate
+          icon: material/weather-night
+          name: 切换到深色模式
+      - media: "(prefers-color-scheme: dark)" 
+        scheme: slate
         primary: blue
         accent: light green
         toggle:
-          icon: material/weather-night
-          name: 切换至夜间模式
+          icon: material/weather-sunny
+          name: 切换到浅色模式
     features:
       - navigation.tabs
       - content.tabs.link #启用内容页
@@ -31,7 +36,7 @@ theme:
 
 nav:
     - 主页: index.md
-    - 译文:
+    - 译文归档:
       - translation/about.md
       - 新闻归档:
         - translation/archives/about.md
@@ -98,7 +103,7 @@ nav:
         - translation/fedora36-released.md
         - translation/2022-05-17-theevilskeleton.md
         - translation/blender-events-in-2022.md
-    - 杂谈: 
+    - 站内杂谈: 
       - essay/about.md
       - Linux 备忘录: 
         - essay/memo/opensuse.md
@@ -107,7 +112,7 @@ nav:
         - essay/memo/alias-tips.md
         - essay/memo/opencc.md
         - essay/memo/Tachidesk-quick-setup.md
-      - 其他杂谈:
+      - 其他:
         - essay/others/2021-08.md
         - essay/others/anime-recommad.md
         - essay/others/adjust-win11-for-popurse.md
@@ -118,26 +123,28 @@ nav:
           - essay/others/contribute/about.md
           - essay/others/contribute/base-01.md
           - essay/others/contribute/base-02.md
-      - 随笔:
-        - essay/main/2022-02-12.md
-        - essay/main/2022-03-05.md
-        - essay/main/2022-03-30.md
-        - essay/main/2022-04-01.md
-        - essay/main/2022-04-09.md
-        - essay/main/2022-04-11.md
-        - essay/main/2022-04-12.md
-        - essay/main/2022-04-13.md
-        - essay/main/2022-04-14.md
-        - essay/main/2022-04-21.md
-        - essay/main/2022-04-26.md
-        - essay/main/2022-05-03.md
-        - essay/main/2022-05-05.md
-        - essay/main/2022-05-10.md
-        - essay/main/2022-05-16.md
-        - essay/main/2022-05-19.md
-        - essay/main/2022-05-21.md
-        - essay/main/2022-05-22.md
-    - 归档:
+    - 随笔&日常:
+      - essay/main/about.md
+      - essay/main/2022-02-12.md
+      - essay/main/2022-03-05.md
+      - essay/main/2022-03-30.md
+      - essay/main/2022-04-01.md
+      - essay/main/2022-04-09.md
+      - essay/main/2022-04-11.md
+      - essay/main/2022-04-12.md
+      - essay/main/2022-04-13.md
+      - essay/main/2022-04-14.md
+      - essay/main/2022-04-21.md
+      - essay/main/2022-04-26.md
+      - essay/main/2022-05-03.md
+      - essay/main/2022-05-05.md
+      - essay/main/2022-05-10.md
+      - essay/main/2022-05-16.md
+      - essay/main/2022-05-19.md
+      - essay/main/2022-05-21.md
+      - essay/main/2022-05-22.md
+      - essay/main/2022-05-27.md
+    - 站外归档:
       - archives/about.md
       - archives/goodies.md
       - archives/index.md
