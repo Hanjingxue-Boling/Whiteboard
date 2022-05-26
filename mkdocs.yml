@@ -195,6 +195,7 @@ markdown_extensions:
 
 plugins:
   - search
+  - rss
 
 extra:
   homepage: https://hanjingxue-boling.github.io/Whiteboard/
