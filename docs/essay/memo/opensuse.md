@@ -60,6 +60,14 @@ zypper refresh && zypper dist-upgrade --from packman --allow-vendor-change
 zypper install --from packman ffmpeg gstreamer-plugins-{good,bad,ugly,libav} libavcodec-full
 ```
 
+设置 proxychains.conf：
+
+```
+zypper in proxychains-ng
+```
+```
+nano /etc/proxychains.conf
+```
 
 将旧用户目录重命名：
 
@@ -167,7 +175,7 @@ sudo hostnamectl set-hostname --static c004-h0
 |`libksysguard5-plugins`|发行版仓库|系统资源管理器插件|
 
 ```
-sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef fcitx5 obs-studio gh opi v2ray-core goldendict goldendict-lang fcitx5 fcitx5-configtool fcitx5-chinese-addons kvantum-manager kvantum-manager-lang gnome-keyring virtualbox htop libksysguard5-plugins
+sudo zypper in keepassxc smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef fcitx5 obs-studio gh opi v2ray-core goldendict goldendict-lang fcitx5 fcitx5-configtool fcitx5-chinese-addons kvantum-manager kvantum-manager-lang gnome-keyring virtualbox htop libksysguard5-plugins
 ```
 ```
 sudo usermod -aG vboxusers $USER
