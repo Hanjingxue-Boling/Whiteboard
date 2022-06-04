@@ -10,14 +10,6 @@ wget https://opentuna.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-
 
 检查 ventoy 是否有可用[更新](https://www.ventoy.net/cn/doc_news.html)。
 
-备份配置文件：
-
-```
-/etc/proxychains.conf
-/etc/tlp.d
-/etc/v2raya
-```
-
 ## 安装系统
 
 禁止联网
@@ -34,7 +26,7 @@ wget https://opentuna.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-
 - 需要禁用的模组：`pattern:games`、`pattern:kde_pim`、`pattern:office`
 - 需要安装的软件包：`git-core`、`flatpak`
 
-重装时不必导入旧用户数据或新建普通账户。
+**重装时不必导入旧用户数据或新建普通账户。**
 
 ## 初次启动
 
@@ -68,11 +60,6 @@ zypper refresh && zypper dist-upgrade --from packman --allow-vendor-change
 zypper install --from packman ffmpeg gstreamer-plugins-{good,bad,ugly,libav} libavcodec-full
 ```
 
-配置 Flatpak：
-
-```
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-```
 
 将旧用户目录重命名：
 
@@ -83,23 +70,20 @@ mv /home/bh /home/bh.old
 新建用户：
 
 ```
-adduser bh
+useradd bh
 ```
 ```
 passwd bh
 ```
 ```
-usermod -aG wheel $USER && usermod -aG libvirtd $USER
+usermod -aG wheel $USER && usermod -aG flatpak $USER
 ```
 
-检查权限：
+检查权限，并矫正权限：
 
 ```
 ls -lat /home/bh && id bh
 ```
-
-矫正权限：
-
 ```
 chown -R bh:bh /home/bh.old
 ```
@@ -120,12 +104,12 @@ chown -R bh:bh /home/bh.old
 /home/bh.old/.config/deadbeef
 /home/bh.old/.config/fcitx
 /home/bh.old/.config/fcitx5
+/home/bh.old/.config/fluent-reader
 /home/bh.old/.config/goldendict
 /home/bh.old/.config/google-chrome
 /home/bh.old/.config/icalingua
 /home/bh.old/.config/kate
 /home/bh.old/.config/keepassxc
-/home/bh.old/.config/Kvantum
 /home/bh.old/.config/obs-studio
 /home/bh.old/.config/smplayer
 /home/bh.old/.config/VirtualBox
@@ -183,7 +167,7 @@ sudo hostnamectl set-hostname --static c004-h0
 |`libksysguard5-plugins`|发行版仓库|系统资源管理器插件|
 
 ```
-sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef fcitx5 obs-studio gh opi flatpak v2ray-core goldendict goldendict-lang fcitx5 fcitx5-configtool fcitx5-chinese-addons kvantum-manager kvantum-manager-lang gnome-keyring virtualbox htop libksysguard5-plugins
+sudo zypper in keepassxc proxychains-ng smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef fcitx5 obs-studio gh opi v2ray-core goldendict goldendict-lang fcitx5 fcitx5-configtool fcitx5-chinese-addons kvantum-manager kvantum-manager-lang gnome-keyring virtualbox htop libksysguard5-plugins
 ```
 ```
 sudo usermod -aG vboxusers $USER
@@ -201,7 +185,7 @@ sudo zypper addrepo https://download.opensuse.org/repositories/home:fusionfuture
 sudo zypper refresh && sudo zypper install wps-office
 ```
 
-安装并启用代理工具：
+安装并启用 v2raya：
 
 ```
 sudo rpm -i /home/bh/下载/packages/installer_redhat_*.rpm; sudo systemctl enable v2ray v2raya --now
@@ -240,12 +224,29 @@ sudo rpm --import linux_signing_key.pub
 sudo zypper ref && sudo zypper in google-chrome-stable
 ```
 
+清理：
+
+```
+sudo zypper rm -u firefox
+```
+```
+cd ~; rm -r .mozilla; rm linux_signing_key.pub
+```
+
 [美化 KDE](./eyecandy-kde.md)
 
 安装相关的 Flatpak 软件包：
 
 !!! note
     建议最好在美化系统完成后再安装 Flatpak，以防止出现一些奇怪的问题。
+
+添加仓库：
+
+```
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+```
+
+安装软件：
 
 ```
 flatpak install flathub com.calibre_ebook.calibre
@@ -263,7 +264,7 @@ flatpak install flathub com.github.qarmin.czkawka
 flatpak install flathub sh.cider.Cider
 ```
 
-启动 tlp:
+启动 tlp（可选）:
 
 ```
 sudo systemctl enable tlp --now
