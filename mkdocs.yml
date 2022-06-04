@@ -103,6 +103,9 @@ nav:
         - translation/fedora36-released.md
         - translation/2022-05-17-theevilskeleton.md
         - translation/blender-events-in-2022.md
+      - 2022-06:
+        - translation/gimp-gsoc-2022-02.md
+        - translation/open-letter-intel-fsp.md
     - 站内杂谈: 
       - essay/about.md
       - Linux 备忘录: 
