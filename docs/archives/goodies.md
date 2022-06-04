@@ -31,9 +31,9 @@
     联想电脑 Linux 硬件兼容情况
 - [LineageOS 官方设备维护列表](https://wiki.lineageos.org/devices/)
 - [多点 Ping 测试](https://ping.chinaz.com/)
-- [tcp.ping.pe/](https://tcp.ping.pe/)
+- [tcp.ping.pe/](https://tcp.ping.pe/)  
     从多地检测指定网站的连通性
-- [Z-library | Book](https://zh.my1lib.org/)
+- [Z-library | Book](https://zh.my1lib.org/)  
     Z-Library 项目的一部分. 全球最大的数字图书馆
 
 ## 工具
