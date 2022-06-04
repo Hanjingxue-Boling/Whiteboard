@@ -21,7 +21,20 @@
 - [中文博客聚合订阅](https://box.othing.xyz/i/)  
     由 [Save The Web](https://github.com/saveweb) 搭建的中文独立博客 RSS 订阅  
 - [OpenCC Online](https://opencc.byvoid.com/)  
-    在线简繁中文转换。
+    在线简繁中文转换。  
+- [中国科技大学测速网站](http://test.ustc.edu.cn/)  
+- [FreeDict Forum](https://forum.freemdict.com/)  
+    词典爱好者之家  
+- [Alternative To](https://alternativeto.net/)
+    查询你使用的软件的流行替代品  
+- [Laptop/Lenovo](https://wiki.archlinux.org/title/Laptop/Lenovo)  
+    联想电脑 Linux 硬件兼容情况
+- [LineageOS 官方设备维护列表](https://wiki.lineageos.org/devices/)
+- [多点 Ping 测试](https://ping.chinaz.com/)
+- [tcp.ping.pe/](https://tcp.ping.pe/)
+    从多地检测指定网站的连通性
+- [Z-library | Book](https://zh.my1lib.org/)
+    Z-Library 项目的一部分. 全球最大的数字图书馆
 
 ## 工具
 
