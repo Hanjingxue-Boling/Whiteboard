@@ -3,12 +3,9 @@ site_url: https://hanjingxue-boling.github.io/Whiteboard/
 site_description: Hanjingxue 的个人在线文档站。
 site_author: Hanjingxue Boling
 
-repo_name: Whiteboard
+repo_name: Source Code
 repo_url: https://github.com/Hanjingxue-Boling/Whiteboard  #仓库链接
 edit_uri: ""
-
-theme:
-
 
 theme:
     name: material
