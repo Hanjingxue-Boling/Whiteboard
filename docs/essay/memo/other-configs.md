@@ -7,6 +7,9 @@
 在 `~/.bashrc` 中设置别名：
 
 ```shell
+export EDITOR=nano
+#将默认文本编辑器指定为 nano
+
 alias sudo="sudo "
 #对 sudo 后的字符启用别名
 alias zypper="proxychains4 zypper"
@@ -17,9 +20,9 @@ alias mkdocs-wb="cd /home/bh/文档/GitHub/Whiteboard/ ; python3 -m mkdocs serve
 #更短的别名
 alias pyc="proxychains4"
 #更短的别名
-alias tuna="wget https://opentuna.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso"
+alias tuna="wget https://opentuna.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso && wget https://opentuna.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256 "
 #从 openTUNA 下载最新的 tumbleweed DVD 镜像
-alias ustc="wget https://mirrors.ustc.edu.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso"
+alias ustc="wget https://mirrors.ustc.edu.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso && wget https://mirrors.ustc.edu.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256 "
 #从 USTC 下载最新的 tumbleweed DVD 镜像
 alias flatpak="proxychains4 flatpak"
 #对 flatpak 使用代理
@@ -33,15 +36,16 @@ alias font-ref="fc-cache -fv"
 #刷新字体
 #alias pip-upgrade="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
 #更新全部的 Python 包
-alias ipp="ping opentuna.cn -c 6; ping baidu.com -c 6"
+alias ipp="ping opentuna.cn -c 6; ping baidu.com -c 6; ping 1.1.1.1 -c 6"
 #测试网络连通性
 alias yt-dlp="proxychains4 yt-dlp"
 #为下载工具设置代理
-export EDITOR=nano
-#将默认文本编辑器指定为 nano
 alias sys-dup="sudo zypper ref; sudo zypper dup -y; flatpak update -y"
-#alias sys-dup="sudo dnf up -y; flatpak update -y"
 #更新整个系统
+alias iftop="sudo iftop"
+alias reboot="sudo reboot"
+alias poweroff="sudo poweroff"
+#为某些命令默认添加 sudo 权限
 ```
 
 ## git
