@@ -7,6 +7,8 @@
 在 `~/.bashrc` 中设置别名：
 
 ```shell
+export PATH=$PATH:/home/bh/.local/bin
+#将 Python 的可执行文件路径添加至 $APTH
 export EDITOR=nano
 #将默认文本编辑器指定为 nano
 
