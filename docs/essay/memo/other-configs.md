@@ -81,22 +81,14 @@ socks5  127.0.0.1 7890
 
 ## Python3
 
-配置软件源（`~/.pip/pip.conf`）：
+设置代理（`~/.config/pip/pip.conf`）：
 
 ```
 [global]
-index-url = http://mirrors.aliyun.com/pypi/simple/
-[install]
-trusted-host=mirrors.aliyun.com
+proxy=http://localhost:7890
 ```
 
-安装后，需要将一些目录（python 模块的可执行文件目录）添加到 `$PATH` 中：
-
-```
-export PATH=~/.local/bin:$PATH
-```
-
-## TLP
+## TLP（可选）
 
 ```
 cd /etc/tlp.d && ls
@@ -133,7 +125,7 @@ STOP_CHARGE_THRESH_BAT0=80
 # 停止充电阈值
 ```
 
-## Cron
+## Cron（可选）
 
 ```shell
 bh@c004-h0:~> crontab -l
