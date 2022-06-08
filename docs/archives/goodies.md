@@ -25,7 +25,8 @@
 - [中国科技大学测速网站](http://test.ustc.edu.cn/)  
 - [FreeDict Forum](https://forum.freemdict.com/)  
     词典爱好者之家  
-- [Alternative To](https://alternativeto.net/)
+    - [Search FreeMdict Files](https://search.freemdict.com/)  
+- [Alternative To](https://alternativeto.net/)  
     查询你使用的软件的流行替代品  
 - [Laptop/Lenovo](https://wiki.archlinux.org/title/Laptop/Lenovo)  
     联想电脑 Linux 硬件兼容情况
