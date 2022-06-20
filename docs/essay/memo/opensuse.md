@@ -235,7 +235,7 @@ sudo zypper ref && sudo zypper in google-chrome-stable
 清理：
 
 ```
-sudo zypper rm -u firefox
+sudo zypper rm -u MozillaFirefox; sudo zypper al MozillaFirefox
 ```
 ```
 cd ~; rm -r .mozilla; rm linux_signing_key.pub
@@ -285,4 +285,14 @@ sudo systemctl status power-profiles-daemon.service tlp.service
 ```
 ```
 sudo systemctl mask power-profiles-daemon.service
+```
+
+NVIDIA 显卡：
+
+```
+sudo zypper ar --refresh https://download.nvidia.com/opensuse/tumbleweed NVIDIA && sudo zypper ref
+```
+
+```
+sudo zypper in x11-video-nvidiaG06
 ```
