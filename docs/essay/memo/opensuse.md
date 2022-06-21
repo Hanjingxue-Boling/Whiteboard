@@ -166,6 +166,7 @@ sudo hostnamectl set-hostname --static c004-h0
 |`goldendict`|发行版仓库|字典|`goldendict-lang`|
 |`google-chrome-stable`|Google|网络浏览器|
 |`code`|Microsoft|源代码编辑器|
+|AppimageLauncher|[GitHub Appimage](https://github.com/TheAssassin/AppImageLauncher/releases)|Appimage 辅助工具|
 |Fluent Reader|[GitHub Appimage](https://github.com/yang991178/fluent-reader/releases)|RSS 阅读器|
 |Icalingua++|[GitHub Appimage](https://github.com/Icalingua-plus-plus/Icalingua-plus-plus/releases)|即时通讯软件|
 |Ventoy|[GitHub](https://github.com/ventoy/Ventoy/releases)|启动 U 盘刻录工具|
@@ -173,6 +174,7 @@ sudo hostnamectl set-hostname --static c004-h0
 |`kvantum-manager`|发行版仓库|主题美化工具|`kvantum-manager-lang`|
 |Cider|Flatpak Remote|Apple Music 开源客户端|`sh.cider.Cider`|
 |`libksysguard5-plugins`|发行版仓库|系统资源管理器插件|
+|Mailspring|Flatpak Remote|邮件客户端|`com.getmailspring.Mailspring`|
 
 ```
 sudo zypper in keepassxc smplayer smplayer-themes neofetch telegram-desktop gimp filelight deadbeef fcitx5 obs-studio gh opi v2ray-core goldendict goldendict-lang fcitx5 fcitx5-configtool fcitx5-chinese-addons kvantum-manager kvantum-manager-lang gnome-keyring virtualbox htop libksysguard5-plugins
@@ -263,13 +265,13 @@ flatpak install flathub com.calibre_ebook.calibre
 flatpak install flathub com.jgraph.drawio.desktop
 ```
 ```
-flatpak install flathub me.hyliu.fluentreader
-```
-```
 flatpak install flathub com.github.qarmin.czkawka
 ```
 ```
 flatpak install flathub sh.cider.Cider
+```
+```
+flatpak install flathub com.getmailspring.Mailspring
 ```
 
 启动 tlp（可选）:

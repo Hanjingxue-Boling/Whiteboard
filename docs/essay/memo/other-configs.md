@@ -42,7 +42,9 @@ alias ipp="ping opentuna.cn -c 6; ping baidu.com -c 6; ping 1.1.1.1 -c 6"
 #测试网络连通性
 alias yt-dlp="proxychains4 yt-dlp"
 #为下载工具设置代理
-alias sys-dup="sudo zypper ref; sudo zypper dup -y; flatpak update -y"
+alias check-up="sudo zypper ref; sudo zypper lu; flatpak update"
+#刷新软件源并列出可用的更新
+alias sys-dup="sudo zypper ref; sudo zypper dup -y; zypper ps -s; flatpak update -y"
 #更新整个系统
 alias iftop="sudo iftop"
 alias reboot="sudo reboot"
