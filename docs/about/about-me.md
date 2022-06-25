@@ -6,7 +6,7 @@
 
 ## 主要事务
 
-我主要的事务是翻译 [openSUSE 社区新闻](https://suse.org.cn/)。最近在参与编写另一个[文档项目](https://github.com/linuxhitchhiker/THGLG)。
+我主要的事务是翻译 [openSUSE 社区新闻](https://suse.org.cn/)。最近在参与编写另一个[文档项目](https://hanjingxue-boling.github.io/openSUSE-Handbook/)。
 
 ## 关联账户
 

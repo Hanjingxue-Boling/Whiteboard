@@ -4,4 +4,4 @@
 
 更多内容另见：
 
-[Linux 漫游指南](https://linuxhitchhiker.github.io/THGLG/){ .md-button }
+[openSUSE Handbook](https://hanjingxue-boling.github.io/openSUSE-Handbook/){ .md-button }
