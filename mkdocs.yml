@@ -105,6 +105,8 @@ nav:
         - translation/open-letter-intel-fsp.md
         - translation/nodejs-eol-v16-0626.md
         - translation/accessibility-in-fedora.md
+      - 2022-07:
+        - translation/ms-pluton-chips.md
     - 站内杂谈: 
       - essay/about.md
       - Linux 备忘录: 
