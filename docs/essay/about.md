@@ -4,4 +4,4 @@
 
 更多内容另见：
 
-[openSUSE Handbook](https://hanjingxue-boling.github.io/openSUSE-Handbook/){ .md-button }
+[openSUSE Handbook](../handbook/intro.md){ .md-button }

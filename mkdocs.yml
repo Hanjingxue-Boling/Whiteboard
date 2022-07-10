@@ -161,6 +161,9 @@ nav:
       - archives/index.md
       - archives/glob-expression.md
       - archives/delete-hide-files.md
+    - openSUSE Handbook:
+      - handbook/intro.md
+      - handbook/index.md
     - 关于: 
       - about/about-me.md
       - about/friends.md

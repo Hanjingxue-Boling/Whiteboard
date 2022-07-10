@@ -12,5 +12,7 @@
 [随笔&日常](./essay/main/about.md){ .md-button }
 [外站归档](./archives/about.md){ .md-button }
 
+[openSUSE Handbok 🦎](./handbook/intro.md){ .md-button }
+
 [友链](./about/friends.md){ .md-button }
 [署名与许可](./about/license.md){ .md-button }
