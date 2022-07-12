@@ -10,6 +10,8 @@
     如果有人欺负你呢，就报我的名字。 
 - [Karuboniru's Blog](https://yanqiyu.info)  
     就是个学物理的，懂个屁的计算机。
+- [一座桥在水上](https://blog.othing.xyz/)  
+- [Blockcity](https://ratizux.github.io/about/)    
 
 ## 添加友链
 
