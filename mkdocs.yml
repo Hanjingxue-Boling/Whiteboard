@@ -65,21 +65,21 @@ nav:
       - OpenBSD 文档归档:
         - translation/OpenBSD-zh/about.md
         - FAQ:
-          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Building the System from Source.md
-          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Disk Setup.md
-          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Installation Guide.md
-          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Keyboard and Display Controls.md
-          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Multimedia.md
-          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Networking.md
-          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Package Management.md
-          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - The X Window System.md
-          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Virtual Private Networks (VPN) .md
-          - translation/OpenBSD-zh/openbsd-faq/OpenBSD FAQ - Virtualization.md
+          - translation/OpenBSD-zh/openbsd-faq/faq1.md
+          - translation/OpenBSD-zh/openbsd-faq/faq2.md
+          - translation/OpenBSD-zh/openbsd-faq/faq3.md
+          - translation/OpenBSD-zh/openbsd-faq/faq4.md
+          - translation/OpenBSD-zh/openbsd-faq/faq5.md
+          - translation/OpenBSD-zh/openbsd-faq/faq6.md
+          - translation/OpenBSD-zh/openbsd-faq/faq7.md
+          - translation/OpenBSD-zh/openbsd-faq/faq8.md
+          - translation/OpenBSD-zh/openbsd-faq/faq9.md
+          - translation/OpenBSD-zh/openbsd-faq/faq10.md
         - Others:
-          - translation/OpenBSD-zh/other/OpenBSD - Following -current and using snapshots.md
-          - translation/OpenBSD-zh/other/OpenBSD - Mailing Lists .md
-          - translation/OpenBSD-zh/other/OpenBSD - Problem Reports.md
-          - translation/OpenBSD-zh/other/OpenBSD - Upgrade Guide 6.9 to 7.0.md
+          - translation/OpenBSD-zh/other/bsd01.md
+          - translation/OpenBSD-zh/other/bsd02.md
+          - translation/OpenBSD-zh/other/bsd03.md
+          - translation/OpenBSD-zh/other/bsd04.md
       - 2021-10:
         - translation/gimp-mirror-policy.md
       - 2022-02:
@@ -155,6 +155,7 @@ nav:
       - essay/main/2022-06-21.md
       - essay/main/2022-07-03.md
       - essay/main/2022-07-10.md
+      - essay/main/2022-07-26.md
     - 站外归档:
       - archives/about.md
       - archives/goodies.md
