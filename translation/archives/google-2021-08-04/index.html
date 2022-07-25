@@ -1,0 +1,3157 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hanjingxue 的个人在线文档站。">
+      
+      
+        <meta name="author" content="Hanjingxue Boling">
+      
+      
+        <link rel="canonical" href="https://hanjingxue-boling.github.io/Whiteboard/translation/archives/google-2021-08-04/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Google Security Blog – 正确对待 Linux 内核安全 - 寒晶雪的文档站</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#google-security-blog-linux" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="https://hanjingxue-boling.github.io/Whiteboard/" title="寒晶雪的文档站" class="md-header__button md-logo" aria-label="寒晶雪的文档站" data-md-component="logo">
+      
+  <img src="../../../assets/fox.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            寒晶雪的文档站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Google Security Blog – 正确对待 Linux 内核安全
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-blue"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-green"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Hanjingxue-Boling/Whiteboard" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Source Code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      主页
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link md-tabs__link--active">
+        译文归档
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../essay/about/" class="md-tabs__link">
+        站内杂谈
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../essay/main/about/" class="md-tabs__link">
+        随笔&日常
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../archives/about/" class="md-tabs__link">
+        站外归档
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../handbook/intro/" class="md-tabs__link">
+        openSUSE Handbook
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/about-me/" class="md-tabs__link">
+        关于
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://hanjingxue-boling.github.io/Whiteboard/" title="寒晶雪的文档站" class="md-nav__button md-logo" aria-label="寒晶雪的文档站" data-md-component="logo">
+      
+  <img src="../../../assets/fox.png" alt="logo">
+
+    </a>
+    寒晶雪的文档站
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Hanjingxue-Boling/Whiteboard" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Source Code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          译文归档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="译文归档" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          译文归档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          新闻归档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="新闻归档" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          新闻归档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_2">
+          2021-07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-07" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          2021-07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xfce-gsoc-2021/" class="md-nav__link">
+        Xfce 已加入 Google Summer of Code 2022
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opensuse-cc/" class="md-nav__link">
+        定期 openSUSE 会议调查的结果
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fedora-dpg/" class="md-nav__link">
+        Fedora GNU/Linux 被联合国数字公共产品项目提名
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-2021-07-27/" class="md-nav__link">
+        为开发者站台：斯坦福大学法学院的 GitHub 开发者权利奖学金
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_3">
+          2021-08
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-08" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          2021-08
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xfce-2021-08-02/" class="md-nav__link">
+        Xfce 开发者博客 ——— 改进搜索
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Google Security Blog – 正确对待 Linux 内核安全
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Google Security Blog – 正确对待 Linux 内核安全
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    要解决什么问题？
+  </a>
+  
+    <nav class="md-nav" aria-label="要解决什么问题？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    什么都不修复？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    修复重要的缺陷？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    修复全部的缺陷！
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    使之成为现实
+  </a>
+  
+    <nav class="md-nav" aria-label="使之成为现实">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    更多的工程师更早地修复错误
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    更多的工程师参与代码审查
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    更多的工程师参与测试和基础设施
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    更多的工程师参与安全和工具链开发
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    别再等了
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xfce-2021-08-17/" class="md-nav__link">
+        Xfce 开发者博客 —— 一场即将到达终点的旅行
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xfce-2021-08-17-02/" class="md-nav__link">
+        Xfce 开发者博客 —— GSOC 贡献总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fedora-dpg-02/" class="md-nav__link">
+        Fedora Linux 正式被联合国认证为数字公共产品
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_4" type="checkbox" id="__nav_2_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_4">
+          2021-09
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-09" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          2021-09
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xfce-2021-09-12/" class="md-nav__link">
+        Xfce 开发者博客 —— 得益于 GSoC 2021，Thunar 中出现了闪亮的新事物。
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xfce-09-17/" class="md-nav__link">
+        Xfce 开发者博客 —— Thunar 的几个重要特征
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fedora-nest-2021/" class="md-nav__link">
+        Nest With Fedora 2021 recordings now available!
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_5" type="checkbox" id="__nav_2_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_5">
+          2021-10
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-10" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          2021-10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kde-network-china-2021/" class="md-nav__link">
+        Linux 应用生态沙龙（KDE Network 中国）
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_6" type="checkbox" id="__nav_2_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_6">
+          2021-11
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-11" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          2021-11
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fedora35-released/" class="md-nav__link">
+        值得等待：Fedora Linux 35 已发布！
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xfce-2021-11-26/" class="md-nav__link">
+        Xfce 开发者博客 —— Xfce 的快捷方式编辑器和其他一些东西
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_7" type="checkbox" id="__nav_2_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_7">
+          2021-12
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-12" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          2021-12
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xfce-2021-12-10/" class="md-nav__link">
+        Xfce 开发者博客 —— xfce4-terminal 0.9.1 开发版
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eff-chrome-manifestv3/" class="md-nav__link">
+        电子前线基金会 —— Chrome 用户请注意：Manifest V3 具有欺骗性和威胁性
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_8" type="checkbox" id="__nav_2_2_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_8">
+          2022-01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-01" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          2022-01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xfce-2022-01-21/" class="md-nav__link">
+        Xfce 开发者博客 —— 更好的 Thunar 工具栏
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          OpenBSD 文档归档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OpenBSD 文档归档" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          OpenBSD 文档归档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenBSD-zh/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_2" type="checkbox" id="__nav_2_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_2">
+          FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="FAQ" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenBSD-zh/openbsd-faq/faq1/" class="md-nav__link">
+        OpenBSD FAQ - 从源码构建系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenBSD-zh/openbsd-faq/faq2/" class="md-nav__link">
+        OpenBSD FAQ - 配置磁盘
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenBSD-zh/openbsd-faq/faq3/" class="md-nav__link">
+        OpenBSD FAQ - 安装指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenBSD-zh/openbsd-faq/faq4/" class="md-nav__link">
+        OpenBSD FAQ - 键盘和显示控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenBSD-zh/openbsd-faq/faq5/" class="md-nav__link">
+        OpenBSD FAQ - 多媒体
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenBSD-zh/openbsd-faq/faq6/" class="md-nav__link">
+        OpenBSD FAQ - 网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenBSD-zh/openbsd-faq/faq7/" class="md-nav__link">
+        OpenBSD FAQ - 软件包管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenBSD-zh/openbsd-faq/faq8/" class="md-nav__link">
+        OpenBSD FAQ - X 窗口系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenBSD-zh/openbsd-faq/faq9/" class="md-nav__link">
+        OpenBSD FAQ - 虚拟专用网络（VPN）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenBSD-zh/openbsd-faq/faq10/" class="md-nav__link">
+        OpenBSD FAQ - 虚拟化
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3" type="checkbox" id="__nav_2_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_3">
+          Others
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Others" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenBSD-zh/other/bsd01/" class="md-nav__link">
+        OpenBSD - 跟随 -current 和使用快照
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenBSD-zh/other/bsd02/" class="md-nav__link">
+        OpenBSD - 邮件列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenBSD-zh/other/bsd03/" class="md-nav__link">
+        OpenBSD - 报告问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenBSD-zh/other/bsd04/" class="md-nav__link">
+        OpenBSD 升级向导：6.9 至 7.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          2021-10
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-10" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          2021-10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gimp-mirror-policy/" class="md-nav__link">
+        GIMP 官方镜像和镜像政策
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          2022-02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-02" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          2022-02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../donation-help-us/" class="md-nav__link">
+        捐款如何在 2021 年帮助我们
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          2022-03
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-03" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          2022-03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xfce4-terminal-0.9.2/" class="md-nav__link">
+        xfce4-terminal 0.9.2 开发版
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gimp-gsoc-2022/" class="md-nav__link">
+        GIMP 是 GSoC 2022 导师组织
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blender-3.1/" class="md-nav__link">
+        Blender 3.1 已发布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xfce-gsoc-2022/" class="md-nav__link">
+        Xfce 已加入 Google Summer of Code 2022
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libreoffice-gsoc-2022/" class="md-nav__link">
+        培养你的技能，学习令人兴奋的新事物！
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plan-to-drop-soft.o.o/" class="md-nav__link">
+        计划停用 software.opensuse.org（社区会议）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openSUSE-code-of-conduct/" class="md-nav__link">
+        openSUSE 行为准则
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          2022-04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-04" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          2022-04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../yast-d-installer/" class="md-nav__link">
+        YaST D-Installer 第一次公开发布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xfce4-terminal-1.0.0/" class="md-nav__link">
+        Xfce Terminal 1.0.0 稳定版已发布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../xfce-setting-gui/" class="md-nav__link">
+        Xfce 设置的图形界面
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8">
+          2022-05
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-05" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          2022-05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fedora36-released/" class="md-nav__link">
+        Fedora 36 已正式发布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022-05-17-theevilskeleton/" class="md-nav__link">
+        对《Flatpak Is Not the Future》的回应
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blender-events-in-2022/" class="md-nav__link">
+        Blender 在 2022 年的活动
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9">
+          2022-06
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-06" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          2022-06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gimp-gsoc-2022-02/" class="md-nav__link">
+        GSoC 2022 项目公布：CMYK 特性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../open-letter-intel-fsp/" class="md-nav__link">
+        为英特尔 FSP 采用开源固件方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodejs-eol-v16-0626/" class="md-nav__link">
+        将 Node.js 16 的生命周期结束日期提前
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibility-in-fedora/" class="md-nav__link">
+        Fedora Workstation 的无障碍功能
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_10">
+          2022-07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-07" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          2022-07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ms-pluton-chips/" class="md-nav__link">
+        认识 Microsoft Pluton 处理器——专为未来 Windows PC 设计的安全芯片
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          站内杂谈
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="站内杂谈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          站内杂谈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Linux 备忘录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux 备忘录" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux 备忘录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/memo/opensuse/" class="md-nav__link">
+        Tumbleweed 配置小记（一）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/memo/other-configs/" class="md-nav__link">
+        Tumbleweed 配置小记（二）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/memo/eyecandy-kde/" class="md-nav__link">
+        openSUSE KDE 美化小记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/memo/alias-tips/" class="md-nav__link">
+        alias 命令小记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/memo/opencc/" class="md-nav__link">
+        使用 OpenCC 进行简繁中文转换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/memo/Tachidesk-quick-setup/" class="md-nav__link">
+        在 Linux 上使用 Tachidesk | 快速配置指南
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          其他
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="其他" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          其他
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/others/2021-08/" class="md-nav__link">
+        Linux distro in my view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/others/anime-recommad/" class="md-nav__link">
+        动画推荐
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/others/adjust-win11-for-popurse/" class="md-nav__link">
+        Windows 11 安装与调教
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/others/fonts-and-measurement/" class="md-nav__link">
+        字体与带宽单位
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/others/about-why/" class="md-nav__link">
+        缘由
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/others/use-rss-sub/" class="md-nav__link">
+        基于 RSS 的简单资讯聚合订阅
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/others/play-minecraft/" class="md-nav__link">
+        在 openSUSE 上游玩 Minecraft
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_8" type="checkbox" id="__nav_3_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_8">
+          贡献者指南（已归档）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="贡献者指南（已归档）" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          贡献者指南（已归档）
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/others/contribute/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/others/contribute/base-01/" class="md-nav__link">
+        慢速开始 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/others/contribute/base-02/" class="md-nav__link">
+        慢速开始 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          随笔&日常
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="随笔&日常" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          随笔&日常
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-02-12/" class="md-nav__link">
+        2022-02-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-03-05/" class="md-nav__link">
+        2022-03-05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-03-30/" class="md-nav__link">
+        2022-03-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-04-01/" class="md-nav__link">
+        2022-04-01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-04-09/" class="md-nav__link">
+        2022-04-09
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-04-11/" class="md-nav__link">
+        2022-04-11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-04-12/" class="md-nav__link">
+        2022-04-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-04-13/" class="md-nav__link">
+        2022-04-13
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-04-14/" class="md-nav__link">
+        2022-04-14
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-04-21/" class="md-nav__link">
+        2022-04-21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-04-26/" class="md-nav__link">
+        2022-04-26
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-05-03/" class="md-nav__link">
+        2022-05-03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-05-05/" class="md-nav__link">
+        2022-05-05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-05-10/" class="md-nav__link">
+        2022-05-10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-05-16/" class="md-nav__link">
+        2022-05-16
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-05-19/" class="md-nav__link">
+        2022-05-19
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-05-21/" class="md-nav__link">
+        2022-05-21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-05-22/" class="md-nav__link">
+        2022-05-22
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-05-27/" class="md-nav__link">
+        2022-05-27
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-06-01/" class="md-nav__link">
+        2022-06-01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-06-05/" class="md-nav__link">
+        2022-06-05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-06-14/" class="md-nav__link">
+        2022-06-14
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-06-21/" class="md-nav__link">
+        2022-06-21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-07-03/" class="md-nav__link">
+        2022-07-03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-07-10/" class="md-nav__link">
+        2022-07-10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/main/2022-07-26/" class="md-nav__link">
+        2022-07-26
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          站外归档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="站外归档" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          站外归档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/goodies/" class="md-nav__link">
+        实用工具与站点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/" class="md-nav__link">
+        外站文档目录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/glob-expression/" class="md-nav__link">
+        Glob 语法及解析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/delete-hide-files/" class="md-nav__link">
+        Linux 删除当前目录下的隐藏文件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          openSUSE Handbook
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="openSUSE Handbook" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          openSUSE Handbook
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../handbook/intro/" class="md-nav__link">
+        Hi 🦎
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../handbook/" class="md-nav__link">
+        目录
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          关于
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="关于" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          关于
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/about-me/" class="md-nav__link">
+        关于我 👋
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/friends/" class="md-nav__link">
+        友链
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/license/" class="md-nav__link">
+        许可证清单
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    要解决什么问题？
+  </a>
+  
+    <nav class="md-nav" aria-label="要解决什么问题？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    什么都不修复？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    修复重要的缺陷？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    修复全部的缺陷！
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    使之成为现实
+  </a>
+  
+    <nav class="md-nav" aria-label="使之成为现实">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    更多的工程师更早地修复错误
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    更多的工程师参与代码审查
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    更多的工程师参与测试和基础设施
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    更多的工程师参与安全和工具链开发
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    别再等了
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="google-security-blog-linux">Google Security Blog – 正确对待 Linux 内核安全</h1>
+<ul>
+<li>原文：<a href="https://security.googleblog.com/2021/08/linux-kernel-security-done-right.html">Linux Kernel Security Done Right</a></li>
+<li>作者：Kees Cook<br />
+    Software Engineer, Google Open Source Security Team</li>
+<li>许可证：未知</li>
+<li>译者：Hanjingxue Boling</li>
+<li>日期：2021-08-04</li>
+</ul>
+<hr />
+<p>借用现代计算机生态系统和 20 世纪 60 年代美国汽车工业之间的一个<a href="http://kernsec.org/files/lss2015/giant-bags-of-mostly-water.pdf">很好的比喻</a>，Linux 内核运行良好：在高速公路上行驶时，你不会被油和汽油喷到脸上，而且你很快就能到达你想去的地方。然而，在遇到故障时，汽车可能最终起火，飞出悬崖。</p>
+<p>随着我们接近 Linux 发布 30 周年，Linux 仍然是计算机历史上最大的合作开发项目。围绕着 Linux 的巨大社区使它能够做一些令人惊奇的事情并平稳地运行。然而，我们仍然缺少的是足够的关注，以确保 Linux 也能<a href="https://en.wikipedia.org/wiki/Fail-safe">失效安全</a>。代码的健壮性和安全性之间有很强的联系：让任何 bug 更难表现出来，就更难表现出安全缺陷。但这并不是故事的终点。当缺陷表现出来时，有效地处理它们是很重要的。</p>
+<p>与其只从每次一个 bug 的角度出发，先发制人的行动可以阻止 bug 产生不良影响。由于 Linux 是用 <a href="https://outflux.net/slides/2019/lca/danger.pdf">C 语言</a>编写的，它将继续有一长串的相关<a href="https://security.googleblog.com/2021/01/data-driven-security-hardening-in.html">问题</a>。Linux 必须被设计成采取积极主动的措施来抵御它自己的风险。汽车有安全带，不是因为我们想撞车，而是因为它能保证突发情况下乘客的人身安全。</p>
+<p>尽管每个人都希望有一个安全的内核在他们的电脑、手机、汽车或<a href="https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#list-of-qualifying-repositories-for-mars-2020-helicopter-contributor-badge">星际直升机</a>上运行，但并不是每个人都有能力为此做些什么。上游的内核开发者可以修复错误，但无法控制下游厂商选择纳入其产品的内容。最终用户可以选择他们的产品，但通常不能控制什么错误被修复，也不能控制使用什么内核（这本身就是一个<a href="https://en.wikipedia.org/wiki/Electronics_right_to_repair">问题</a>）。归根结底，供应商有责任保持他们产品的内核安全。</p>
+<h2 id="_1">要解决什么问题？</h2>
+<p>追踪和修复不同的错误的统计数据是令人清醒的。<a href="http://kroah.com/log/blog/2018/02/05/linux-kernel-release-model/">稳定的内核版本</a>（“只修复错误”）每周都包含近 100 个新的修复。面对如此高的变化率，供应商可以选择忽略所有的修复，只挑出 "重要的 "修复，或者面临把所有修复都并入产品的艰巨任务。</p>
+<p><img alt="01" src="../images/Linux%20kernel%20stable%20release%20bug%20fixes%20per%20month.png" /></p>
+<h3 id="_2">什么都不修复？</h3>
+<p>随着恶意软件、僵尸网络和<a href="https://android-developers.googleblog.com/2017/04/an-investigation-of-chrysaor-malware-on.html">针对有缺陷的软件</a>的国家监控大量出现，很明显，忽视所有修复是错误的 “解决方案”。不幸的是，这是供应商非常普遍的立场，他们认为他们的设备只是一个物理产品，而不是一个必须定期<a href="https://datatracker.ietf.org/doc/rfc8996/">更新</a>的混合产品/服务。</p>
+<h3 id="_3">修复重要的缺陷？</h3>
+<p>在无所作为的失职和修复一切的沉重负担之间，传统的供应商的选择是只挑 “重要” 的修复。但是，什么才是 “重要的” ，甚至是相关的？仅仅由</p>
+<p><em>实施一个修复是否需要开发人员时间来决定。</em></p>
+<p>普遍的看法是，根据 Mitre <a href="https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=%22linux+kernel%22">CVE</a> 列表来选择要修复的漏洞，假定所有重要的缺陷（以及因此要修复的缺陷）都有一个相关的 CVE 。然而，考虑到缺陷的数量及其对特定系统的适用性，并不是所有的安全缺陷都有 CVE ，而且也没有及时分配。证据显示，对于 Linux 的 CVE ，超过 40% 在 CVE 被分配之前就已经被修复了，平均延迟到修复后<a href="https://github.com/gregkh/presentation-cve-is-dead">三个月以上</a>。有些修复措施在<a href="https://googleprojectzero.blogspot.com/2019/11/bad-binder-android-in-wild-exploit.html">数年后</a>仍未被确认其安全影响。除此之外，与产品相关的错误甚至可能<a href="https://cve.mitre.org/cve/cna/rules.html#section_7_assignment_rules">不属于</a> CVE 的范畴。最后，上游开发者对 <a href="https://www.kernel.org/doc/html/latest/admin-guide/security-bugs.html#cve-assignment">CVE 分配</a>并不感兴趣；他们把有限的时间花在修复错误上。</p>
+<p>依靠精选修复某些漏洞的供应商几乎可以保证会错过别人正在积极修复的重要漏洞，这几乎比什么都不做更糟糕，因为它造成了安全更新得到适当处理的假象。</p>
+<h3 id="_4">修复全部的缺陷！</h3>
+<p>那么，供应商该怎么做呢？答案很简单，尽管很痛苦：持续更新到<a href="https://www.kernel.org/">最新的内核版本</a>，无论是主要版本还是稳定版本。跟踪主要版本意味着获得<a href="https://outflux.net/blog/?s=%22security+things%22">安全改进</a>和错误修复，而稳定版本只是错误修复。例如，尽管现代安卓手机的内核是基于<a href="https://source.android.com/devices/architecture/kernel/android-common#compatibility-matrix">两到四年前</a>的主要版本，但值得庆幸的是，安卓供应商现在确实在<a href="https://source.android.com/devices/architecture/kernel/releases">追踪稳定版内核</a>。因此，即使在较新的主要内核中加入的功能会被遗漏，但所有最新的稳定内核修复都是存在的。</p>
+<p>进行持续的内核更新（主要的或稳定的）可以理解为在一个组织内面临巨大的阻力，因为害怕退步 – 更新会破坏产品吗？答案通常是供应商不知道，或者更新的频率比他们测试的时间短。但是，更新的问题不在于内核可能导致回退；而在于供应商没有足够的测试覆盖率和自动化来知道答案。测试必须优先于个别修复。</p>
+<h2 id="_5">使之成为现实</h2>
+<p>还有一个问题：如何可能支持所有持续更新所需的工作？事实证明，这是一个简单的资源分配问题，而且比想象中的更容易完成：下游的冗余资源可以转移到更大的上游协作。</p>
+<h3 id="_6">更多的工程师更早地修复错误</h3>
+<p>由于供应商使用旧的内核和向后移植现有的修复，他们的工程资源正在做多余的工作。例如，与其让 10 家公司各派一名工程师独立地回传相同的修复程序，不如将这些开发人员的时间转移到上游工作上，这样每个人就可以为 Linux 生态系统修复 10 个单独的错误。这将有助于解决日益积压的错误。仅仅看一下潜在的内核安全缺陷的一个来源，<a href="https://syzkaller.appspot.com/upstream">syzkaller 仪表板</a>显示，目前公开的错误数量接近 900 个，即使<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=grep&amp;q=Reported-by%3A+syzbot%2B">每年有约 400 个</a>被修复，每年也会增长约 100 个。</p>
+<h3 id="_7">更多的工程师参与代码审查</h3>
+<p>除了事后积压的 bug 之外，更多关注上游代码审查将有助于从一开始就阻止 bug 的引入，其好处不仅仅是抓到的直接 bug 。能力强的<a href="https://lwn.net/Articles/718411/">代码审查带宽</a>是一种有限的资源。如果没有<a href="https://kernel-recipes.org/en/2016/talks/maintainers-dont-scale/">足够的人</a>专门负责上游代码审查和子系统维护任务，整个内核开发过程就会出现瓶颈。</p>
+<p>Linux 长期的健壮性取决于开发者，但特别是有效的<a href="https://www.linuxfoundation.org/blog/role-of-a-linux-kernel-maintainer/">内核维护者</a>。尽管业界在努力<a href="https://training.linuxfoundation.org/linux-kernel-development/">培训</a>新的开发者，但传统上这只是以他们能得到的 “功能驱动的” 工作为理由。但是，只关注产品的时间表最终会使 Linux 陷入 “<a href="https://en.wikipedia.org/wiki/Tragedy_of_the_commons">公地悲剧</a>”。扩大维护者的数量可以<a href="https://techdebtpolicy.com/tragedy-of-the-commons/">避免此事</a>。幸运的是，新的维护者的 “渠道” 是直截了当的。</p>
+<p>维护者的建立不仅来自于他们对子系统技术的深度了解，也来自于他们对其他开发者的指导和代码审查的经验。培训新的审查员必须成为常态，其动机是使上游审查成为工作的一部分。今天的审查员成为明天的维护者。如果每个主要的内核子系统都多了四个专门的维护者，我们的<a href="https://par.nsf.gov/servlets/purl/10106647">生产力就会翻倍</a>。</p>
+<h3 id="_8">更多的工程师参与测试和基础设施</h3>
+<p>除了更多的审查员，改善 Linux 的<a href="https://www.kernel.org/doc/html/latest/process/development-process.html">开发工作流程</a>对于扩大每个人的贡献能力至关重要。 Linux 的 “只用电子邮件” 的工作流程<a href="https://lwn.net/Articles/803619/">已显老态</a>，但更多的自动化<a href="https://patchwork.kernel.org/project/netdevbpf/list/">补丁跟踪</a>、<a href="https://linux.kernelci.org/job/">持续集成</a>、<a href="https://github.com/google/syzkaller/issues?q=is%3Aissue+is%3Aopen+label%3A%22syzbot+user+request%22">模糊处理</a>、<a href="https://github.com/google/syzkaller/issues/533">覆盖率</a>和<a href="https://www.kernel.org/doc/html/latest/dev-tools/">测试</a>的上游开发将使开发过程明显更有效率。</p>
+<p>此外，与其在内核发布后进行测试，不如在开发过程中进行测试更为有效。当针对未发布的内核版本（例如 <a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git">linux-next</a>）进行测试并<a href="https://groups.io/g/kernelci/message/1142">向上游报告</a>时，开发者可以立即得到关于缺陷的反馈。在缺陷被真正发布之前，就可以开发出修复方法；<a href="https://www.ministryoftesting.com/dojo/lessons/ten-reasons-why-you-fix-bugs-as-soon-as-you-find-them">尽早修复一个缺陷总是比晚些时候更容易</a>。</p>
+<p>这种 “<a href="https://www.ibrahimatlinux.com/uploads/6/3/9/7/6397792/03.pdf">上游优先</a>” 的产品内核开发和测试方法是非常有效的。谷歌在 Chrome OS 和安卓系统上这样做已经有一段时间了，而且在行业内几乎是唯一的。这意味着功能开发是针对最新的内核进行的，而设备的测试也同样尽可能接近最新的上游内核，所有这些都避免了重复的 “机构内部” 努力。</p>
+<h3 id="_9">更多的工程师参与安全和工具链开发</h3>
+<p>除了被动地处理个别漏洞和现有的维护需求外，还需要主动地消除整类缺陷，这样开发人员就不会再引入这些类型的漏洞。如果我们能阻止同类安全漏洞再次出现，为什么还要一年修复 10 次？</p>
+<p>在过去的几年里，各种脆弱的语言特性和内核 API 已经被取消或取代（例如，<a href="https://git.kernel.org/linus/0bb95f80a38f82884693194ea720e9cca5e12ada">VLAs</a>、<a href="https://git.kernel.org/linus/a035d552a93bb9ef6048733bb9f2a0dc857ff869">switch fallthrough</a>、<a href="https://git.kernel.org/linus/3d2403fd10a1dbb359b154af41ffed9f2a7520e8">addr_limit</a>）。然而，仍然<a href="https://github.com/KSPP/linux/issues">有很多工作要做</a>。最耗时的方面之一是在 Linux 的 2500 万行代码中进行这些通常是侵入性的、对上下文敏感的改变所涉及的重构工作。</p>
+<p>除了内核代码本身，编译器和工具链也需要增加更多的防御性功能（例如，<a href="https://git.kernel.org/linus/f0fe00d4972a8cd4b98cc2c29758615e4d51cdfe">变量归零</a>、<a href="https://source.android.com/devices/tech/debug/kcfi">CFI</a>、<a href="https://bugzilla.kernel.org/buglist.cgi?bug_status=__open__&amp;component=Sanitizers&amp;list_id=1093987&amp;product=Memory%20Management">消毒器</a>）。由于工具链在技术上处于内核的 “外部” ，它的开发工作经常被不适当地忽视和投入不足。代码安全的负担需要尽可能地转移到工具链上，以释放人类在其他领域的工作。在最先进的方面，我们必须确保 Linux 可以用 <a href="https://lore.kernel.org/lkml/20210704202756.29107-1-ojeda@kernel.org/">Rust</a> 这样的内存安全语言编写。</p>
+<h2 id="_10"><a href="https://www.youtube.com/watch?v=sRee26pfVzU#t=11">别再等了</a></h2>
+<p>如果你没有使用最新的内核，你就没有最新增加的安全防御措施（包括错误修复）。面对新发现的缺陷，这使得系统的安全性比它们本来的要低。即使通过仔细的系统设计、适当的威胁建模和其他标准的安全实践，风险的大小也会随着时间的推移而迅速增长，使供应商不得不计算出他们可以容忍用户接触多老的内核。除非答案是 “放弃我们的用户” ，否则工程资源必须集中在上游，通过持续部署最新的内核版本来缩小差距。</p>
+<p>根据我们最保守的估计，Linux 内核及其工具链目前至少有 100 名工程师的人力资源空缺，所以要靠大家把他们的开发者人才聚集到上游来。这是唯一能确保以合理的长期成本平衡安全的解决方案。</p>
+
+              
+            </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../xfce-2021-08-02/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Xfce 开发者博客 ——— 改进搜索" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              Xfce 开发者博客 ——— 改进搜索
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../xfce-2021-08-17/" class="md-footer__link md-footer__link--next" aria-label="下一页: Xfce 开发者博客 —— 一场即将到达终点的旅行" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              Xfce 开发者博客 —— 一场即将到达终点的旅行
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Some copyright reserved. 2021-2022 Hanjingxue Boling.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

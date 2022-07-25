@@ -1,0 +1,3637 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hanjingxue 的个人在线文档站。">
+      
+      
+        <meta name="author" content="Hanjingxue Boling">
+      
+      
+        <link rel="canonical" href="https://hanjingxue-boling.github.io/Whiteboard/translation/OpenBSD-zh/openbsd-faq/faq6/">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>OpenBSD FAQ - 网络 - 寒晶雪的文档站</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#openbsd-faq-" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="https://hanjingxue-boling.github.io/Whiteboard/" title="寒晶雪的文档站" class="md-header__button md-logo" aria-label="寒晶雪的文档站" data-md-component="logo">
+      
+  <img src="../../../../assets/fox.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            寒晶雪的文档站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OpenBSD FAQ - 网络
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-blue"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-green"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Hanjingxue-Boling/Whiteboard" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Source Code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../.." class="md-tabs__link">
+      主页
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link md-tabs__link--active">
+        译文归档
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../essay/about/" class="md-tabs__link">
+        站内杂谈
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../essay/main/about/" class="md-tabs__link">
+        随笔&日常
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../archives/about/" class="md-tabs__link">
+        站外归档
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../handbook/intro/" class="md-tabs__link">
+        openSUSE Handbook
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../about/about-me/" class="md-tabs__link">
+        关于
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://hanjingxue-boling.github.io/Whiteboard/" title="寒晶雪的文档站" class="md-nav__button md-logo" aria-label="寒晶雪的文档站" data-md-component="logo">
+      
+  <img src="../../../../assets/fox.png" alt="logo">
+
+    </a>
+    寒晶雪的文档站
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Hanjingxue-Boling/Whiteboard" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Source Code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          译文归档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="译文归档" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          译文归档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          新闻归档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="新闻归档" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          新闻归档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_2">
+          2021-07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-07" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          2021-07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/xfce-gsoc-2021/" class="md-nav__link">
+        Xfce 已加入 Google Summer of Code 2022
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/opensuse-cc/" class="md-nav__link">
+        定期 openSUSE 会议调查的结果
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/fedora-dpg/" class="md-nav__link">
+        Fedora GNU/Linux 被联合国数字公共产品项目提名
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/github-2021-07-27/" class="md-nav__link">
+        为开发者站台：斯坦福大学法学院的 GitHub 开发者权利奖学金
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_3">
+          2021-08
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-08" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          2021-08
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/xfce-2021-08-02/" class="md-nav__link">
+        Xfce 开发者博客 ——— 改进搜索
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/google-2021-08-04/" class="md-nav__link">
+        Google Security Blog – 正确对待 Linux 内核安全
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/xfce-2021-08-17/" class="md-nav__link">
+        Xfce 开发者博客 —— 一场即将到达终点的旅行
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/xfce-2021-08-17-02/" class="md-nav__link">
+        Xfce 开发者博客 —— GSOC 贡献总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/fedora-dpg-02/" class="md-nav__link">
+        Fedora Linux 正式被联合国认证为数字公共产品
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_4" type="checkbox" id="__nav_2_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_4">
+          2021-09
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-09" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          2021-09
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/xfce-2021-09-12/" class="md-nav__link">
+        Xfce 开发者博客 —— 得益于 GSoC 2021，Thunar 中出现了闪亮的新事物。
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/xfce-09-17/" class="md-nav__link">
+        Xfce 开发者博客 —— Thunar 的几个重要特征
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/fedora-nest-2021/" class="md-nav__link">
+        Nest With Fedora 2021 recordings now available!
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_5" type="checkbox" id="__nav_2_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_5">
+          2021-10
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-10" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          2021-10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/kde-network-china-2021/" class="md-nav__link">
+        Linux 应用生态沙龙（KDE Network 中国）
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_6" type="checkbox" id="__nav_2_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_6">
+          2021-11
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-11" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          2021-11
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/fedora35-released/" class="md-nav__link">
+        值得等待：Fedora Linux 35 已发布！
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/xfce-2021-11-26/" class="md-nav__link">
+        Xfce 开发者博客 —— Xfce 的快捷方式编辑器和其他一些东西
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_7" type="checkbox" id="__nav_2_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_7">
+          2021-12
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-12" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          2021-12
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/xfce-2021-12-10/" class="md-nav__link">
+        Xfce 开发者博客 —— xfce4-terminal 0.9.1 开发版
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/eff-chrome-manifestv3/" class="md-nav__link">
+        电子前线基金会 —— Chrome 用户请注意：Manifest V3 具有欺骗性和威胁性
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_8" type="checkbox" id="__nav_2_2_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_8">
+          2022-01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-01" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          2022-01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archives/xfce-2022-01-21/" class="md-nav__link">
+        Xfce 开发者博客 —— 更好的 Thunar 工具栏
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          OpenBSD 文档归档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OpenBSD 文档归档" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          OpenBSD 文档归档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_2" type="checkbox" id="__nav_2_3_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_2">
+          FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="FAQ" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq1/" class="md-nav__link">
+        OpenBSD FAQ - 从源码构建系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq2/" class="md-nav__link">
+        OpenBSD FAQ - 配置磁盘
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq3/" class="md-nav__link">
+        OpenBSD FAQ - 安装指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq4/" class="md-nav__link">
+        OpenBSD FAQ - 键盘和显示控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq5/" class="md-nav__link">
+        OpenBSD FAQ - 多媒体
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          OpenBSD FAQ - 网络
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        OpenBSD FAQ - 网络
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    网络配置
+  </a>
+  
+    <nav class="md-nav" aria-label="网络配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    识别和设置网络接口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    默认主机名和网关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    DNS 解析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    激活更改
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    检查路由
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    在接口上设置别名
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    动态主机设置协议
+  </a>
+  
+    <nav class="md-nav" aria-label="动态主机设置协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dhcp" class="md-nav__link">
+    DHCP 客户端
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp_1" class="md-nav__link">
+    DHCP 服务器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pxe-i386amd64" class="md-nav__link">
+    PXE 启动（i386，amd64）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    无线网络
+  </a>
+  
+    <nav class="md-nav" aria-label="无线网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    配置无线适配器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    中继无线适配器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    搭建网桥
+  </a>
+  
+    <nav class="md-nav" aria-label="搭建网桥">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dhcp_2" class="md-nav__link">
+    作为 DHCP 服务器的网桥
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    在网桥上过滤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    桥接技巧
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    等价多路径路由
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nfs" class="md-nav__link">
+    使用 NFS
+  </a>
+  
+    <nav class="md-nav" aria-label="使用 NFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nfs_1" class="md-nav__link">
+    搭建一个 NFS 服务器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nfs_2" class="md-nav__link">
+    挂载 NFS 文件系统
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nfs_3" class="md-nav__link">
+    检查 NFS 上的统计信息
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq7/" class="md-nav__link">
+        OpenBSD FAQ - 软件包管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq8/" class="md-nav__link">
+        OpenBSD FAQ - X 窗口系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq9/" class="md-nav__link">
+        OpenBSD FAQ - 虚拟专用网络（VPN）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq10/" class="md-nav__link">
+        OpenBSD FAQ - 虚拟化
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3" type="checkbox" id="__nav_2_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_3">
+          Others
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Others" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/bsd01/" class="md-nav__link">
+        OpenBSD - 跟随 -current 和使用快照
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/bsd02/" class="md-nav__link">
+        OpenBSD - 邮件列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/bsd03/" class="md-nav__link">
+        OpenBSD - 报告问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/bsd04/" class="md-nav__link">
+        OpenBSD 升级向导：6.9 至 7.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          2021-10
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-10" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          2021-10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gimp-mirror-policy/" class="md-nav__link">
+        GIMP 官方镜像和镜像政策
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          2022-02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-02" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          2022-02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../donation-help-us/" class="md-nav__link">
+        捐款如何在 2021 年帮助我们
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          2022-03
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-03" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          2022-03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../xfce4-terminal-0.9.2/" class="md-nav__link">
+        xfce4-terminal 0.9.2 开发版
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gimp-gsoc-2022/" class="md-nav__link">
+        GIMP 是 GSoC 2022 导师组织
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blender-3.1/" class="md-nav__link">
+        Blender 3.1 已发布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../xfce-gsoc-2022/" class="md-nav__link">
+        Xfce 已加入 Google Summer of Code 2022
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../libreoffice-gsoc-2022/" class="md-nav__link">
+        培养你的技能，学习令人兴奋的新事物！
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../plan-to-drop-soft.o.o/" class="md-nav__link">
+        计划停用 software.opensuse.org（社区会议）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../openSUSE-code-of-conduct/" class="md-nav__link">
+        openSUSE 行为准则
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          2022-04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-04" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          2022-04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../yast-d-installer/" class="md-nav__link">
+        YaST D-Installer 第一次公开发布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../xfce4-terminal-1.0.0/" class="md-nav__link">
+        Xfce Terminal 1.0.0 稳定版已发布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../xfce-setting-gui/" class="md-nav__link">
+        Xfce 设置的图形界面
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8">
+          2022-05
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-05" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          2022-05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fedora36-released/" class="md-nav__link">
+        Fedora 36 已正式发布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2022-05-17-theevilskeleton/" class="md-nav__link">
+        对《Flatpak Is Not the Future》的回应
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blender-events-in-2022/" class="md-nav__link">
+        Blender 在 2022 年的活动
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9">
+          2022-06
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-06" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          2022-06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gimp-gsoc-2022-02/" class="md-nav__link">
+        GSoC 2022 项目公布：CMYK 特性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-letter-intel-fsp/" class="md-nav__link">
+        为英特尔 FSP 采用开源固件方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nodejs-eol-v16-0626/" class="md-nav__link">
+        将 Node.js 16 的生命周期结束日期提前
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../accessibility-in-fedora/" class="md-nav__link">
+        Fedora Workstation 的无障碍功能
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_10">
+          2022-07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-07" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          2022-07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ms-pluton-chips/" class="md-nav__link">
+        认识 Microsoft Pluton 处理器——专为未来 Windows PC 设计的安全芯片
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          站内杂谈
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="站内杂谈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          站内杂谈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Linux 备忘录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux 备忘录" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux 备忘录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/memo/opensuse/" class="md-nav__link">
+        Tumbleweed 配置小记（一）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/memo/other-configs/" class="md-nav__link">
+        Tumbleweed 配置小记（二）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/memo/eyecandy-kde/" class="md-nav__link">
+        openSUSE KDE 美化小记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/memo/alias-tips/" class="md-nav__link">
+        alias 命令小记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/memo/opencc/" class="md-nav__link">
+        使用 OpenCC 进行简繁中文转换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/memo/Tachidesk-quick-setup/" class="md-nav__link">
+        在 Linux 上使用 Tachidesk | 快速配置指南
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          其他
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="其他" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          其他
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/others/2021-08/" class="md-nav__link">
+        Linux distro in my view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/others/anime-recommad/" class="md-nav__link">
+        动画推荐
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/others/adjust-win11-for-popurse/" class="md-nav__link">
+        Windows 11 安装与调教
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/others/fonts-and-measurement/" class="md-nav__link">
+        字体与带宽单位
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/others/about-why/" class="md-nav__link">
+        缘由
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/others/use-rss-sub/" class="md-nav__link">
+        基于 RSS 的简单资讯聚合订阅
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/others/play-minecraft/" class="md-nav__link">
+        在 openSUSE 上游玩 Minecraft
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_8" type="checkbox" id="__nav_3_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_8">
+          贡献者指南（已归档）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="贡献者指南（已归档）" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          贡献者指南（已归档）
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/others/contribute/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/others/contribute/base-01/" class="md-nav__link">
+        慢速开始 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/others/contribute/base-02/" class="md-nav__link">
+        慢速开始 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          随笔&日常
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="随笔&日常" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          随笔&日常
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-02-12/" class="md-nav__link">
+        2022-02-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-03-05/" class="md-nav__link">
+        2022-03-05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-03-30/" class="md-nav__link">
+        2022-03-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-04-01/" class="md-nav__link">
+        2022-04-01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-04-09/" class="md-nav__link">
+        2022-04-09
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-04-11/" class="md-nav__link">
+        2022-04-11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-04-12/" class="md-nav__link">
+        2022-04-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-04-13/" class="md-nav__link">
+        2022-04-13
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-04-14/" class="md-nav__link">
+        2022-04-14
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-04-21/" class="md-nav__link">
+        2022-04-21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-04-26/" class="md-nav__link">
+        2022-04-26
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-05-03/" class="md-nav__link">
+        2022-05-03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-05-05/" class="md-nav__link">
+        2022-05-05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-05-10/" class="md-nav__link">
+        2022-05-10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-05-16/" class="md-nav__link">
+        2022-05-16
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-05-19/" class="md-nav__link">
+        2022-05-19
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-05-21/" class="md-nav__link">
+        2022-05-21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-05-22/" class="md-nav__link">
+        2022-05-22
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-05-27/" class="md-nav__link">
+        2022-05-27
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-06-01/" class="md-nav__link">
+        2022-06-01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-06-05/" class="md-nav__link">
+        2022-06-05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-06-14/" class="md-nav__link">
+        2022-06-14
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-06-21/" class="md-nav__link">
+        2022-06-21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-07-03/" class="md-nav__link">
+        2022-07-03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-07-10/" class="md-nav__link">
+        2022-07-10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../essay/main/2022-07-26/" class="md-nav__link">
+        2022-07-26
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          站外归档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="站外归档" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          站外归档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archives/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archives/goodies/" class="md-nav__link">
+        实用工具与站点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archives/" class="md-nav__link">
+        外站文档目录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archives/glob-expression/" class="md-nav__link">
+        Glob 语法及解析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archives/delete-hide-files/" class="md-nav__link">
+        Linux 删除当前目录下的隐藏文件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          openSUSE Handbook
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="openSUSE Handbook" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          openSUSE Handbook
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../handbook/intro/" class="md-nav__link">
+        Hi 🦎
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../handbook/" class="md-nav__link">
+        目录
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          关于
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="关于" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          关于
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/about-me/" class="md-nav__link">
+        关于我 👋
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/friends/" class="md-nav__link">
+        友链
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/license/" class="md-nav__link">
+        许可证清单
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    网络配置
+  </a>
+  
+    <nav class="md-nav" aria-label="网络配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    识别和设置网络接口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    默认主机名和网关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    DNS 解析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    激活更改
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    检查路由
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    在接口上设置别名
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    动态主机设置协议
+  </a>
+  
+    <nav class="md-nav" aria-label="动态主机设置协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dhcp" class="md-nav__link">
+    DHCP 客户端
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp_1" class="md-nav__link">
+    DHCP 服务器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pxe-i386amd64" class="md-nav__link">
+    PXE 启动（i386，amd64）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    无线网络
+  </a>
+  
+    <nav class="md-nav" aria-label="无线网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    配置无线适配器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    中继无线适配器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    搭建网桥
+  </a>
+  
+    <nav class="md-nav" aria-label="搭建网桥">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dhcp_2" class="md-nav__link">
+    作为 DHCP 服务器的网桥
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    在网桥上过滤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    桥接技巧
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    等价多路径路由
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nfs" class="md-nav__link">
+    使用 NFS
+  </a>
+  
+    <nav class="md-nav" aria-label="使用 NFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nfs_1" class="md-nav__link">
+    搭建一个 NFS 服务器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nfs_2" class="md-nav__link">
+    挂载 NFS 文件系统
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nfs_3" class="md-nav__link">
+    检查 NFS 上的统计信息
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="openbsd-faq-">OpenBSD FAQ - 网络</h1>
+<h2 id="_1">网络配置</h2>
+<p>OpenBSD 中的网络配置是通过 <code>/etc</code> 中的文本文件完成的。这些设置通常最初是在<a href="https://www.openbsd.org/faq/faq4.html">系统安装过程</a>中配置的。</p>
+<h3 id="_2">识别和设置网络接口</h3>
+<p>接口由网卡的类型命名，而不是连接的类型。例如，以下是 Intel 快速以太网网卡的 <a href="https://man.openbsd.org/dmesg">dmesg(8)</a> 片段：</p>
+<div class="highlight"><pre><span></span><code>fxp0 at pci0 dev 10 function 0 &quot;Intel 82557&quot; rev 0x0c: irq 5, address 00:02:b3:2b:10:f7
+inphy0 at fxp0 phy 1: i82555 10/100 media interface, rev. 4
+</code></pre></div>
+<p>此设备使用 <a href="https://man.openbsd.org/fxp">fxp(4)</a> 驱动程序并在此处分配编号 0。</p>
+<p><a href="https://man.openbsd.org/ifconfig">ifconfig(8)</a> 实用程序将显示系统上已识别的网络接口。</p>
+<div class="highlight"><pre><span></span><code>$ ifconfig
+lo0: flags=8049&lt;UP,LOOPBACK,RUNNING,MULTICAST&gt; mtu 33200
+        index 3 priority 0 llprio 3
+        groups: lo
+        inet 127.0.0.1 netmask 0xff000000
+fxp0: flags=8843&lt;UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+        lladdr 00:02:b3:2b:10:f7
+        index 1 priority 0 llprio 3
+        media: Ethernet autoselect (100baseTX full-duplex)
+        status: active
+        inet 10.0.0.38 netmask 0xffffff00 broadcast 10.0.0.255
+enc0: flags=0&lt;&gt;
+        index 2 priority 0 llprio 3
+        groups: enc
+        status: active
+pflog0: flags=141&lt;UP,RUNNING,PROMISC&gt; mtu 33200
+        index 4 priority 0 llprio 3
+        groups: pflog
+</code></pre></div>
+<p>此示例仅显示一个物理以太网接口：<code>fxp0</code>。该接口配置了 IP，因此值为 <code>inet 10.0.0.38 netmask 0xffffff00 broadcast 10.0.0.255</code>。它也配置了 <code>UP</code> 和 <code>RUNNING</code> 标志。</p>
+<p><a href="https://man.openbsd.org/netstart">netstart(8)</a> 脚本在引导时使用 <a href="https://man.openbsd.org/hostname.if">hostname.if(5)</a> 文件配置网络接口，其中 “if” 被每个接口的全名替换。上面的示例将使用文件 <code>/etc/hostname.fxp0</code>，其中包含以下选项：</p>
+<div class="highlight"><pre><span></span><code>inet 10.0.0.38 255.255.255.0
+</code></pre></div>
+<p>这个 <code>hostname.fxp0</code> 文件也有一个交互式等效文件：</p>
+<div class="highlight"><pre><span></span><code># ifconfig fxp0 10.0.0.38 255.255.255.0
+</code></pre></div>
+<p>默认情况下启用其他几个接口。这些虚拟接口用于提供各种功能。以下手册页描述了它们：</p>
+<ul>
+<li><a href="https://man.openbsd.org/enc">enc(4)</a> - 封装接口</li>
+<li><a href="https://man.openbsd.org/lo">lo(4)</a> - 环回接口</li>
+<li><a href="https://man.openbsd.org/pflog">pflog(4)</a> - 数据包过滤器日志记录接口</li>
+</ul>
+<p>你可以使用 <a href="https://man.openbsd.org/ifconfig">ifconfig(8)</a> 的 <code>create</code> 子命令添加其他虚拟接口。</p>
+<h3 id="_3">默认主机名和网关</h3>
+<p><code>/etc/myname</code> 和 <code>/etc/mygate</code> 文件由 <a href="https://man.openbsd.org/netstart">netstart(8)</a> 脚本读取。这两个文件由一行字组成，分别指定系统的完全限定域名（fully qualified domain name）和网关主机的地址。<code>/etc/mygate</code> 文件不需要在所有系统上都存在。有关更多详细信息，请参阅 <a href="https://man.openbsd.org/myname">myname(5)</a>。</p>
+<h3 id="dns">DNS 解析</h3>
+<p>DNS 解析由 <a href="https://man.openbsd.org/resolv.conf">resolv.conf(5)</a> 文件控制，该文件由 <a href="https://man.openbsd.org/resolvd">resolvd(8)</a> 管理。</p>
+<div class="highlight"><pre><span></span><code>$ cat /etc/resolv.conf
+search example.com
+nameserver 125.2.3.4
+nameserver 125.2.3.5
+lookup file bind
+</code></pre></div>
+<p>这里默认的域名是 <code>example.com</code>，会有两个名称服务器（<code>125.2.3.4</code> 和 <code>125.2.3.5</code>），并且在名称服务器之前会查询 <a href="https://man.openbsd.org/hosts">hosts(5)</a> 文件。</p>
+<h3 id="_4">激活更改</h3>
+<p>从这里，重新启动或运行 <a href="https://man.openbsd.org/netstart">netstart(8)</a> 脚本：</p>
+<div class="highlight"><pre><span></span><code># sh /etc/netstart
+</code></pre></div>
+<p>如果已经配置了接口，则在运行此脚本时可能会产生一些警告。使用 <a href="https://man.openbsd.org/ifconfig">ifconfig(8)</a> 确保接口设置正确。</p>
+<p>尽管可以在正在运行中的 OpenBSD 系统上完全重新配置网络，但建议在任何重大更改后重新启动。</p>
+<h3 id="_5">检查路由</h3>
+<p>可以通过 <a href="https://man.openbsd.org/netstat">netstat(1)</a> 或 <a href="https://man.openbsd.org/route">route(8)</a> 检查路由。</p>
+<div class="highlight"><pre><span></span><code>$ netstat -rn
+Routing tables
+
+Internet:
+Destination        Gateway            Flags     Refs     Use    Mtu  Prio Iface
+default            10.0.0.1           UGS         4       16      -    12 fxp0
+224/4              127.0.0.1          URS         0        0  32768     8 lo0
+127/8              127.0.0.1          UGRS        0        0  32768     8 lo0
+127.0.0.1          127.0.0.1          UH          2       15  32768     1 lo0
+10.0.0/24          link#1             UC          1        4      -     4 fxp0
+10.0.0.1           aa:0:4:0:81:d      UHL         1       11      -     1 fxp0
+10.0.0.38          127.0.0.1          UGHS        0        0      -     1 lo0
+
+$ route show
+Routing tables
+
+Internet:
+Destination        Gateway            Flags     Refs     Use    Mtu  Prio Iface
+default            10.0.0.1           UGS         4       16      -    12 fxp0
+base-address.mcast localhost          URS         0        0  32768     8 lo0
+loopback           localhost          UGRS        0        0  32768     8 lo0
+localhost          localhost          UH          2       15  32768     1 lo0
+10.0.0/24          link#1             UC          1        4      -     4 fxp0
+10.0.0.1           aa:0:4:0:81:d      UHL         1       11      -     1 fxp0
+10.0.0.38          localhost          UGHS        0        0      -     1 lo0
+</code></pre></div>
+<h3 id="_6">在接口上设置别名</h3>
+<p>要在接口上设置 IP 别名，只需编辑其 <a href="https://man.openbsd.org/hostname.if">hostname.if(5)</a> 文件。</p>
+<p>在本例中，两个别名被添加到接口 <code>dc0</code>，它被配置为 <code>192.168.0.2</code>，网络掩码为 <code>255.255.255.0</code>。</p>
+<div class="highlight"><pre><span></span><code>$ cat /etc/hostname.dc0
+inet 192.168.0.2 255.255.255.0
+inet alias 192.168.0.3 255.255.255.255
+inet alias 192.168.0.4 255.255.255.255
+</code></pre></div>
+<p>创建此文件后，<a href="https://www.openbsd.org/faq/faq6.html#Setup.activate">运行 netstart</a> 或重新启动。要查看所有别名，请使用 <code>ifconfig -A</code>。</p>
+<h2 id="_7">动态主机设置协议</h2>
+<p>动态主机设置协议 (DHCP) 是一种自动配置网络接口的方法。OpenBSD 可以是配置其他机器的 DHCP 服务器，也可以是由 DHCP 服务器配置的 DHCP 客户端。</p>
+<h3 id="dhcp">DHCP 客户端</h3>
+<p>要使用 <a href="https://man.openbsd.org/dhcpleased">dhcpleased(8)</a>，请编辑网络接口的 <a href="https://man.openbsd.org/hostname.if">hostname.if(5)</a> 文件。<a href="https://www.openbsd.org/faq/faq6.html#Wireless">无线网络</a>部分解释了如何设置无线接口。对于以太网接口，一行就足够了：</p>
+<div class="highlight"><pre><span></span><code>inet autoconf
+</code></pre></div>
+<p>OpenBSD 将在启动时从 DHCP 服务器收集其 IP 地址、默认网关和 DNS 服务器。其他选项可以在 <a href="https://man.openbsd.org/dhcpleased.conf">dhcpleased.conf(5)</a> 中指定。</p>
+<p>要从命令行通过 DHCP 获取 IP，请运行：</p>
+<div class="highlight"><pre><span></span><code># ifconfig xl0 inet autoconf
+</code></pre></div>
+<p>将 <code>xl0</code> 替换为接口名称。</p>
+<h3 id="dhcp_1">DHCP 服务器</h3>
+<p>要使用 OpenBSD 作为 DHCP 服务器，请在启动时启用 <a href="https://man.openbsd.org/dhcpd">dhcpd(8)</a> 守护进程：</p>
+<div class="highlight"><pre><span></span><code># rcctl enable dhcpd
+</code></pre></div>
+<p>下次启动时，dhcpd 将运行并附加到 <a href="https://man.openbsd.org/dhcpd.conf">dhcpd.conf(5)</a> 中具有有效配置的所有 NIC。可以通过明确地命名来指定单个接口：</p>
+<div class="highlight"><pre><span></span><code># rcctl set dhcpd flags em1 em2
+</code></pre></div>
+<p><code>/etc/dhcpd.conf</code> 示例文件可能如下所示：</p>
+<div class="highlight"><pre><span></span><code># Home
+subnet 192.168.1.0 netmask 255.255.255.0 {
+    option domain-name-servers 192.168.1.2;
+    option routers 192.168.1.1;
+    range 192.168.1.3 192.168.1.50;
+}
+
+# Guests
+subnet 172.16.0.0 netmask 255.255.255.0 {
+    option domain-name-servers 1.2.3.4, 5.6.7.8;
+    option routers 172.16.0.1;
+    range 172.16.0.2 172.16.0.254;
+}
+</code></pre></div>
+<p>本示例中有两个子网：家庭网络和访客网络。客户端将自动获得一个 IP 地址，并指向配置文件各自部分中指定的网关和 DNS 服务器。有关更多选项，请参阅 <a href="https://man.openbsd.org/dhcp-options">dhcp-options(5)</a>。</p>
+<h3 id="pxe-i386amd64">PXE 启动（i386，amd64）</h3>
+<p>预引导执行环境 (PXE) 是仅使用网络引导系统的标准方法。客户端的具有 PXE 功能的 NIC 在<a href="https://www.openbsd.org/faq/faq14.html#BootAmd64">启动过程</a>开始时广播 DHCP 请求，并且不仅接收基本的 IP/DNS 信息，还提供一个用于启动的文件。在 OpenBSD 上，这个文件被称为 <a href="https://man.openbsd.org/pxeboot">pxeboot(8)</a>，通常由 <a href="https://man.openbsd.org/tftpd">tftpd(8)</a> 提供服务。</p>
+<h2 id="_8">无线网络</h2>
+<p>OpenBSD 支持<a href="https://man.openbsd.org/?query=wireless&amp;apropos=1">多种无线芯片组</a>。更多支持的设备可以在 <a href="https://man.openbsd.org/usb">usb(4)</a> 和 <a href="https://man.openbsd.org/pci">pci(4)</a> 中找到。驱动程序手册页中描述了它们支持的确切范围。</p>
+<p>以下网卡支持基于主机的接入点 (Host-based Access Point, HostAP) 模式，允许它们用作<a href="https://www.openbsd.org/faq/pf/example1.html">无线接入点</a>：</p>
+<ul>
+<li><a href="https://man.openbsd.org/acx">acx(4)</a> - TI ACX100/ACX111</li>
+<li><a href="https://man.openbsd.org/ath">ath(4)</a> - Atheros 802.11a/b/g</li>
+<li><a href="https://man.openbsd.org/athn">athn(4)</a> - Atheros 802.11/a/g/n devices</li>
+<li><a href="https://man.openbsd.org/bwfm">bwfm(4)</a> - Broadcom 和 Cypress IEEE 802.11a/ac/b/g/n 无线网络设备</li>
+<li><a href="https://man.openbsd.org/pgt">pgt(4)</a> - Conexant/Intersil Prism GT Full-MAC 802.11a/b/g</li>
+<li><a href="https://man.openbsd.org/ral">ral(4)</a> 和 <a href="https://man.openbsd.org/ural">ural(4)</a> - Ralink Technology RT25x0 802.11a/b/g</li>
+<li><a href="https://man.openbsd.org/rtw">rtw(4)</a> - Realtek 8180 802.11b</li>
+<li><a href="https://man.openbsd.org/rum">rum(4)</a> - Ralink Technology RT2501USB</li>
+<li><a href="https://man.openbsd.org/wi">wi(4)</a> - Prism2/2.5/3</li>
+</ul>
+<p>ifconfig(8) 的 <code>media</code> 子命令可用于显示网络接口的媒体功能。对于无线设备，它显示支持的 802.11a/b/g/n 媒体模式和支持的操作模式（<code>hostap</code>、<code>ibss</code>、<code>monitor</code>）。 例如，要查看接口 <code>ath0</code> 的媒体功能，请运行：</p>
+<div class="highlight"><pre><span></span><code>$ ifconfig ath0 media
+</code></pre></div>
+<p>为了使用某些无线网卡，可能需要通过 <a href="https://man.openbsd.org/fw_update">fw_update(1)</a> 获取的固件文件。一些制造商拒绝允许<a href="https://www.openbsd.org/faq/faq1.html#ReallyFree">自由</a>分发他们的固件，因此它不能包含在 OpenBSD 中。</p>
+<p>另一个需要考虑的选择：为基于 OpenBSD 的防火墙使用传统的 NIC 和外部桥接无线接入点。</p>
+<h3 id="_9">配置无线适配器</h3>
+<p>基于受支持芯片的适配器可以像任何其他网络接口一样使用。要将 OpenBSD 系统连接到现有的无线网络，请使用 <a href="https://man.openbsd.org/ifconfig">ifconfig(8)</a> 实用程序。</p>
+<p>无线客户端的 <a href="https://man.openbsd.org/hostname.if">hostname.if(5)</a> 文件示例可能是：</p>
+<div class="highlight"><pre><span></span><code>nwid puffyuberalles wpakey passwordhere
+inet autoconf
+</code></pre></div>
+<p>或者，对于多个接入点：</p>
+<div class="highlight"><pre><span></span><code>join home-net wpakey passwordhere
+join work-net wpakey passwordhere
+join cafe-wifi
+inet autoconf
+</code></pre></div>
+<p>请注意 <code>inet autoconf</code> 应该放置在其他配置行之后，因为在配置完成之前网络适配器将无法发送 DHCP 请求。</p>
+<h3 id="_10">中继无线适配器</h3>
+<p>中继（Trunks）是由一个或多个网络接口组成的虚拟接口。在本节中，我们的示例将是带有有线 <a href="https://man.openbsd.org/bge">bge0</a> 接口和无线 <a href="https://man.openbsd.org/iwn">iwn0</a> 接口的笔记本电脑。我们将使用它们构建一个 <a href="https://man.openbsd.org/trunk">trunk(4)</a> 接口。有线和无线接口必须连接到同一个二层网络。</p>
+<p>为此，我们首先激活两个物理端口，然后将它们分配给 <code>trunk0</code>。</p>
+<div class="highlight"><pre><span></span><code># echo up &gt; /etc/hostname.bge0
+</code></pre></div>
+<p>然而，无线接口需要更多的配置。它需要连接到我们受 WPA 保护的无线网络：</p>
+<div class="highlight"><pre><span></span><code>$ cat /etc/hostname.iwn0
+nwid puffynet wpakey mysecretkey
+up
+</code></pre></div>
+<p>现在，我们的中继接口定义如下：</p>
+<div class="highlight"><pre><span></span><code>$ cat /etc/hostname.trunk0
+trunkproto failover trunkport bge0
+trunkport iwn0
+inet autoconf
+</code></pre></div>
+<p>中继设置为故障转移模式，因此可以使用任一接口。如果两者都可用，它将首选 <code>bge0</code> 端口，因为这是添加到中继设备的第一个端口。</p>
+<h2 id="_11">搭建网桥</h2>
+<p><a href="https://man.openbsd.org/bridge">bridge(4)</a> 是两个或多个独立网络之间的链接。与路由器不同，数据包透明地通过网桥：两个网段对任一侧的节点都显示为一个。网桥只会转发必须从一个网段传递到另一个网段的数据包，因此网桥中的接口可能有也可能没有自己的 IP 地址。如果是这样，该接口实际上具有两种操作模式：一种作为网桥的一部分，另一种作为独立的 NIC。如果两个接口都没有 IP 地址，则网桥将传递网络数据，但无法进行外部维护（这可以是一个功能）。</p>
+<h3 id="dhcp_2">作为 DHCP 服务器的网桥</h3>
+<p>假设我们有一个系统，它有四个 <a href="https://man.openbsd.org/vr">vr(4)</a> 接口，<code>vr0</code> 到 <code>vr3</code>。 我们希望将 <code>vr1</code>、<code>vr2</code> 和 <code>vr3</code> 桥接在一起，而将 <code>vr0</code> 留给上行链路。 我们还希望通过桥接接口上的 DHCP 提供 IP 地址。作为 DHCP 服务器和上行链路路由器，该盒子需要在桥接网络上有一个 IP 地址。</p>
+<p>无法将 IP 地址直接分配给网桥接口。IP 地址应该添加到成员接口之一，但我们不能使用物理接口，因为链接可能会关闭，在这种情况下，地址将无法访问。 幸运的是，有可用于此目的的 <a href="https://man.openbsd.org/vether">vether(4)</a>（虚拟以太网）驱动程序。我们将它添加到网桥，为其分配 IP 地址并使 dhcpd(8) 在那里监听。</p>
+<ul>
+<li>本节不再对 <a href="https://www.openbsd.org/faq/faq6.html#DHCPserver">DHCP 服务器配置</a>进行描述，但这里使用的寻址方案是相同的。</li>
+<li>这也将是桥接网络的上行链路路由器，因此我们将使用 IP 地址 <code>192.168.1.1</code> 来匹配 DHCP 服务器配置。</li>
+<li>我们不会在这里介绍上行链路、路由或防火墙配置。</li>
+</ul>
+<p>首先，将 <code>vr1</code>、<code>vr2</code> 和 <code>vr3</code> 接口标记为 <code>up</code>：</p>
+<div class="highlight"><pre><span></span><code># echo up &gt; /etc/hostname.vr1
+# echo up &gt; /etc/hostname.vr2
+# echo up &gt; /etc/hostname.vr3
+</code></pre></div>
+<p>然后创建 <code>vether0</code> 配置：</p>
+<div class="highlight"><pre><span></span><code># echo &#39;inet 192.168.1.1 255.255.255.0 192.168.1.255&#39; &gt; /etc/hostname.vether0
+</code></pre></div>
+<p>配置桥接接口以包含上述所有接口：</p>
+<div class="highlight"><pre><span></span><code>$ cat /etc/hostname.bridge0
+add vether0
+add vr1
+add vr2
+add vr3
+up
+</code></pre></div>
+<p>最后我们让 DHCP 守护进程监听 vether0 接口：</p>
+<div class="highlight"><pre><span></span><code># rcctl set dhcpd flags vether0
+</code></pre></div>
+<p>最后，重新启动系统。</p>
+<h3 id="_12">在网桥上过滤</h3>
+<p><a href="https://www.openbsd.org/faq/pf/index.html">PF</a> 可用于限制通过网桥的流量。请记住，根据网桥的性质，相同的数据流经两个接口，因此只需要在一个接口上进行过滤。</p>
+<h3 id="_13">桥接技巧</h3>
+<ul>
+<li>通过使用 <a href="https://man.openbsd.org/ifconfig">ifconfig(8)</a> 或 <a href="https://man.openbsd.org/hostname.if">hostname.bridge0</a> 中的 <code>blocknonip</code> 选项，可以防止非 IP 流量（例如 IPX 或 NETBEUI）绕过过滤器。 这在某些情况下可能很重要，但请注意网桥适用于所有类型的流量，而不仅仅是 IP。</li>
+<li>桥接要求 NIC 处于混杂模式（promiscuous mode）。它们侦听<strong>所有</strong>网络流量，而不仅仅是针对接口的流量。这会给处理器和总线带来比预期更高的负载。</li>
+</ul>
+<h2 id="_14">等价多路径路由</h2>
+<p>等价多路径路由（Equal-Cost Multipath Routing）是指在同一网络的路由表中有多条路由，如默认路由 0.0.0.0/0。 当内核进行路由查找以确定将发往该网络的数据包发送到何处时，它可以从任何等价路由中进行选择。在大多数情况下，多路径路由用于提供冗余上行链路连接，例如到 Internet 的冗余连接。</p>
+<p><a href="https://man.openbsd.org/route">route(8)</a> 命令用于在路由表中添加/更改/删除路由。添加多路径路由时使用 <code>-mpath</code> 参数。</p>
+<div class="highlight"><pre><span></span><code># route add -mpath default 10.130.128.1
+# route add -mpath default 10.132.0.1
+</code></pre></div>
+<p>验证路由：</p>
+<div class="highlight"><pre><span></span><code># netstat -rnf inet | grep default
+default     10.130.128.1      UGS       2      134      -     fxp1
+default     10.132.0.1        UGS       0      172      -     fxp2
+</code></pre></div>
+<p>在这个例子中，我们可以看到一个默认路由指向 <code>10.130.128.1</code>，可以通过 <code>fxp1</code> 接口访问，另一个指向 <code>10.132.0.1</code>，可以通过 <code>fxp2</code> 访问。</p>
+<p>由于 <a href="https://man.openbsd.org/mygate">mygate(5)</a> 文件尚不支持多路径默认路由，因此应将上述命令添加到 fxp1 和 fxp2 接口的 <a href="https://man.openbsd.org/hostname.if">hostname.if(5)</a> 文件的底部。然后应该删除 <code>/etc/mygate</code> 文件。</p>
+<div class="highlight"><pre><span></span><code>$ tail -1 /etc/hostname.fxp1
+!route add -mpath default 10.130.128.1
+$ tail -1 /etc/hostname.fxp2
+!route add -mpath default 10.132.0.1
+</code></pre></div>
+<p>最后，不要忘记通过启用适当的 <a href="https://man.openbsd.org/sysctl.8">sysctl(8)</a> 变量来激活多路径路由的使用。</p>
+<div class="highlight"><pre><span></span><code># sysctl net.inet.ip.multipath=1
+# sysctl net.inet6.ip6.multipath=1
+</code></pre></div>
+<p>请务必编辑 <a href="https://man.openbsd.org/sysctl.conf">sysctl.conf(5)</a> 以使更改永久生效。</p>
+<p>现在尝试跟踪路由到不同的目的地。内核将负载平衡每条多路径路由上的流量。</p>
+<div class="highlight"><pre><span></span><code># traceroute -n 154.11.0.4
+traceroute to 154.11.0.4 (154.11.0.4), 64 hops max, 60 byte packets
+ 1  10.130.128.1  19.337 ms  18.194 ms  18.849 ms
+ 2  154.11.95.170  17.642 ms  18.176 ms  17.731 ms
+ 3  154.11.5.33  110.486 ms  19.478 ms  100.949 ms
+ 4  154.11.0.4  32.772 ms  33.534 ms  32.835 ms
+
+# traceroute -n 154.11.0.5
+traceroute to 154.11.0.5 (154.11.0.5), 64 hops max, 60 byte packets
+ 1  10.132.0.1  14.175 ms  14.503 ms  14.58 ms
+ 2  154.11.95.38  13.664 ms  13.962 ms  13.445 ms
+ 3  208.38.16.151  13.964 ms  13.347 ms  13.788 ms
+ 4  154.11.0.5  30.177 ms  30.95 ms  30.593 ms
+</code></pre></div>
+<p>有关如何选择路由的更多信息，请参阅 <a href="https://www.ietf.org/rfc/rfc2992.txt">RFC2992</a>，“等价多路径算法的分析（Analysis of an Equal-Cost Multi-Path Algorithm）”。</p>
+<p>值得注意的是，如果多路径路由使用的接口出现故障（即丢失载波（carrier）），内核仍将尝试使用指向该接口的路由转发数据包。这种流量当然会被黑洞化，最终无处可去。强烈建议使用 <a href="https://man.openbsd.org/ifstated">ifstated(8)</a> 来检查不可用的接口并相应地调整路由表。</p>
+<h2 id="nfs">使用 NFS</h2>
+<p>网络文件系统 NFS 用于通过网络共享文件系统。</p>
+<p>本节将介绍简单 NFS 设置的步骤。该示例详细介绍了 LAN 上的服务器，客户端访问 LAN 上的 NFS。该节不包括保护 NFS。</p>
+<h3 id="nfs_1">搭建一个 NFS 服务器</h3>
+<p>首先，在服务器上启用 <a href="https://man.openbsd.org/portmap">portmap(8)</a>、<a href="https://man.openbsd.org/mountd">mountd(8)</a> 和 <a href="https://man.openbsd.org/nfsd">nfsd(8)</a> 服务：</p>
+<div class="highlight"><pre><span></span><code># rcctl enable portmap mountd nfsd
+</code></pre></div>
+<p>然后配置将可用的文件系统列表。</p>
+<p>在本例中，我们有一个 IP 地址为 <code>10.0.0.1</code> 的服务器。此服务器将仅向其自己子网内的客户端提供 NFS 服务。这是在下列 exports(5) 文件中配置的：</p>
+<div class="highlight"><pre><span></span><code>$ cat /etc/exports
+/docs -alldirs -ro -network=10.0.0 -mask=255.255.255.0
+</code></pre></div>
+<p>本地文件系统 <code>/docs</code> 将通过 NFS 提供。<code>-alldirs</code> 选项指定客户端将能够在 <code>/docs</code> 以及 <code>/docs</code> 本身下的任何位置挂载。<code>-ro</code> 选项指定客户端将仅被授予只读访问权限。最后两个参数指定只有使用 <code>255.255.255.0</code> 网络掩码的 <code>10.0.0.0</code> 网络中的客户端才能被授权挂载此文件系统。</p>
+<p>现在启动服务器相关的服务：</p>
+<div class="highlight"><pre><span></span><code># rcctl start portmap mountd nfsd
+</code></pre></div>
+<p>如果在 NFS 已经运行时对 <code>/etc/exports</code> 进行了更改，则必须重启 <code>mountd</code> 重新载入配置。</p>
+<div class="highlight"><pre><span></span><code># rcctl reload mountd
+</code></pre></div>
+<h3 id="nfs_2">挂载 NFS 文件系统</h3>
+<p>NFS 文件系统应该通过 <a href="https://man.openbsd.org/mount_nfs">mount(8)</a>，或者更具体地说，<a href="https://man.openbsd.org/mount_nfs">mount_nfs(8)</a> 挂载。</p>
+<p>要将主机 <code>10.0.0.1</code> 上的 <code>/docs</code> 文件系统挂载到本地文件系统 <code>/mnt</code>，请运行：</p>
+<div class="highlight"><pre><span></span><code># mount -t nfs 10.0.0.1:/docs /mnt
+</code></pre></div>
+<p>要在引导时挂载该文件系统，请在 <a href="https://man.openbsd.org/fstab">fstab(5)</a> 中添加一行，如下所示：</p>
+<div class="highlight"><pre><span></span><code># echo &#39;10.0.0.1:/docs /mnt nfs ro,nodev,nosuid 0 0&#39; &gt;&gt; /etc/fstab
+</code></pre></div>
+<p>在这一行的末尾使用 <code>0 0</code> 很重要，这样计算机就不会在启动时尝试 <a href="https://man.openbsd.org/fsck">fsck(8)</a> NFS 文件系统。</p>
+<p>当以 root 用户访问 NFS 挂载时，服务器会自动将 root 的访问权限映射到用户名 <code>nobody</code> 和组 <code>nobody</code>。在考虑文件权限时了解这一点很重要。例如，获取具有以下权限的文件：</p>
+<div class="highlight"><pre><span></span><code>-rw-------    1 root     wheel           0 Dec 31 03:00 _daily.B20143
+</code></pre></div>
+<p>如果此文件位于 NFS 共享上并且 root 用户尝试从 NFS 客户端访问此文件，则访问将被拒绝。</p>
+<p>root 映射到的用户和组可以通过 NFS 服务器上的 <a href="https://man.openbsd.org/exports">exports(5)</a> 文件进行配置。</p>
+<h3 id="nfs_3">检查 NFS 上的统计信息</h3>
+<p>要确保 NFS 正常运行，需要检查的一件事是所有守护程序都已正确注册到 RPC。 为此，请使用 <a href="https://man.openbsd.org/rpcinfo">rpcinfo(8)</a>。</p>
+<div class="highlight"><pre><span></span><code>$ rpcinfo -p 10.0.0.1
+   program vers proto   port
+    100000    2   tcp    111  portmapper
+    100000    2   udp    111  portmapper
+    100005    1   udp    633  mountd
+    100005    3   udp    633  mountd
+    100005    1   tcp    916  mountd
+    100005    3   tcp    916  mountd
+    100003    2   udp   2049  nfs
+    100003    3   udp   2049  nfs
+    100003    2   tcp   2049  nfs
+    100003    3   tcp   2049  nfs
+</code></pre></div>
+<p>一些实用程序允许管理员查看 NFS 发生的情况，例如 <a href="https://man.openbsd.org/showmount">showmount(8)</a> 和 <a href="https://man.openbsd.org/nfsstat">nfsstat(1)</a>。</p>
+
+              
+            </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../faq5/" class="md-footer__link md-footer__link--prev" aria-label="上一页: OpenBSD FAQ - 多媒体" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              OpenBSD FAQ - 多媒体
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../faq7/" class="md-footer__link md-footer__link--next" aria-label="下一页: OpenBSD FAQ - 软件包管理" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              OpenBSD FAQ - 软件包管理
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Some copyright reserved. 2021-2022 Hanjingxue Boling.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "content.tabs.link"], "search": "../../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

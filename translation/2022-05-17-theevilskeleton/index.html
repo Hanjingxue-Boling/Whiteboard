@@ -1,0 +1,3793 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hanjingxue 的个人在线文档站。">
+      
+      
+        <meta name="author" content="Hanjingxue Boling">
+      
+      
+        <link rel="canonical" href="https://hanjingxue-boling.github.io/Whiteboard/translation/2022-05-17-theevilskeleton/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>对《Flatpak Is Not the Future》的回应 - 寒晶雪的文档站</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#flatpak-is-not-the-future" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="https://hanjingxue-boling.github.io/Whiteboard/" title="寒晶雪的文档站" class="md-header__button md-logo" aria-label="寒晶雪的文档站" data-md-component="logo">
+      
+  <img src="../../assets/fox.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            寒晶雪的文档站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              对《Flatpak Is Not the Future》的回应
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-blue"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-green"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Hanjingxue-Boling/Whiteboard" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Source Code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      主页
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../about/" class="md-tabs__link md-tabs__link--active">
+        译文归档
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../essay/about/" class="md-tabs__link">
+        站内杂谈
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../essay/main/about/" class="md-tabs__link">
+        随笔&日常
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../archives/about/" class="md-tabs__link">
+        站外归档
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../handbook/intro/" class="md-tabs__link">
+        openSUSE Handbook
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/about-me/" class="md-tabs__link">
+        关于
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://hanjingxue-boling.github.io/Whiteboard/" title="寒晶雪的文档站" class="md-nav__button md-logo" aria-label="寒晶雪的文档站" data-md-component="logo">
+      
+  <img src="../../assets/fox.png" alt="logo">
+
+    </a>
+    寒晶雪的文档站
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Hanjingxue-Boling/Whiteboard" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Source Code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          译文归档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="译文归档" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          译文归档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          新闻归档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="新闻归档" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          新闻归档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_2">
+          2021-07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-07" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          2021-07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/xfce-gsoc-2021/" class="md-nav__link">
+        Xfce 已加入 Google Summer of Code 2022
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/opensuse-cc/" class="md-nav__link">
+        定期 openSUSE 会议调查的结果
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/fedora-dpg/" class="md-nav__link">
+        Fedora GNU/Linux 被联合国数字公共产品项目提名
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/github-2021-07-27/" class="md-nav__link">
+        为开发者站台：斯坦福大学法学院的 GitHub 开发者权利奖学金
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_3">
+          2021-08
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-08" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          2021-08
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/xfce-2021-08-02/" class="md-nav__link">
+        Xfce 开发者博客 ——— 改进搜索
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/google-2021-08-04/" class="md-nav__link">
+        Google Security Blog – 正确对待 Linux 内核安全
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/xfce-2021-08-17/" class="md-nav__link">
+        Xfce 开发者博客 —— 一场即将到达终点的旅行
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/xfce-2021-08-17-02/" class="md-nav__link">
+        Xfce 开发者博客 —— GSOC 贡献总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/fedora-dpg-02/" class="md-nav__link">
+        Fedora Linux 正式被联合国认证为数字公共产品
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_4" type="checkbox" id="__nav_2_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_4">
+          2021-09
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-09" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          2021-09
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/xfce-2021-09-12/" class="md-nav__link">
+        Xfce 开发者博客 —— 得益于 GSoC 2021，Thunar 中出现了闪亮的新事物。
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/xfce-09-17/" class="md-nav__link">
+        Xfce 开发者博客 —— Thunar 的几个重要特征
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/fedora-nest-2021/" class="md-nav__link">
+        Nest With Fedora 2021 recordings now available!
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_5" type="checkbox" id="__nav_2_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_5">
+          2021-10
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-10" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          2021-10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/kde-network-china-2021/" class="md-nav__link">
+        Linux 应用生态沙龙（KDE Network 中国）
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_6" type="checkbox" id="__nav_2_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_6">
+          2021-11
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-11" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          2021-11
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/fedora35-released/" class="md-nav__link">
+        值得等待：Fedora Linux 35 已发布！
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/xfce-2021-11-26/" class="md-nav__link">
+        Xfce 开发者博客 —— Xfce 的快捷方式编辑器和其他一些东西
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_7" type="checkbox" id="__nav_2_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_7">
+          2021-12
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-12" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          2021-12
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/xfce-2021-12-10/" class="md-nav__link">
+        Xfce 开发者博客 —— xfce4-terminal 0.9.1 开发版
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/eff-chrome-manifestv3/" class="md-nav__link">
+        电子前线基金会 —— Chrome 用户请注意：Manifest V3 具有欺骗性和威胁性
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_8" type="checkbox" id="__nav_2_2_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_8">
+          2022-01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-01" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          2022-01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archives/xfce-2022-01-21/" class="md-nav__link">
+        Xfce 开发者博客 —— 更好的 Thunar 工具栏
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          OpenBSD 文档归档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OpenBSD 文档归档" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          OpenBSD 文档归档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBSD-zh/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_2" type="checkbox" id="__nav_2_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_2">
+          FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="FAQ" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBSD-zh/openbsd-faq/faq1/" class="md-nav__link">
+        OpenBSD FAQ - 从源码构建系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBSD-zh/openbsd-faq/faq2/" class="md-nav__link">
+        OpenBSD FAQ - 配置磁盘
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBSD-zh/openbsd-faq/faq3/" class="md-nav__link">
+        OpenBSD FAQ - 安装指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBSD-zh/openbsd-faq/faq4/" class="md-nav__link">
+        OpenBSD FAQ - 键盘和显示控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBSD-zh/openbsd-faq/faq5/" class="md-nav__link">
+        OpenBSD FAQ - 多媒体
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBSD-zh/openbsd-faq/faq6/" class="md-nav__link">
+        OpenBSD FAQ - 网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBSD-zh/openbsd-faq/faq7/" class="md-nav__link">
+        OpenBSD FAQ - 软件包管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBSD-zh/openbsd-faq/faq8/" class="md-nav__link">
+        OpenBSD FAQ - X 窗口系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBSD-zh/openbsd-faq/faq9/" class="md-nav__link">
+        OpenBSD FAQ - 虚拟专用网络（VPN）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBSD-zh/openbsd-faq/faq10/" class="md-nav__link">
+        OpenBSD FAQ - 虚拟化
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3" type="checkbox" id="__nav_2_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_3">
+          Others
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Others" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBSD-zh/other/bsd01/" class="md-nav__link">
+        OpenBSD - 跟随 -current 和使用快照
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBSD-zh/other/bsd02/" class="md-nav__link">
+        OpenBSD - 邮件列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBSD-zh/other/bsd03/" class="md-nav__link">
+        OpenBSD - 报告问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBSD-zh/other/bsd04/" class="md-nav__link">
+        OpenBSD 升级向导：6.9 至 7.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          2021-10
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021-10" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          2021-10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gimp-mirror-policy/" class="md-nav__link">
+        GIMP 官方镜像和镜像政策
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          2022-02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-02" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          2022-02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../donation-help-us/" class="md-nav__link">
+        捐款如何在 2021 年帮助我们
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          2022-03
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-03" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          2022-03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xfce4-terminal-0.9.2/" class="md-nav__link">
+        xfce4-terminal 0.9.2 开发版
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gimp-gsoc-2022/" class="md-nav__link">
+        GIMP 是 GSoC 2022 导师组织
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blender-3.1/" class="md-nav__link">
+        Blender 3.1 已发布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xfce-gsoc-2022/" class="md-nav__link">
+        Xfce 已加入 Google Summer of Code 2022
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libreoffice-gsoc-2022/" class="md-nav__link">
+        培养你的技能，学习令人兴奋的新事物！
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plan-to-drop-soft.o.o/" class="md-nav__link">
+        计划停用 software.opensuse.org（社区会议）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openSUSE-code-of-conduct/" class="md-nav__link">
+        openSUSE 行为准则
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          2022-04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-04" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          2022-04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yast-d-installer/" class="md-nav__link">
+        YaST D-Installer 第一次公开发布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xfce4-terminal-1.0.0/" class="md-nav__link">
+        Xfce Terminal 1.0.0 稳定版已发布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xfce-setting-gui/" class="md-nav__link">
+        Xfce 设置的图形界面
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8">
+          2022-05
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-05" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          2022-05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fedora36-released/" class="md-nav__link">
+        Fedora 36 已正式发布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          对《Flatpak Is Not the Future》的回应
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        对《Flatpak Is Not the Future》的回应
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    作品信息
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    导言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    "尺寸"
+  </a>
+  
+    <nav class="md-nav" aria-label=""尺寸"">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    "共享运行环境？"
+  </a>
+  
+    <nav class="md-nav" aria-label=""共享运行环境？"">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    "存储空间使用"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    "磁盘空间很便宜！"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    "内存使用，启动时间"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    "安全"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    "总比没有好！"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    "权限和门户"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    "标识符冲突"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    "服务"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flatpak" class="md-nav__link">
+    "Flatpak 可以固定的吗"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    "结论"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    结论
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blender-events-in-2022/" class="md-nav__link">
+        Blender 在 2022 年的活动
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9">
+          2022-06
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-06" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          2022-06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gimp-gsoc-2022-02/" class="md-nav__link">
+        GSoC 2022 项目公布：CMYK 特性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-letter-intel-fsp/" class="md-nav__link">
+        为英特尔 FSP 采用开源固件方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodejs-eol-v16-0626/" class="md-nav__link">
+        将 Node.js 16 的生命周期结束日期提前
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accessibility-in-fedora/" class="md-nav__link">
+        Fedora Workstation 的无障碍功能
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_10">
+          2022-07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022-07" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          2022-07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ms-pluton-chips/" class="md-nav__link">
+        认识 Microsoft Pluton 处理器——专为未来 Windows PC 设计的安全芯片
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          站内杂谈
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="站内杂谈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          站内杂谈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Linux 备忘录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux 备忘录" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux 备忘录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/memo/opensuse/" class="md-nav__link">
+        Tumbleweed 配置小记（一）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/memo/other-configs/" class="md-nav__link">
+        Tumbleweed 配置小记（二）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/memo/eyecandy-kde/" class="md-nav__link">
+        openSUSE KDE 美化小记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/memo/alias-tips/" class="md-nav__link">
+        alias 命令小记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/memo/opencc/" class="md-nav__link">
+        使用 OpenCC 进行简繁中文转换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/memo/Tachidesk-quick-setup/" class="md-nav__link">
+        在 Linux 上使用 Tachidesk | 快速配置指南
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          其他
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="其他" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          其他
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/others/2021-08/" class="md-nav__link">
+        Linux distro in my view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/others/anime-recommad/" class="md-nav__link">
+        动画推荐
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/others/adjust-win11-for-popurse/" class="md-nav__link">
+        Windows 11 安装与调教
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/others/fonts-and-measurement/" class="md-nav__link">
+        字体与带宽单位
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/others/about-why/" class="md-nav__link">
+        缘由
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/others/use-rss-sub/" class="md-nav__link">
+        基于 RSS 的简单资讯聚合订阅
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/others/play-minecraft/" class="md-nav__link">
+        在 openSUSE 上游玩 Minecraft
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_8" type="checkbox" id="__nav_3_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_8">
+          贡献者指南（已归档）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="贡献者指南（已归档）" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          贡献者指南（已归档）
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/others/contribute/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/others/contribute/base-01/" class="md-nav__link">
+        慢速开始 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/others/contribute/base-02/" class="md-nav__link">
+        慢速开始 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          随笔&日常
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="随笔&日常" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          随笔&日常
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-02-12/" class="md-nav__link">
+        2022-02-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-03-05/" class="md-nav__link">
+        2022-03-05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-03-30/" class="md-nav__link">
+        2022-03-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-04-01/" class="md-nav__link">
+        2022-04-01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-04-09/" class="md-nav__link">
+        2022-04-09
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-04-11/" class="md-nav__link">
+        2022-04-11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-04-12/" class="md-nav__link">
+        2022-04-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-04-13/" class="md-nav__link">
+        2022-04-13
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-04-14/" class="md-nav__link">
+        2022-04-14
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-04-21/" class="md-nav__link">
+        2022-04-21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-04-26/" class="md-nav__link">
+        2022-04-26
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-05-03/" class="md-nav__link">
+        2022-05-03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-05-05/" class="md-nav__link">
+        2022-05-05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-05-10/" class="md-nav__link">
+        2022-05-10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-05-16/" class="md-nav__link">
+        2022-05-16
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-05-19/" class="md-nav__link">
+        2022-05-19
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-05-21/" class="md-nav__link">
+        2022-05-21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-05-22/" class="md-nav__link">
+        2022-05-22
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-05-27/" class="md-nav__link">
+        2022-05-27
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-06-01/" class="md-nav__link">
+        2022-06-01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-06-05/" class="md-nav__link">
+        2022-06-05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-06-14/" class="md-nav__link">
+        2022-06-14
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-06-21/" class="md-nav__link">
+        2022-06-21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-07-03/" class="md-nav__link">
+        2022-07-03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-07-10/" class="md-nav__link">
+        2022-07-10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essay/main/2022-07-26/" class="md-nav__link">
+        2022-07-26
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          站外归档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="站外归档" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          站外归档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archives/about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archives/goodies/" class="md-nav__link">
+        实用工具与站点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archives/" class="md-nav__link">
+        外站文档目录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archives/glob-expression/" class="md-nav__link">
+        Glob 语法及解析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archives/delete-hide-files/" class="md-nav__link">
+        Linux 删除当前目录下的隐藏文件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          openSUSE Handbook
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="openSUSE Handbook" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          openSUSE Handbook
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handbook/intro/" class="md-nav__link">
+        Hi 🦎
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handbook/" class="md-nav__link">
+        目录
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          关于
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="关于" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          关于
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/about-me/" class="md-nav__link">
+        关于我 👋
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/friends/" class="md-nav__link">
+        友链
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/license/" class="md-nav__link">
+        许可证清单
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    作品信息
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    导言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    "尺寸"
+  </a>
+  
+    <nav class="md-nav" aria-label=""尺寸"">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    "共享运行环境？"
+  </a>
+  
+    <nav class="md-nav" aria-label=""共享运行环境？"">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    "存储空间使用"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    "磁盘空间很便宜！"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    "内存使用，启动时间"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    "安全"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    "总比没有好！"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    "权限和门户"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    "标识符冲突"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    "服务"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flatpak" class="md-nav__link">
+    "Flatpak 可以固定的吗"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    "结论"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    结论
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="flatpak-is-not-the-future">对《Flatpak Is Not the Future》的回应</h1>
+<h2 id="_1">作品信息</h2>
+<ul>
+<li>作者：<a href="https://theevilskeleton.gitlab.io/about">TheEvilSkeleton</a></li>
+<li>原文：<a href="https://theevilskeleton.gitlab.io/2022/05/16/response-to-flatpak-is-not-the-future.html">Response to "Flatpak Is Not the Future"</a></li>
+<li>许可证：<a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt">CC-BY-SA 4.0</a></li>
+<li>译者：Hanjingxue Boling</li>
+<li>日期：2022-05-17</li>
+</ul>
+<hr />
+<h2 id="_2">导言</h2>
+<p>去年底，<a href="https://github.com/ludocode">Nicholas Fraser</a> 公开发表了《<a href="https://ludocode.com/blog/flatpak-is-not-the-future">Flatpak Is Not the Future</a>》这篇有趣的文章，很快引起了 Linux 社区的关注。我想回顾一下作者的一些论点，并解释一些误解和主张。</p>
+<p>请记住，我没有反对作者的观点。本文的重点是减少该文章可能造成的误导和误解，因为我已经看到（现在仍然看到）许多用户非常频繁地张贴这篇文章，而没有对该文的主题有正确的理解。</p>
+<h2 id="_3">"尺寸"</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">译文</label><label for="__tabbed_1_2">原文</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>假设你想制作一个简单的计算器应用程序。应该需要下载多大的东西？</p>
+<p>[…]</p>
+<p>Flatpak 或 Steam 等其他解决方案分别下载运行环境。你的应用程序元数据指定它需要使用的运行环境，后台服务会下载它并使用它运行你的应用程序。</p>
+<p>那么这些运行环境有多大？当在一台全新的机器上从 Flathub 安装 KCalc 时，你可以看到你需要下载的第一个运行环境大小接近近 900MB。如下：</p>
+<div class="highlight"><pre><span></span><code>            ID                                      Branch    Op   Remote    Download
+ <span class="m">1</span>.     org.freedesktop.Platform.GL.default     <span class="m">20</span>.08     i    flathub   &lt; <span class="m">106</span>.4 MB
+ <span class="m">2</span>.     org.freedesktop.Platform.VAAPI.Intel    <span class="m">20</span>.08     i    flathub    &lt; <span class="m">11</span>.6 MB
+ <span class="m">3</span>.     org.freedesktop.Platform.openh264       <span class="m">2</span>.0       i    flathub     &lt; <span class="m">1</span>.5 MB
+ <span class="m">4</span>.     org.kde.KStyle.Adwaita                  <span class="m">5</span>.15      i    flathub     &lt; <span class="m">6</span>.6 MB
+ <span class="m">5</span>.     org.kde.Platform.Locale                 <span class="m">5</span>.15      i    flathub   &lt; <span class="m">341</span>.4 MB <span class="o">(</span>partial<span class="o">)</span>
+ <span class="m">6</span>.     org.kde.Platform                        <span class="m">5</span>.15      i    flathub   &lt; <span class="m">370</span>.1 MB
+ <span class="m">7</span>.     org.kde.kcalc.Locale                    stable    i    flathub   &lt; <span class="m">423</span>.1 kB <span class="o">(</span>partial<span class="o">)</span>
+ <span class="m">8</span>.     org.kde.kcalc                           stable    i    flathub     &lt; <span class="m">4</span>.4 MB
+</code></pre></div>
+<p>请注意，应用程序本身只有 4.4MB。其余的是我系统上已经存在的冗余的库。我只是从 Flatpak 安装路径中直接运行了 <code>kcalc</code> 二进制文件（未启用沙盒化），并让它使用我的本地库。它运行得很好，因为它使用的所有库都是向后兼容的。</p>
+<p>Flatpak 想要下载 3D 驱动程序、专有视频编解码器、主题、语言环境、Qt 5、KDE 5、GTK 3、ICU、LLVM、ffmpeg、Python 以及 <code>org.kde.Platform</code> 中的所有其他内容，来运行一个计算器。因为与 AppImage 不同，Flatpak 的运行环境并没有被精简到应用程序需要的内容。而是获取了任何应用程序的所有依赖项。它在现有的操作系统之上，再造了一个完整的通用操作系统。</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>Suppose you want to make a simple calculator app. How big should the download be?</p>
+<p>[…]</p>
+<p>Other solutions like Flatpak or Steam download the runtime separately. Your app metadata specifies what runtime it wants to use and a service downloads it and runs your app against it.</p>
+<p>So how big are these runtimes? On a fresh machine, install KCalc from Flathub. You’re looking at a nearly 900 MB download to get your first runtime. For a calculator.</p>
+<div class="highlight"><pre><span></span><code>            ID                                      Branch    Op   Remote    Download
+ <span class="m">1</span>.     org.freedesktop.Platform.GL.default     <span class="m">20</span>.08     i    flathub   &lt; <span class="m">106</span>.4 MB
+ <span class="m">2</span>.     org.freedesktop.Platform.VAAPI.Intel    <span class="m">20</span>.08     i    flathub    &lt; <span class="m">11</span>.6 MB
+ <span class="m">3</span>.     org.freedesktop.Platform.openh264       <span class="m">2</span>.0       i    flathub     &lt; <span class="m">1</span>.5 MB
+ <span class="m">4</span>.     org.kde.KStyle.Adwaita                  <span class="m">5</span>.15      i    flathub     &lt; <span class="m">6</span>.6 MB
+ <span class="m">5</span>.     org.kde.Platform.Locale                 <span class="m">5</span>.15      i    flathub   &lt; <span class="m">341</span>.4 MB <span class="o">(</span>partial<span class="o">)</span>
+ <span class="m">6</span>.     org.kde.Platform                        <span class="m">5</span>.15      i    flathub   &lt; <span class="m">370</span>.1 MB
+ <span class="m">7</span>.     org.kde.kcalc.Locale                    stable    i    flathub   &lt; <span class="m">423</span>.1 kB <span class="o">(</span>partial<span class="o">)</span>
+ <span class="m">8</span>.     org.kde.kcalc                           stable    i    flathub     &lt; <span class="m">4</span>.4 MB
+</code></pre></div>
+<p>Note that the app package itself is only 4.4 MB. The rest is all redundant libraries that are already on my system. I just ran the <code>kcalc</code> binary straight out of its Flatpak install path unsandboxed and let it use my native libraries. It ran just fine, because all of the libraries it uses are backwards compatible.</p>
+<p>Flatpak wants to download 3D drivers, patented video codecs, themes, locales, Qt 5, KDE 5, GTK 3, ICU, LLVM, ffmpeg, Python, and everything else in <code>org.kde.Platform</code>, all to run a calculator. Because unlike AppImage, the runtime isn’t stripped down to just what the app needs. It’s got every dependency for any app. It’s an entire general-purpose OS on top of your existing OS.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>Flatpak 安装这些运行环境以确保你和其他用户在不同系统上运行完全相同的二进制文件和库，无论这些库是否向后兼容。这样做是为了减少应用程序开发人员所需的质量保证 (QA) 数量并尽可能减少错误，因为应用程序开发人员可以测试针对相同工具链和依赖项进行构建测试。</p>
+<p>通过主机的库运行程序，可能会遇到特定于发行版的错误，或者其他类型的负面影响，例如 修补的库、稍旧或更新版本的库、被忽略的依赖项等。</p>
+<p>此外，这实际上与系统包非常相似。假设你在你的系统上使用 GNOME，并且你想在你的系统上安装 KCalc。如果你没有安装 Plasma，则包管理器将下载并安装所有需要的 Qt 和 Plasma 依赖项，然后再安装大小为 4.4MB 的 KCalc。</p>
+<p>就像系统包一样，你安装的应用程序越多，Flatpak 的空间效率就越高。Flatpak 进入一个称为重复数据删除（Deduplication）的过程，在该过程中它尽可能复用依赖项，从而避免重复下载数据。在作者的示例中，KCalc 拉取了 900MB 的运行环境和驱动程序。现在，假设你安装了 10 个以上的 Qt 应用程序。与其重新下载和重新安装 9GB（900MB * 10 ≈ 9GB），Flatpak <em>不会</em>重新下载安装 10 次依赖，而且你<em>也不会</em>浪费 9GB。相反，所有 10 个 Qt 应用程序将继续使用之前已安装的相同的运行环境。重复数据删除确保依赖相同依赖项的应用程序将继续复用相同的依赖项。基本上，你安装的应用程序越多，Flatpak 的空间效率就越高。</p>
+<h3 id="_4">"共享运行环境？"</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">译文</label><label for="__tabbed_2_2">原文</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>他们声称他们对运行环境进行了重复数据删除。我质疑重新编译所有内容时不同分支之间真正可以共享多少。<code>/usr</code> 在 Ubuntu 的不同版本之间发生了多大的变化？ 我想差不多都是一样的。</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>They claim that they deduplicate runtimes. I question how much can really be shared between different branches when everything is recompiled. How much has /usr changed between releases of Ubuntu? I would guess just about all of it.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>关于这一部分，Will Thompson 已经在他的网站上写了一篇回复：<a href="https://blogs.gnome.org/wjjt/2021/11/24/on-flatpak-disk-usage-and-deduplication/">On Flatpak disk usage and deduplication</a>。他查看了运行环境的大小以及有多少重复数据删除生效。这是一个关于去重的非常详细的解释，我推荐阅读它。</p>
+<p>总而言之，freedesktop.org 20.08 和 21.08 运行环境相比，重复数据删除将 498MB 减少了 113MB。GNOME 41 和 freedesktop.org 21.08 运行环境相比，重复数据删除将 715MB 减少了 388MB。他还更深入地研究了这些运行环境和应用程序。</p>
+<p>并且，Flatpak 不仅对运行环境进行了重复数据删除，而且对运行环境之外的内容也进行了重复数据删除，只要这些文件共享相同的哈希（校验和）即可。Flatpak 的维护者 Alexander Larsson 在<a href="https://conf.tube/w/qWLp5vosZg1V7vmZhmn5wM?start=26m49s">此视频</a>中详细解释了相关内容。</p>
+<h4 id="_5">"存储空间使用"</h4>
+<p>我们将检查我的系统上使用的运行环境的数量。让我们看看我在我的系统上安装了什么：</p>
+<div class="highlight"><pre><span></span><code>$ flatpak list --runtime --user <span class="p">|</span> wc -l
+<span class="m">57</span>
+</code></pre></div>
+<p>在我的系统中，我安装了 57 个运行环境。</p>
+<p>现在，让我们看看我安装的运行环境：</p>
+<div class="highlight"><pre><span></span><code>$ flatpak list --runtime --user
+Name                                                   Application ID                                               Version             Branch              Origin
+Codecs                                                 com.github.Eloston.UngoogledChromium.Codecs                                      stable              flathub
+Proton <span class="o">(</span>community build<span class="o">)</span>                               com.valvesoftware.Steam.CompatibilityTool.Proton             <span class="m">7</span>.0-2               stable              flathub
+Proton experimental <span class="o">(</span>community build<span class="o">)</span>                  com.valvesoftware.Steam.CompatibilityTool.Proton-Exp         <span class="m">7</span>.0-20220511        stable              flathub
+Proton-GE <span class="o">(</span>community build<span class="o">)</span>                            com.valvesoftware.Steam.CompatibilityTool.Proton-GE          <span class="m">7</span>.17-1              stable              flathub
+gamescope                                              com.valvesoftware.Steam.Utility.gamescope                    <span class="m">3</span>.11.28             stable              flathub
+steamtinkerlaunch                                      com.valvesoftware.Steam.Utility.steamtinkerlaunch                                <span class="nb">test</span>                steamtinkerlaunch-origin
+Codecs                                                 org.audacityteam.Audacity.Codecs                                                 stable              flathub
+Codecs                                                 org.chromium.Chromium.Codecs                                                     stable              flathub
+Fedora Platform                                        org.fedoraproject.Platform                                   <span class="m">35</span>                  f35                 fedora
+LSP                                                    org.freedesktop.LinuxAudio.Plugins.LSP                       <span class="m">1</span>.1.30              <span class="m">20</span>.08               flathub
+LSP                                                    org.freedesktop.LinuxAudio.Plugins.LSP                       <span class="m">1</span>.2.1               <span class="m">21</span>.08               flathub
+TAP-plugins                                            org.freedesktop.LinuxAudio.Plugins.TAP                       <span class="m">1</span>.0.1               <span class="m">21</span>.08               flathub
+ZamPlugins                                             org.freedesktop.LinuxAudio.Plugins.ZamPlugins                <span class="m">3</span>.14                <span class="m">20</span>.08               flathub
+ZamPlugins                                             org.freedesktop.LinuxAudio.Plugins.ZamPlugins                <span class="m">3</span>.14                <span class="m">21</span>.08               flathub
+SWH                                                    org.freedesktop.LinuxAudio.Plugins.swh                       <span class="m">0</span>.4.17              <span class="m">21</span>.08               flathub
+Freedesktop Platform                                   org.freedesktop.Platform                                     <span class="m">20</span>.08.19            <span class="m">20</span>.08               flathub
+Freedesktop Platform                                   org.freedesktop.Platform                                     <span class="m">21</span>.08.13            <span class="m">21</span>.08               flathub
+i386                                                   org.freedesktop.Platform.Compat.i386                                             <span class="m">21</span>.08               flathub
+Mesa                                                   org.freedesktop.Platform.GL.default                          <span class="m">21</span>.1.8              <span class="m">20</span>.08               flathub
+Mesa                                                   org.freedesktop.Platform.GL.default                          <span class="m">21</span>.3.8              <span class="m">21</span>.08               flathub
+default                                                org.freedesktop.Platform.GL32.default                                            <span class="m">21</span>.08               flathub
+MangoHud                                               org.freedesktop.Platform.VulkanLayer.MangoHud                <span class="m">0</span>.6.6-1             <span class="m">21</span>.08               flathub
+vkBasalt                                               org.freedesktop.Platform.VulkanLayer.vkBasalt                <span class="m">0</span>.3.2.5             <span class="m">21</span>.08               flathub
+ffmpeg-full                                            org.freedesktop.Platform.ffmpeg-full                                             <span class="m">21</span>.08               flathub
+i386                                                   org.freedesktop.Platform.ffmpeg_full.i386                                        <span class="m">21</span>.08               flathub
+openh264                                               org.freedesktop.Platform.openh264                            <span class="m">2</span>.1.0               <span class="m">2</span>.0                 flathub
+Freedesktop SDK                                        org.freedesktop.Sdk                                          <span class="m">21</span>.08.13            <span class="m">21</span>.08               flathub
+i386                                                   org.freedesktop.Sdk.Compat.i386                                                  <span class="m">21</span>.08               flathub
+.NET Core SDK extension                                org.freedesktop.Sdk.Extension.dotnet6                        <span class="m">6</span>.0.300             <span class="m">21</span>.08               flathub
+Free Pascal Compiler and Lazarus                       org.freedesktop.Sdk.Extension.freepascal                     <span class="m">3</span>.2.2               <span class="m">21</span>.08               flathub
+toolchain-i386                                         org.freedesktop.Sdk.Extension.toolchain-i386                                     <span class="m">21</span>.08               flathub
+GNOME Boxes Osinfo DB                                  org.gnome.Boxes.Extension.OsinfoDb                           <span class="m">20220214</span>            stable              flathub
+GNOME Application Platform version <span class="m">41</span>                  org.gnome.Platform                                                               <span class="m">41</span>                  flathub
+GNOME Application Platform version <span class="m">42</span>                  org.gnome.Platform                                                               <span class="m">42</span>                  flathub
+GNOME Application Platform version Nightly             org.gnome.Platform                                                               master              gnome-nightly
+i386                                                   org.gnome.Platform.Compat.i386                                                   <span class="m">41</span>                  flathub
+i386                                                   org.gnome.Platform.Compat.i386                                                   <span class="m">42</span>                  flathub
+GNOME Software Development Kit version <span class="m">41</span>              org.gnome.Sdk                                                                    <span class="m">41</span>                  flathub
+GNOME Software Development Kit version <span class="m">42</span>              org.gnome.Sdk                                                                    <span class="m">42</span>                  flathub
+GNOME Software Development Kit version Nightly         org.gnome.Sdk                                                                    master              gnome-nightly
+i386                                                   org.gnome.Sdk.Compat.i386                                                        <span class="m">41</span>                  flathub
+i386                                                   org.gnome.Sdk.Compat.i386                                                        <span class="m">42</span>                  flathub
+Adwaita dark GTK theme                                 org.gtk.Gtk3theme.Adwaita-dark                                                   <span class="m">3</span>.22                flathub
+adw-gtk3 Gtk Theme                                     org.gtk.Gtk3theme.adw-gtk3                                                       <span class="m">3</span>.22                flathub
+adw-gtk3-dark Gtk Theme                                org.gtk.Gtk3theme.adw-gtk3-dark                                                  <span class="m">3</span>.22                flathub
+Kvantum theme engine                                   org.kde.KStyle.Kvantum                                       <span class="m">1</span>.0.1               <span class="m">5</span>.15-21.08          flathub
+KDE Application Platform                               org.kde.Platform                                                                 <span class="m">5</span>.15-21.08          flathub
+QGnomePlatform                                         org.kde.PlatformTheme.QGnomePlatform                                             <span class="m">5</span>.15                flathub
+QGnomePlatform                                         org.kde.PlatformTheme.QGnomePlatform                                             <span class="m">5</span>.15-21.08          flathub
+QtSNI                                                  org.kde.PlatformTheme.QtSNI                                                      <span class="m">5</span>.15                flathub
+QtSNI                                                  org.kde.PlatformTheme.QtSNI                                                      <span class="m">5</span>.15-21.08          flathub
+KDE Software Development Kit                           org.kde.Sdk                                                                      <span class="m">5</span>.15-21.08          flathub
+QGnomePlatform-decoration                              org.kde.WaylandDecoration.QGnomePlatform-decoration                              <span class="m">5</span>.15                flathub
+QGnomePlatform-decoration                              org.kde.WaylandDecoration.QGnomePlatform-decoration                              <span class="m">5</span>.15-21.08          flathub
+DXVK                                                   org.winehq.Wine.DLLs.dxvk                                    <span class="m">1</span>.10.1              stable-21.08        flathub
+Gecko                                                  org.winehq.Wine.gecko                                                            stable-21.08        flathub
+Mono                                                   org.winehq.Wine.mono                                                             stable-21.08        flathub
+</code></pre></div>
+<p>这是一张包括我安装的所有不同的版本、分支的运行环境的巨大列表。</p>
+<p>我使用 <code>--user</code> 标志安装 Flatpak 应用程序，这意味着每个用户都安装了所有内容；也意味着所有 Flatpak 安装都位于 <code>~/.local/share/flatpak</code> 目录中。</p>
+<p>我最近编写了一个<a href="https://gitlab.com/TheEvilSkeleton/flatpak-dedup-checker">脚本</a>来对比 Flatpak 应用程序、运行环境或两者的大小。 它检查大小而不进行重复数据删除、重复数据删除和压缩（如果适用）。</p>
+<p>此脚本检查文件硬链接的次数，并在给定的 Flatpak 目录中相应地相乘。例如，如果一个文件硬链接 10 次，则脚本显示为 10 倍空间（但实际上，它只使用一次）。然后，它（使用重复数据删除）检查实际大小。最后，如果使用带有<a href="https://btrfs.wiki.kernel.org/index.php/Compression">透明压缩</a>的 btrfs，脚本将智能地检查启用压缩的大小。</p>
+<p>在这个脚本的帮助下，让我们看看它们占用了多少数据：</p>
+<div class="highlight"><pre><span></span><code>$ ./flatpak-dedup-checker --path<span class="o">=</span>~/.local/share/flatpak --runtime
+Directory:                  /var/home/TheEvilSkeleton/.local/share/flatpak/runtime
+Size without deduplication: <span class="m">36</span>.22 GB
+Size with deduplication:    <span class="m">13</span>.07 GB <span class="o">(</span><span class="m">36</span>% of <span class="m">36</span>.22 GB<span class="o">)</span>
+</code></pre></div>
+<p>就是这样！57 个运行环境在启用了重复数据删除的情况下只使用了 13.07GB 的空间，而不是 36.22GB，这远远低于 50%。</p>
+<p>我们可以观察到重复数据删除实际上是有效的。由于运行环境已经开始共享大量文件，因此对一半以上的文件进行了重复数据删除。</p>
+<h3 id="_6">"磁盘空间很便宜！"</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">译文</label><label for="__tabbed_3_2">原文</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>他们说磁盘空间很便宜。这不是真的，现代计算机的基础设备不是这样。内置存储实际上一直在缩小。</p>
+<p>软件变得如此缓慢和臃肿，以至于操作系统不再可以在机械硬盘上令人满意地运行。笔记本电脑制造商正在转向更小的闪存驱动器，以提高性能，同时保持利润。在 2015 年，廉价笔记本电脑配备 256GB 或更大的机械硬盘。现在在 2021 年，它们配备 120GB 闪存。NVMe 驱动器的价格约为 100$/TB，笔记本电脑制造商将这些价格抬高了 500% 或更多，因此升级新笔记本电脑的成本可能很高。</p>
+<p>Chromebook 甚至更小，因为它们将所有内容都推送到云存储中。 智能手机开始运行成熟的 Linux 发行版。Raspberry Pi 4 和 400 使用 SD 卡作为存储设备，并且具有如此出色的性能，我们正处于低成本计算革命的边缘。当然，Flatpak 应该可以在这些系统上使用！没有理由说 16 GB 的存储设备不适合我们想要的所有可能的非游戏软件。Flatpak 不是革命的一部分。它阻止了它。</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>They say disk space is cheap. This is not true, not for the root devices of modern computers. Built-in storage has in fact been shrinking.</p>
+<p>Software has gotten so much slower and more bloated that operating systems no longer run acceptably on spinning rust. Laptop manufacturers are switching to smaller flash drives to improve performance while preserving margins. Budget laptops circa 2015 shipped with 256 GB or larger mechanical drives. Now in 2021 they ship with 120 GB flash. NVMe drives are around $100/TB and laptop manufacturers inflate these prices 500% or more so upgrading a new laptop can be pricey.</p>
+<p>Chromebooks are even smaller as they push everything onto cloud storage. Smartphones are starting to run full-fledged Linux distributions. The Raspberry Pi 4 and 400 use an SD card as root device and have such fantastic performance that we’re on the verge of a revolution in low-cost computing. Surely Flatpak should be usable on these systems! There is no reason why a 16 GB root device shouldn’t fit every possible piece of non-game software we could want. Flatpak isn’t part of the revolution; it’s holding it back.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>内置存储肯定变小了。但是，由于 <a href="https://www.flashmemorysummit.com/Proceedings2019/08-07-Wednesday/20190807_CTRL-201-1_Haratsch.pdf">SSD 控制器</a>和<a href="https://businesscomputingworld.co.uk/compression-and-deduplication-in-flash-storage/">闪存存储</a>中内置了压缩和重复数据删除功能，闪存存储比硬盘驱动器具有更高的物理密度。</p>
+<p>由于这些功能，操作系统、游戏和其他数据在闪存上占用的空间更少。换句话说：作为最终用户，你直观看到存储空间变少，但与机械硬盘相比，数据在闪存上占用的空间也更少。</p>
+<p>此外，我们可以启用 btrfs 透明压缩以节省大量空间。Fedora Linux 使用 <code>zstd:1</code>（zstd 级别 1）压缩以减少数据占用的空间，这是我将在以下示例中使用的压缩。</p>
+<p>让我们启用压缩，对比一下上面结果的大小：</p>
+<div class="highlight"><pre><span></span><code>$ ./flatpak-dedup-checker --path<span class="o">=</span>~/.local/share/flatpak --runtime
+Directory:                  /var/home/TheEvilSkeleton/.local/share/flatpak/runtime
+Size without deduplication: <span class="m">36</span>.22 GB
+Size with deduplication:    <span class="m">13</span>.07 GB <span class="o">(</span><span class="m">36</span>% of <span class="m">36</span>.22 GB<span class="o">)</span>
+Size with compression:      <span class="m">9</span>.41 GB <span class="o">(</span><span class="m">25</span>% of <span class="m">36</span>.22 GB<span class="p">;</span> <span class="m">71</span>% of <span class="m">13</span>.07 GB<span class="o">)</span>
+</code></pre></div>
+<p>最终表现甚至更好。仅使用重复数据删除时，运行环境的大小为 34.56GB 的 36%。启用 <code>zstd:1</code> 后，又降至 25%。</p>
+<p>让我们对所有已安装的应用程序执行相同的操作：</p>
+<div class="highlight"><pre><span></span><code>$ flatpak list --app --user | wc --lines
+79
+</code></pre></div>
+<p>我安装了 79 个应用程序。以下是已安装的所有应用程序的列表：</p>
+<div class="highlight"><pre><span></span><code>$ flatpak list --app --user
+Name                                       Application ID                                        Version                       Branch                   Origin
+Decoder                                    com.belmoussaoui.Decoder                              <span class="m">0</span>.2.2                         stable                   flathub
+Brave Browser                              com.brave.Browser                                     <span class="m">1</span>.38.115                      stable                   flathub
+Discord                                    com.discordapp.Discord                                <span class="m">0</span>.0.17                        stable                   flathub
+Discord Canary                             com.discordapp.DiscordCanary                          <span class="m">0</span>.0.135                       beta                     flathub-beta
+Mindustry                                  com.github.Anuken.Mindustry                           <span class="m">126</span>.2                         stable                   flathub
+ungoogled-chromium                         com.github.Eloston.UngoogledChromium                  <span class="m">101</span>.0.4951.64                 stable                   flathub
+Notepad Next                               com.github.dail8859.NotepadNext                       v0.5.1                        stable                   flathub
+Tor Browser Launcher                       com.github.micahflee.torbrowser-launcher              <span class="m">0</span>.3.5                         stable                   flathub
+waifu2x-ncnn-vulkan                        com.github.nihui.waifu2x-ncnn-vulkan                  <span class="m">20220419</span>                      stable                   flathub
+Czkawka                                    com.github.qarmin.czkawka                             <span class="m">4</span>.1.0                         stable                   flathub
+Avvie                                      com.github.taiko2k.avvie                              <span class="m">2</span>.1                           stable                   flathub
+Flatseal                                   com.github.tchx84.Flatseal                            <span class="m">1</span>.7.5                         stable                   flathub
+EasyEffects                                com.github.wwmm.easyeffects                           <span class="m">6</span>.2.5                         stable                   flathub
+NewsFlash                                  com.gitlab.newsflash                                  <span class="m">1</span>.5.1                         stable                   flathub
+Google Chrome                              com.google.Chrome                                     <span class="m">101</span>.0.4951.41-1               beta                     flathub-beta
+Extension Manager                          com.mattjakeman.ExtensionManager                      <span class="m">0</span>.3.0                         stable                   flathub
+Microsoft Edge                             com.microsoft.Edge                                    <span class="m">101</span>.0.1210.39-1               stable                   flathub
+OBS Studio                                 com.obsproject.Studio                                 <span class="m">27</span>.2.4                        stable                   flathub
+BlackBox                                   com.raggesilver.BlackBox                              <span class="m">42</span>.alpha0                     master                   blackbox-origin
+Bottles                                    com.usebottles.bottles                                <span class="m">2022</span>.5.2-trento-3             stable                   flathub
+Steam                                      com.valvesoftware.Steam                               <span class="m">1</span>.0.0.74                      stable                   flathub
+Visual Studio Code                         com.visualstudio.code                                 <span class="m">1</span>.67.0-1651667246             stable                   flathub
+Fragments                                  de.haeckerfelix.Fragments                             <span class="m">2</span>.0.2                         stable                   flathub
+Boop-GTK                                   fyi.zoey.Boop-GTK                                     <span class="m">1</span>.6.0                         stable                   flathub
+Element                                    im.riot.Riot                                          <span class="m">1</span>.10.12                       stable                   flathub
+Amberol                                    io.bassi.Amberol                                      <span class="m">0</span>.6.1                         stable                   flathub
+youtubedl-gui                              io.github.JaGoLi.ytdl_gui                             <span class="m">3</span>.0                           stable                   flathub
+Celluloid                                  io.github.celluloid_player.Celluloid                  <span class="m">0</span>.23                          stable                   flathub
+Mousai                                     io.github.seadve.Mousai                               <span class="m">0</span>.6.6                         stable                   flathub
+LibreWolf                                  io.gitlab.librewolf-community                         <span class="m">100</span>.0-2                       stable                   flathub
+Lutris                                     net.lutris.Lutris                                     <span class="m">0</span>.5.10.1                      beta                     flathub-beta
+Poedit                                     net.poedit.Poedit                                     <span class="m">3</span>.0.1                         stable                   flathub
+Color Picker                               nl.hjdskes.gcolor3                                    <span class="m">2</span>.4.0                         stable                   flathub
+Audacity                                   org.audacityteam.Audacity                             <span class="m">3</span>.1.3                         stable                   flathub
+Chromium Web Browser                       org.chromium.Chromium                                 <span class="m">101</span>.0.4951.64                 stable                   flathub
+Chromium application base                  org.chromium.Chromium.BaseApp                                                       <span class="m">21</span>.08                    flathub
+Electron2 application base                 org.electronjs.Electron2.BaseApp                                                    <span class="m">21</span>.08                    flathub
+Fedora Media Writer                        org.fedoraproject.MediaWriter                         <span class="m">4</span>.2.2                         stable                   fedora
+Flatpak External Data Checker              org.flathub.flatpak-external-data-checker                                           stable                   flathub
+appstream-glib                             org.freedesktop.appstream-glib                                                      stable                   flathub
+Feeds                                      org.gabmus.gfeeds                                     <span class="m">1</span>.0.3                         stable                   flathub
+GNU Image Manipulation Program             org.gimp.GIMP                                         <span class="m">2</span>.99.10                       beta                     flathub-beta
+Adwaita Demo                               org.gnome.Adwaita1.Demo                               <span class="m">1</span>.2.alpha                     master                   gnome-nightly
+Boxes                                      org.gnome.Boxes                                       <span class="m">42</span>.0                          stable                   flathub
+Builder                                    org.gnome.Builder                                     <span class="m">42</span>.0                          stable                   flathub
+Calendar                                   org.gnome.Calendar                                    <span class="m">42</span>.0                          stable                   flathub
+Contacts                                   org.gnome.Contacts                                    <span class="m">42</span>.0                          stable                   flathub
+Web                                        org.gnome.Epiphany.Devel                              <span class="m">42</span>~beta                       master                   devel-origin
+File Roller                                org.gnome.FileRoller                                  <span class="m">3</span>.42.0                        stable                   flathub
+Firmware                                   org.gnome.Firmware                                    <span class="m">42</span>.1                          stable                   flathub
+Fractal                                    org.gnome.Fractal.Devel                               <span class="m">5</span>.alpha                       master                   gnome-nightly
+Geary                                      org.gnome.Geary                                       <span class="m">40</span>.0                          stable                   flathub
+Notes                                      org.gnome.Notes                                       <span class="m">40</span>.1                          stable                   flathub
+Text Editor                                org.gnome.TextEditor                                  <span class="m">42</span>.1                          stable                   flathub
+Weather                                    org.gnome.Weather                                     <span class="m">42</span>.0                          stable                   flathub
+Clocks                                     org.gnome.clocks                                      <span class="m">42</span>.0                          stable                   flathub
+Contrast                                   org.gnome.design.Contrast                             <span class="m">0</span>.0.5                         stable                   flathub
+Image Viewer                               org.gnome.eog                                         <span class="m">42</span>.1                          stable                   flathub
+Fonts                                      org.gnome.font-viewer                                 <span class="m">42</span>.0                          stable                   flathub
+gitg                                       org.gnome.gitg                                        <span class="m">41</span>                            stable                   flathub
+Identity                                   org.gnome.gitlab.YaLTeR.Identity                      <span class="m">0</span>.3.0                         stable                   flathub
+Iotas                                      org.gnome.gitlab.cheywood.Iotas                       <span class="m">0</span>.1.1                         stable                   flathub
+Apostrophe                                 org.gnome.gitlab.somas.Apostrophe                     <span class="m">2</span>.6.3                         stable                   flathub
+Inkscape                                   org.inkscape.Inkscape                                 <span class="m">1</span>.1.2                         stable                   flathub
+Kdenlive                                   org.kde.kdenlive                                      <span class="m">22</span>.04.0                       stable                   flathub
+Krita                                      org.kde.krita                                         <span class="m">5</span>.0.2                         stable                   flathub
+LibreOffice                                org.libreoffice.LibreOffice                           <span class="m">7</span>.3.3.2                       stable                   flathub
+Thunderbird                                org.mozilla.Thunderbird                               <span class="m">91</span>.9.0                        stable                   flathub
+Firefox                                    org.mozilla.firefox                                   <span class="m">100</span>.0                         stable                   flathub
+Olive                                      org.olivevideoeditor.Olive                            <span class="m">0</span>.1.2                         stable                   flathub
+ONLYOFFICE Desktop Editors                 org.onlyoffice.desktopeditors                         <span class="m">7</span>.0.1                         stable                   flathub
+Helvum                                     org.pipewire.Helvum                                   <span class="m">0</span>.3.4                         stable                   flathub
+PolyMC                                     org.polymc.PolyMC                                     <span class="m">1</span>.2.2                         stable                   flathub
+PulseAudio Volume Control                  org.pulseaudio.pavucontrol                            <span class="m">5</span>.0                           stable                   flathub
+qBittorrent                                org.qbittorrent.qBittorrent                           <span class="m">4</span>.4.2                         stable                   flathub
+QOwnNotes                                  org.qownnotes.QOwnNotes                               <span class="m">22</span>.5.0                        stable                   flathub
+Tenacity                                   org.tenacityaudio.Tenacity                                                          nightly                  tenacity
+Wine                                       org.winehq.Wine                                       <span class="m">7</span>.0                           stable-21.08             flathub
+Commit                                     re.sonny.Commit                                       <span class="m">3</span>.2.0                         stable                   flathub
+</code></pre></div>
+<p>让我们检查一下它们在没有使用重复数据删除、使用重复数据删除以及同时使用重复数据删除和透明压缩的情况下占用的存储量：</p>
+<div class="highlight"><pre><span></span><code>$ ./flatpak-dedup-checker --path<span class="o">=</span>~/.local/share/flatpak --app
+Directory:                  /var/home/TheEvilSkeleton/.local/share/flatpak/app
+Size without deduplication: <span class="m">11</span>.16 GB
+Size with deduplication:    <span class="m">9</span>.78 GB <span class="o">(</span><span class="m">87</span>% of <span class="m">11</span>.16 GB<span class="o">)</span>
+Size with compression:      <span class="m">7</span>.81 GB <span class="o">(</span><span class="m">69</span>% of <span class="m">11</span>.16 GB<span class="p">;</span> <span class="m">79</span>% of <span class="m">9</span>.78 GB<span class="o">)</span>
+</code></pre></div>
+<p>同样，重复数据删除和压缩在这里也很有效。应用程序已经占用了非常少的空间，并且由于应用程序通常包含不同的文件，因此利用重复数据删除的可能性小于运行环境。使用重复数据删除后，未被重复数据删除删除的内容仅占 11.16GB 原有大小的 87%。在启用 <code>zstd:1</code> 透明压缩后，仅占原有大小的 69%。</p>
+<p>现在，结合运行环境和应用程序：</p>
+<div class="highlight"><pre><span></span><code>./flatpak-dedup-checker --path=~/.local/share/flatpak
+Directories                 /var/home/TheEvilSkeleton/.local/share/flatpak/{runtime,app}
+Size without deduplication: 47.38 GB
+Size with deduplication:    22.75 GB (48% of 47.38 GB)
+Size with compression:      17.17 GB (36% of 47.38 GB; 75% of 22.75 GB)
+</code></pre></div>
+<p>我们可以在这里观察到压缩是有效的。这也是 Fedora Linux 向用户推送 btrfs 的驱动力，因此我们可以利用透明压缩等现代特性。希望越来越多的发行版能遵循相同的脚步。</p>
+<h3 id="_7">"内存使用，启动时间"</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">译文</label><label for="__tabbed_4_2">原文</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>更大的问题是这些应用程序实际上可能需要几秒钟才能启动。他们必须从磁盘加载所有自己的库，而不是使用系统上已有的，已载入内存的库。</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>A bigger problem is that these applications can actually take several seconds to start up. They have to load all their own libraries from disk instead of using what’s already on the system, already in memory.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>这是假设用户在系统上安装了两个相同的应用程序（从发行版软件源和 Flatpak 同时安装）并且想要加载两者。我只能想象有一小部分用户同时安装了两种变体（Flatpak 和原生版本）并经常使用它们。否则，如果这些应用程序主要用作 Flatpak，应该不会有问题。</p>
+<p>大力推动 Flatpak 的发行版，如 Fedora Silverblue/Kinoite、Endless OS 和elementaryOS，严格推动 Flatpak 作为桌面应用程序的获取方式。作为副作用，这些发行版的基础安装量也非常小。例如，根据 Will Thompson 在<a href="https://blogs.gnome.org/wjjt/2021/11/24/on-flatpak-disk-usage-and-deduplication/">在 Flatpak 磁盘使用和重复数据删除</a>中的说法，安装 Endless OS 大约需要 4.2GB 的存储空间。</p>
+<h2 id="_8">"安全"</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">译文</label><label for="__tabbed_5_2">原文</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>Flatpak 允许应用程序声明它们需要完全访问你的文件系统或主文件夹，但软件商店仍然声称此类应用程序是沙盒的。这在之前<a href="https://flatkill.org/2020/">已经讨论过</a>了。当我在全新安装的 Fedora 34 的软件应用程序中搜索 GIMP 时，会发生以下情况：
+<img alt="01" src="../assets/flatpak-gimp-sandboxed.png" /></p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>Flatpak allows applications to declare that they need full access to your filesystem or your home folder, yet graphical software stores still claim such applications are sandboxed. This has been <a href="https://flatkill.org/2020/">discussed before</a>. Here’s what happens when I search GIMP in the Software application on a fresh install of Fedora 34:
+<img alt="01" src="../assets/flatpak-gimp-sandboxed.png" /></p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>这个之前也<a href="https://theevilskeleton.gitlab.io/2021/02/11/response-to-flatkill-org.html">讨论过</a>。我还想补充一点，这是一个由 GNOME Software 导致显示不正确的问题，而不是 Flatpak 有问题。另一方面，自 GNOME 41 以来，此问题已得到修复：</p>
+<p><img alt="02" src="../assets/GIMP-in-GNOME-Software-1.png" /></p>
+<p><img alt="03" src="../assets/GIMP-in-GNOME-Software-2.png" /></p>
+<p>无论如何，我个人认为将由前端（GNOME Software）引起的问题归咎于后端（Flatpak）是不公平的。<code>flatpak</code> 非常清楚地标注了 GIMP 或任何其他应用程序将默认使用的权限：</p>
+<div class="highlight"><pre><span></span><code>$ flatpak install org.gimp.GIMP
+org.gimp.GIMP permissions:
+    ipc                   network       x11      dri      file access <span class="o">[</span><span class="m">1</span><span class="o">]</span>
+    dbus access <span class="o">[</span><span class="m">2</span><span class="o">]</span>       tags <span class="o">[</span><span class="m">3</span><span class="o">]</span>
+
+    <span class="o">[</span><span class="m">1</span><span class="o">]</span> /tmp, host, xdg-config/GIMP, xdg-config/gtk-3.0, xdg-run/gvfs, xdg-run/gvfsd
+    <span class="o">[</span><span class="m">2</span><span class="o">]</span> org.freedesktop.FileManager1, org.gnome.Shell.Screenshot, org.gtk.vfs, org.gtk.vfs.*,
+        org.kde.kwin.Screenshot
+    <span class="o">[</span><span class="m">3</span><span class="o">]</span> stable
+
+
+        ID                    Branch         Op         Remote         Download
+ <span class="m">1</span>.     org.gimp.GIMP         stable         i          flathub        &lt; <span class="m">121</span>.3 MB
+
+Proceed with these changes to the user installation? <span class="o">[</span>Y/n<span class="o">]</span>:
+</code></pre></div>
+<p>Flatpak 本身总是明目张胆地设置权限，我认为当他们没有造成这种情况时，批评他们是不公平的。</p>
+<h2 id="_9">"总比没有好！"</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">译文</label><label for="__tabbed_6_2">原文</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>Flatpak 和 Snap 的辩护者声称，有一些安全总比没有好。实际上并非如此。从纯粹的技术角度来看，对于具有文件系统访问权限的应用程序，安全性完全等于没有。这实际更糟糕，因为它导致人们对他们在互联网上随机找到的应用程序的信任度超过了他们应该信任的程度。</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>Flatpak and Snap apologists claim that some security is better than nothing. This is not true. From a purely technical perspective, for applications with filesystem access the security is exactly equal to nothing. In reality it’s actually worse than nothing because it leads people to place more trust than they should in random applications they find on the internet.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>从纯粹的技术角度来看，无论是否使用 <code>filesystem=host/home</code>，Flatpak 也有一些安全优势。文件系统访问并不自动意味着有问题的应用程序可以访问<em>所有内容</em>。</p>
+<p>首先，Flatpak 应用程序无法看到其他 Flatpak 应用程序的内容。让我们对比一下主机 shell 看到的内容和在 ~/.var/app 的 GIMP 容器内的 shell 看到的内容，Flatpak 应用程序中的所有用户配置都位于其中。</p>
+<div class="highlight"><pre><span></span><code>$ ls ~/.var/app <span class="p">|</span> wc --lines
+<span class="m">83</span>
+$ ls ~/.var/app
+com.belmoussaoui.Decoder                  com.microsoft.Edge                    org.chromium.Chromium                      org.gnome.Contacts         org.gnome.gitlab.cheywood.Iotas    org.mozilla.Firefox
+com.brave.Browser                         com.obsproject.Studio                 org.cubocore.CoreArchiver                  org.gnome.design.Contrast  org.gnome.gitlab.somas.Apostrophe  org.mozilla.firefox
+com.discordapp.Discord                    com.raggesilver.Terminal              org.fedoraproject.MediaWriter              org.gnome.eog              org.gnome.gitlab.YaLTeR.Identity   org.olivevideoeditor.Olive
+com.discordapp.DiscordCanary              com.usebottles.bottles                org.flathub.flatpak-external-data-checker  org.gnome.eog.Devel        org.gnome.NautilusDevel            org.onlyoffice.desktopeditors
+com.github.Anuken.Mindustry               com.valvesoftware.Steam               org.freedesktop.appstream-glib             org.gnome.Epiphany.Devel   org.gnome.Notes                    org.pipewire.Helvum
+com.github.dail8859.NotepadNext           de.haeckerfelix.Fragments             org.gabmus.gfeeds                          org.gnome.Evince           org.gnome.Screenshot               org.polymc.PolyMC
+com.github.Eloston.UngoogledChromium      fyi.zoey.Boop-GTK                     org.gimp.GIMP                              org.gnome.FileRoller       org.gnome.TextEditor               org.pulseaudio.pavucontrol
+com.github.micahflee.torbrowser-launcher  im.riot.Riot                          org.gnome.Adwaita1.Demo                    org.gnome.Firmware         org.gnome.Totem                    org.qbittorrent.qBittorrent
+com.github.nihui.waifu2x-ncnn-vulkan      io.bassi.Amberol                      org.gnome.Boxes                            org.gnome.font-viewer      org.gnome.Weather                  org.qownnotes.QOwnNotes
+com.github.tchx84.Flatseal                io.github.celluloid_player.Celluloid  org.gnome.Builder                          org.gnome.Fractal.Devel    org.inkscape.Inkscape              org.tenacityaudio.Tenacity
+com.github.wwmm.easyeffects               io.github.JaGoLi.ytdl_gui             org.gnome.Calculator                       org.gnome.FractalDevel     org.kde.alligator                  org.winehq.Wine
+com.gitlab.newsflash                      io.github.seadve.Mousai               org.gnome.Calendar                         org.gnome.Geary            org.kde.kdenlive                   re.sonny.Commit
+com.google.Chrome                         net.poedit.Poedit                     org.gnome.Characters                       org.gnome.gedit            org.kde.krita                      us.zoom.Zoom
+com.mattjakeman.ExtensionManager          nl.hjdskes.gcolor3                    org.gnome.clocks                           org.gnome.gitg             org.libreoffice.LibreOffice
+</code></pre></div>
+<p>我们可以观察到主机 shell 可以看到 ~/.var/app 中的所有内容。</p>
+<p>让我们检查一下 GIMP 容器内部的 shell：</p>
+<div class="highlight"><pre><span></span><code>$ flatpak run --command<span class="o">=</span>bash org.gimp.GIMP
+<span class="o">[</span>📦 org.gimp.GIMP theevilskeleton.gitlab.io<span class="o">]</span>$ ls ~/.var/app
+org.gimp.GIMP
+</code></pre></div>
+<p>与主机 shell 不同，GIMP 容器内的 shell 只能看到 <code>~/.var/app/org.gimp.GIMP</code>，这是 GIMP 配置所在的位置。即使 <code>filesystem=host</code>，GIMP 默认情况下也无法看到我的 Geary、GNOME 联系人或其他 Flatpak 应用程序的配置，这意味着 GIMP 更难从其他应用程序读取并篡改数据。</p>
+<p>此外，默认情况下，这些应用程序无法访问系统中的每个 API 或框架。我的计算机已连接并与我的 Nextcloud 实例、Google 和 Microsoft 帐户同步。为了让我的计算机与我的帐户进行通信，它使用 <a href="https://wiki.gnome.org/Projects/GnomeOnlineAccounts">OnlineAccounts</a> 框架。这还允许 GNOME Contacts、Notes 等应用程序同步我的联系人、便笺和其他信息。GNOME Contacts 具有 <code>org.gnome.OnlineAccounts=talk</code> 权限，这意味着它可以与框架“对话”并访问这些信息，而 GIMP 则不能。</p>
+<p>为了确认，让我们检查一下一个带有 <code>filesystem=host</code> 的 GIMP，是否具有 <code>org.gnome.OnlineAccounts=talk</code> 权限：</p>
+<div class="highlight"><pre><span></span><code>$ flatpak info --show-permissions org.gimp.GIMP
+<span class="o">[</span>Context<span class="o">]</span>
+<span class="nv">shared</span><span class="o">=</span>network<span class="p">;</span>ipc<span class="p">;</span>
+<span class="nv">sockets</span><span class="o">=</span>x11<span class="p">;</span>wayland<span class="p">;</span>fallback-x11<span class="p">;</span>
+<span class="nv">devices</span><span class="o">=</span>dri<span class="p">;</span>
+<span class="nv">filesystems</span><span class="o">=</span>xdg-config/GIMP<span class="p">;</span>xdg-config/gtk-3.0<span class="p">;</span>/tmp<span class="p">;</span>xdg-run/gvfsd<span class="p">;</span>host<span class="p">;</span>xdg-run/gvfs<span class="p">;</span>
+
+<span class="o">[</span>Session Bus Policy<span class="o">]</span>
+org.kde.kwin.Screenshot<span class="o">=</span>talk
+org.gtk.vfs.*<span class="o">=</span>talk
+org.gnome.Shell.Screenshot<span class="o">=</span>talk
+org.freedesktop.FileManager1<span class="o">=</span>talk
+</code></pre></div>
+<p>我们注意到这里没有 <code>org.gnome.OnlineAccounts=talk</code>。这意味着，如果没有此权限，GIMP 就很难与 OnlineAccounts 框架进行通信，因此它无法成功地将我的联系人、笔记或其他类型的信息提取到我连接的帐户中。</p>
+<p>不用说，<code>filesystem=host/home</code> 可以写入敏感位置肯定是个问题。但是 GIMP 需要额外的步骤才能访问我的其他个人信息这一事实意味着 Flatpak 可以通过 <code>filesystem=host/home</code> 稍微防止不良行为者。此外，大多数应用程序都没有这些权限。在安全领域，100% 的安全是不存在的，但我们总是可以更近一步，这正是 Flatpak 所做的。</p>
+<p>此外，如果对默认设置感到不舒服，我们可以使用 <a href="https://github.com/tchx84/Flatseal">Flatseal</a> 来管理这些权限。虽然我承认这不是一个好方法，但它肯定是目前最好的选择。另一种方法是手动配置 bubblewrap、Firejail 或 AppArmor，这比 Flatseal 需要更多的时间和知识。另一个“替代方案”是依赖非沙盒环境。Flatseal 还整洁地<a href="https://github.com/tchx84/Flatseal/blob/master/DOCUMENTATION.md">记录</a>了主要权限，以帮助用户了解他们将要更改的内容。</p>
+<h2 id="_10">"权限和门户"</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">译文</label><label for="__tabbed_7_2">原文</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>Flatpak 正在开发一个<a href="https://docs.flatpak.org/en/latest/sandbox-permissions.html">细粒度的权限系统</a>，以提高其沙箱的安全性。权限是诸如是否允许应用程序访问麦克风或打印机之类的事情。门户（Portals）就像在沙盒外运行的文件打开对话框之类的东西，因此沙盒中的应用程序只获取用户选择的文件。</p>
+<p>Flatpak 记录了这些门户并提供了一个用于访问它们的客户端库，<a href="https://github.com/flatpak/libportal">libportal</a>。但是，这并不是真正适用于单个应用程序。这一切都意味着要集成到工具包中。从文档中：</p>
+<blockquote>
+<p>像 GTK3 和 Qt5 这样的接口工具包实现了对门户的透明支持，这意味着应用程序不需要做任何额外的工作就能使用它们（值得检查每个工具包支持哪些门户）。</p>
+</blockquote>
+<p>显然，为应用程序本身开发客户端 API 与 Flatpak 的使命背道而驰。他们希望在 Flatpak 上运行的应用程序不知道 Flatpak。他们宁愿修改 GTK 等核心库以与 Flatpak 集成。例如，如果你想打开一个文件，你不是去调用 Flatpak API 函数来获取文件或请求权限。相反，你调用一个普通的 GTK 文件打开对话框，并且你的 Flatpak 运行环境的 GTK 在内部与 Flatpak 服务进行门户交互（使用各种黑客手段让你“正常”访问文件并假装你没有被沙盒化。）</p>
+<p>这是实现这一点的最复杂和最脆弱的方法。其他沙盒平台的工作方式也完全不同。如果我想要在 Android 上获得文件访问权限，我不只是尝试使用 Java File API 打开文件并期望它神奇地提示用户。 我必须<a href="https://developer.android.com/training/permissions/requesting">先调用 Android 特定的 API 来请求权限</a>。 iOS 也是一样。那么为什么我不能只调用 <code>flatpak_request_permission(PERMISSION)</code> 并在用户批准或拒绝时获得回调呢？</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>Flatpak is working on a <a href="https://docs.flatpak.org/en/latest/sandbox-permissions.html">fine-grained permission system</a> to improve the security of its sandbox. Permissions are things like whether the app is allowed to access the microphone or the printer. Portals are things like a file open dialog that runs outside the sandbox, so the app in the sandbox gets only the file the user chose.</p>
+<p>Flatpak documents these <a href="https://github.com/flatpak/libportal">portals</a> and provides libportal, a client library to access them. However this isn’t really intended for individual apps. It’s all meant to be integrated in the toolkits. From the <a href="https://docs.flatpak.org/en/latest/sandbox-permissions.html#portals">documentation</a>:</p>
+<blockquote>
+<p>Interface toolkits like GTK3 and Qt5 implement transparent support for portals, meaning that applications don’t need to do any additional work to use them (it is worth checking which portals each toolkit supports).</p>
+</blockquote>
+<p>Apparently, developing client APIs for apps themselves is antithetical to Flatpak’s mission. They want the apps running on Flatpak to be unaware of Flatpak. They would rather modify the core libraries like GTK to integrate with Flatpak. So for example if you want to open a file, you don’t call a Flatpak API function to get a file or request permissions. Instead, you call for an ordinary GTK file open dialog and your Flatpak runtime’s GTK internally does the portal interaction with the Flatpak service (using all sorts of hacks to let you access the file “normally” and pretend you’re not sandboxed.)</p>
+<p>This is the most complicated and brittle way to implement this. It’s also not at all how other sandboxed platforms work. If I want file access permissions on Android, I don’t just try to open a file with the Java File API and expect it to magically prompt the user. I have to call <a href="https://developer.android.com/training/permissions/requesting">Android-specific APIs to request permissions first</a>. iOS is the same. So why shouldn’t I be able to just call <code>flatpak_request_permission(PERMISSION)</code> and get a callback when the user approves or declines?</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>门户被设计为标准而不是 Flatpak 特定的。这意味着门户可以在 Flatpak 之外使用，即系统包甚至是 Snap。这也意味着我们可以利用这些门户更好地与桌面集成。</p>
+<p>一个臭名昭著的例子是 Linux 上的文件选择器问题。长期以来，基于 Firefox 和 Chromium 的浏览器（包括 Electron）一直在使用 GTK 文件选择器。这意味着，如果你当时使用 Plasma，这些浏览器使用的是 GTK 文件选择器而不是 KDE 文件选择器，这使得它们看起来很不一致，具体情况取决于所你使用的桌面。</p>
+<p>后来这个问题通过 XDG FileChooser 门户解决了。XDG FileChooser 门户使应用程序打开主机文件选择器，而不是工具包或框架正在使用的硬编码文件选择器。如今，如果你在 Plasma、Flatpak 上使用 Firefox 或 Google Chrome，并且你决定在这些应用程序中打开文件选择器，那么它们将打开 KDE 文件选择器，而不是之前硬编码的 GTK 文件选择器。同样，Kdenlive，一个 KDE 应用程序，在用户使用 GNOME 时打开 GTK 文件选择器，而不是 KDE 文件选择器。</p>
+<p>门户的另一个巨大好处是，一旦应用程序开发人员升级到包含门户支持的工具包或框架版本，它们就会自动使用，因此是透明的。去年，Electron 开始支持 <a href="https://github.com/electron/electron/pull/19159#event-4543753441">FileChooser 门户</a>。 <a href="https://element.io/">Element</a> 是一个使用 Electron 的 Matrix 客户端，已升级到支持 FileChooser 门户的较新版本的 Electron。 升级之后，Element “神奇地”开始打开主机的文件选择器，而不是之前硬编码的 GTK 文件选择器。因此，如果你使用 Plasma，Element 现在应该打开 KDE 文件选择器，而不是 GTK 文件选择器。从字面上看，这再简单不过了。</p>
+<p>相比之下，我只能想象 Flatpak 开发人员开发 Flatpak 特定的（即非标准的） API 会迫使个别应用程序开发人员集成这些 API 并持续维护它们。这将导致应用程序开发人员之间的重复工作，并且还可能迫使个别开发人员在他们已经使用的 API 之上维护 Flatpak 特定的 API，而不是为每个用例使用一个。最糟糕的是，这只适用于 Flatpak，因此原生应用程序无法打开桌面的文件选择器。</p>
+<p>Flatpak 开发人员目前采用的方法是一种标准化、透明且易于集成的方式，应用程序开发人员只需很少甚至不费吹灰之力就能让这些 API 正常工作。大多数开发人员已经不优先考虑 Linux 桌面，通过要求开发人员单独为 Flatpak 实现和维护不同的 API 集来期望在 Linux 桌面上采用不会有太大帮助。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">译文</label><label for="__tabbed_8_2">原文</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p><a href="https://www.youtube.com/watch?v=faqQuJkqCIA&amp;t=1347s">这就是为什么</a>。Fedora 正在将他们所有的 rpm 应用程序自动转换为 Flatpak。为了做到这一点，他们通常需要 Flatpak 权限系统和 Flatpak，不需要改变任何应用程序。</p>
+<p>他们到底为什么要对应用程序进行大规模自动转换？我跟你一样也不知道。该视频声称 Fedora 的应用程序质量高于上游，并且 Fedora 使他们的 Flatpak 可用于较旧的发行版。我认为他们更有可能只是想要大量自动转换的应用程序，以使其看起来像 Flatpak 有用。不管是什么原因，很明显，这一要求影响了他们许多糟糕的设计决策。</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>This is why. Fedora is auto-converting all of their rpm apps to Flatpak. In order for this to work, they need the Flatpak permission system and Flatpak in general to require no app changes whatsoever.</p>
+<p>Why on Earth would they do a mass automatic conversion of apps? Your guess is as good as mine. The video claims that Fedora’s apps are higher quality than upstream, and Fedora makes their Flatpaks available on older distributions. I think it’s more likely they just want huge numbers of auto-converted apps to make it look like Flatpak is useful. Whatever the reason, it’s clear that this requirement has influenced many of their poor design decisions.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>这看起来似乎并无关联？ 演示文稿中的前几张幻灯片与门户网站没有任何关联。这完全是 Fedora 项目的决定。</p>
+<p>从逻辑上讲，如果 Flatpak 开发人员决定创建 Flatpak 特定 API，然后应用程序开发人员将这些 API 集成到他们的应用程序中，这些转换后的 RPM 将在 Flatpak 容器中运行这些应用程序没有问题，因为上游已经支持这些 Flatpak 特定 API。调用 Flatpak 特定的 API 根本不会影响 Fedora Flatpak。</p>
+<p>由于 Fedora Flatpak 将 Fedora 仓库的 RPM 转换为 Flatpak 应用程序，因此从 Fedora 项目开发人员和维护人员的角度来看，信任和审计要容易得多。此外，这些 RPM 已经符合 Fedora Project 的所有行为和标准。它们都构建在 Fedora 项目的基础设施中，并基于 Fedora 项目维护者维护的 RPM。另一方面，Flathub 是独立的，不隶属于 Fedora 项目。这也使 Fedora 项目维护人员的审计更加困难。</p>
+<h2 id="_11">"标识符冲突"</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">译文</label><label for="__tabbed_9_2">原文</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>因此 Fedora 自动将其所有应用程序转换为 Flatpak。它是否至少将它们命名为特定于 Fedora 的东西？</p>
+<p>不，它没有。Fedora 将 GIMP 的 Flatpak 版发布为 <code>org.gimp.GIMP</code>。这与 GIMP 开发人员在 Flathub 上发布的官方 <code>org.gimp.GIMP</code> 冲突。在全新安装 Fedora 34 时，如果添加 Flathub 存储库并键入 <code>flatpak install org.gimp.GIMP</code>，系统会提示你安装哪个：</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>nick@fedora active<span class="o">]</span>$ flatpak install org.gimp.GIMP
+Looking <span class="k">for</span> matches…
+Remotes found with refs similar to ‘org.gimp.GIMP’:
+
+      <span class="m">1</span><span class="o">)</span> ‘fedora’ <span class="o">(</span>system<span class="o">)</span>
+      <span class="m">2</span><span class="o">)</span> ‘flathub’ <span class="o">(</span>system<span class="o">)</span>
+
+Which <span class="k">do</span> you want to use <span class="o">(</span><span class="m">0</span> to abort<span class="o">)</span>? <span class="o">[</span><span class="m">0</span>-2<span class="o">]</span>:
+</code></pre></div>
+<p>如果你选择选项 1，你将获得一个带有 Fedora 补丁的 GIMP 版本，该补丁使用 650MB 大小的 Fedora 35 运行环境。如果你选择选项 2，你将获得使用 1.8GB 大小的 freedesktop.org GNOME 运行环境的 GIMP。
+org.gimp 前缀是为实际拥有 gimp.org 域的人保留的，这难道不是反向 DNS 的全部意义吗？Fedora 如何在伪装成上游开发者的同时证明发布应用程序的合理性？如果主要的 Linux 发行版甚至都不尊重 DNS，那么谁会呢？</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>So Fedora auto-converts all its apps to Flatpak. Does it at least namespace them to something specific to Fedora?</p>
+<p>No, it doesn’t. Fedora publishes its Flatpak of GIMP as <code>org.gimp.GIMP</code>. This conflicts with the official <code>org.gimp.GIMP</code> published by the GIMP developers on Flathub. On a fresh install of Fedora 34, if you add the Flathub repository and type <code>flatpak install org.gimp.GIMP</code>, you get prompted for which one to install:
+<div class="highlight"><pre><span></span><code><span class="o">[</span>nick@fedora active<span class="o">]</span>$ flatpak install org.gimp.GIMP
+Looking <span class="k">for</span> matches…
+Remotes found with refs similar to ‘org.gimp.GIMP’:
+
+      <span class="m">1</span><span class="o">)</span> ‘fedora’ <span class="o">(</span>system<span class="o">)</span>
+      <span class="m">2</span><span class="o">)</span> ‘flathub’ <span class="o">(</span>system<span class="o">)</span>
+
+Which <span class="k">do</span> you want to use <span class="o">(</span><span class="m">0</span> to abort<span class="o">)</span>? <span class="o">[</span><span class="m">0</span>-2<span class="o">]</span>:
+</code></pre></div></p>
+<p>If you choose option 1, you get a build of GIMP with Fedora’s patches that uses the 650 MB Fedora 35 runtime. If you choose option 2, you get a different build of GIMP that uses the 1.8 GB freedesktop.org GNOME runtime.</p>
+<p>Isn’t the whole point of reverse DNS that the org.gimp prefix is reserved for people who actually own the gimp.org domain? How can Fedora justify publishing apps while masquerading as the upstream developers? If major Linux distributions won’t even respect DNS, who will?</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>反向 DNS 表示法的要点是使用应用程序作者的域名，而不是打包程序的作者。</p>
+<p>不用说，这确实是个问题。Flatpak 的去中心化特性使 Flatpak 远程仓库可以自由使用相同的应用程序 ID，这也可能导致标识符冲突。尽管如此，这仍然比没有应用程序 ID 更能防止应用程序具有相同的名称。</p>
+<h2 id="_12">"服务"</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">译文</label><label for="__tabbed_10_2">原文</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>所有这些应用程序打包系统都要求用户在安装任何软件包之前在其 PC 上安装一些服务。</p>
+<p>值得称赞的是，AppImage 在技术上不需要服务来运行应用程序，但如果没有它，AppImage 就不会与桌面集成。我有时需要 AppImage 应用程序，我的解决方案是将它放在我的 <code>~/Downloads</code> 文件夹中，然后从我的文件管理器中双击它来运行它。这是一种糟糕的用户体验。</p>
+<p>所有桌面集成（启动器条目、MIME 类型、图标和更新）都由 appimaged 或 AppImageLauncher 提供，用户必须安装它们其中一个才能使桌面集成正常工作。所以在实践中，AppImage 与我们的任何其他解决方案没有什么不同：它需要一个服务才能使用。</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>All of these app packaging systems require that the user have some service installed on their PC before any packages can be installed.</p>
+<p>AppImage, to its credit, technically does not require a service to run apps, but it doesn’t integrate with the desktop without it. I needed to use an AppImage app for a while and my solution was to just leave it in my ~/Downloads folder and double click it from my file manager to run it. This is a terrible user experience.</p>
+<p>All of the desktop integration (launcher entries, mimetypes, icons, updates) is provided by either appimaged or AppImageLauncher, one of which must be installed by the user for any of this to work. So in practice, AppImage is no different than any of our other solutions: it requires a service to be usable.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>缺少一个重要的关键：商店集成。AppImages 不会（也不会很快）与 GNOME Software 或 Discover 等软件商店集成。GNOME Software 和 Discover 负责同时管理 Flatpak 应用程序和系统包，而 AppImageHub 专门用于 AppImage。</p>
+<p>大多数 AppImage 需要一个很大的最小依赖。大多数 AppImage 不打包 glibc 或其他核心依赖。此外，许多 AppImage 甚至可能没有捆绑更高级别的依赖项，这些依赖项可以使应用程序在不依赖主机的情况下真正发挥作用。这些 AppImage 中的许多将假定用户的主机已经安装了一些依赖项并且具有正确的版本。</p>
+<p>这意味着大多数 AppImages 实际上并不是通用的，并且根据你使用的发行版，使用它们可能变得更加困难。如果你使用的是基于 musl 的发行版，AppImages 将无法工作。 同样，如果你使用不可变的发行版，它们可能不会带有许多较低和较高级别的依赖项，因为 Flatpak 和其他容器实用程序已经处理了这一点。Flatpak 兼容大多数桌面电脑。甚至 <a href="https://steamcommunity.com/app/1675200/discussions/0/3186864655192471065/">Steam Deck 也默认使用 Flatpak</a>。那是因为 Flatpak 提供了更为丰富的依赖项。</p>
+<h2 id="flatpak">"Flatpak 可以固定的吗"</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">译文</label><label for="__tabbed_11_2">原文</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>如果 Flatpak 开发者真的想要一个可以与 Android 和 iOS 相媲美的应用分发系统，那么沙盒、权限和门户系统应该是唯一的重点。</p>
+<p>他们应该：</p>
+<p>放弃与运行环境相关的一切，转而将本机 <code>/usr</code>（或 <code>/usr</code> 中的一组受限核心库）以只读方式挂载到每个容器中；</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>If the Flatpak developers truly want an app distribution system that rivals Android and iOS, the sandbox, permissions and portal system should be the only focus.</p>
+<p>They should:</p>
+<p>Abandon everything related to runtimes, and instead mount the native /usr (or a restricted set of core libraries from /usr) read-only into each container;</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p><code>/usr</code> 是一个在大多数情况下每次安装都是唯一的目录，因为用户安装不同的软件包。如果 Flatpak 假定已经安装了一些库和依赖项。这将重现与 AppImage 相同的问题，因此不会使 <code>/usr</code> 具有通用性，同时也将违背 Flatpak 的目的。</p>
+<p>运行环境确保核心依赖项在任何给定系统上始终可用，更重要的是，确保正确的版本。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">译文</label><label for="__tabbed_12_2">原文</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>构建一个细粒度的用户交互运行环境权限系统，该系统需要应用程序调用 Flatpak 特定的 API 以激活权限对话框；</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>Build a fine-grained user-interactive runtime permission system that requires the app to make Flatpak-specific API calls to activate permission dialogs; and</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>这<em>正是</em> Flatpak 正在做的事情，唯一的区别是这些 “Flatpak 特定的 API 调用”是门户，也是标准。随着时间的推移，我们将开始看到越来越多使用门户的应用程序。GTK 应用程序已经使用门户，Qt 应用程序也是如此。Firefox、基于 Chromium 的浏览器和 Electron 也开始支持一些门户网站，等等。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">译文</label><label for="__tabbed_13_2">原文</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>弃用安装时权限（尤其是文件系统访问权限）并从 Flathub 中删除所有使用它们的应用程序。</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>Deprecate install-time permissions (especially filesystem access) and remove all apps from Flathub that use them.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>大规模采用不会在 10 天内发生。这主要取决于应用程序开发人员的优先事项。目前，我们依赖于安装时（静态）权限，因为许多框架开发人员并不认为门户是优先事项。这个问题甚至不是 Flatpak 特有的问题，Wayland、Windows Store 和其他平台上的许多其他新技术也会发生这种情况。现代视频游戏也依赖于 32 位库。这说起来容易做起来难，而且实际上不可能让为非沙盒环境设计的应用程序在其对立环境中运行而不会出现问题。</p>
+<p>任何需要过渡或适应不同技术的事情都需要时间和精力。Flatpak 不是魔术，Wayland、PipeWire 和其他事物也不是。</p>
+<p>即使有文件系统权限，仍然有安全优势。这些应用程序通常无法访问所有 API，也无法访问单个 Flatpak 应用程序的数据。此外，管理权限也比其他方法更容易，因为文档可用且界面易于使用。</p>
+<p>容器方面也非常有用，因为它使升级系统变得更加容易。Flatpak 应用程序不依赖 PPA、Copr 等，而是在主要版本之间独立更新，只需要打包一次就让所有人使用。</p>
+<p>另一方面，避免静态权限确实是一个优先事项，因为我们希望完全切换到门户网站，正如 Alexander Larsson 在这个<a href="https://www.youtube.com/watch?v=4569sjVer54">演示文稿</a>中提到的那样:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">译文</label><label for="__tabbed_14_2">原文</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>在此系统下，将鼓励应用程序静态链接它们的许多依赖项，但使用系统 GTK/Qt/SDL、OpenGL/Vulkan、OpenSSL/curl 和其他大型或安全关键库。社区可以维护指南和包装器，以使应用程序能够动态链接到系统库的跨版本和交叉分发。应用程序将被期望进行修改以运行沙盒，并直接通过 Flatpak 客户端 API 请求权限。</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>Under this system, apps would be encouraged to statically link many of their dependencies, but use the system GTK/Qt/SDL, OpenGL/Vulkan, OpenSSL/curl, and other large or security-critical libraries. The community could maintain guidelines and wrappers to make apps that dynamically link against the system libraries cross-version and cross-distribution. Apps would be expected to make changes to run sandboxed and request permissions directly through a Flatpak client API.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>这再次导致通用性问题。这些依赖项可能使用较旧的、较新的、已修补的等变体，具体取决于发行版，而 Flatpak 在任何地方都使用相同的变体。我最近偶然<a href="https://github.com/bottlesdevs/Bottles/issues/1442">发现</a>一个用户遇到了 <a href="https://github.com/bottlesdevs/Bottles">Bottles</a> 无法渲染字体的问题。这是由于使用了 GTK 的修补版本造成的。该问题后来得到解决，但我们可以观察到简单的补丁可能会导致可用性问题。更别说版本差异了。</p>
+<h2 id="_13">"结论"</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">译文</label><label for="__tabbed_15_2">原文</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>如果你是 Linux 发行版维护者，请了解所有这些解决方案试图完成的任务。你在构建软件存储库、维护库、测试无数系统配置、设计一致的用户体验方面的所有辛勤工作……他们正试图抛弃所有这些。这些运行环境打包机制中的每一个都试图颠覆操作系统，尽可能多地用自己的来替换。你为什么要支持这个？</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>If you are a Linux distribution maintainer, please understand what all of these solutions are trying to accomplish. All your hard work in building your software repository, maintaining your libraries, testing countless system configurations, designing a consistent user experience… they are trying to throw all of that away. Every single one of these runtime packaging mechanisms is trying to subvert the operating system, replacing as much as they can with their own. Why would you support this?</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>Flatpak 的目标是不“把所有这些都扔掉”。相反，它是为了避免做重复的工作，给发行版开发者更多的空间来创新他们的发行版，而不是花费大部分时间来打包软件并持续维护它们。Alexander Larsson 做了一个演示，<a href="https://www.youtube.com/watch?v=0yeXTounX3E&amp;t=252s">详细解释</a>了此事。</p>
+<p>这也是 Fedora Silverblue/Kinoite 快速改进的原因。 Fedora Silverblue/Kinoite 与大多数发行版完全不同，因为它具有不可变的特性。 由于它主要依赖于 Flatpak 和 <a href="https://containertoolbx.org/">Toolbx</a>，因此还有很多改进核心实用程序的空间，例如 <code>rpm-ostree</code>（Fedora Silverblue/Kinoite 的包管理器）。另一个典型的例子是 SteamOS。</p>
+<h2 id="_14">结论</h2>
+<p>综上所述，相信文章作者对 Flatpak 的很多方面都有误解，然后很快就得出了结论。</p>
+<p>在 Flatpak 首次发布之前，Linux 桌面上已经存在很多问题：X11、PulseAudio、碎片等。由于碎片化，通常针对不同的工具链和不同的库和依赖项构建包。在任何给定时间，软件在任何发行版上都无法按预期运行的可能性是无穷无尽的。</p>
+<p>这些都是 Linux 桌面上的现实问题，我们可以清楚地看到 Flatpak 开发人员在解决这些问题方面做得非常出色；也是正确的：Flatpak 于​​ 2015 年首次宣布为 xdg-app，甚至不到十年后，GTK 应用程序与 Flatpak 相比其发行版分发的系统包版本工作得非常好（有时甚至更好）。复杂的应用程序，如 <a href="https://github.com/bottlesdevs/Bottles">Bottles</a>、Firefox 和任何基于 Chromium 的浏览器，在 Flatpak 中运行良好。Steam Deck 在 SteamOS 上发布并主要使用 Flatpak。Fedora Silverblue/Kinoite、Endless OS 和elementaryOS 也主要使用 Flatpak。</p>
+<p>Flatpak 完美吗？不，我们仍然严重依赖静态权限。但是，随着时间的推移，我相信会有越来越多的框架和工具包开始使用门户。更多使用这些框架和工具包的应用程序将开始支持门户，只需投入很少的工作，并且应用程序将被设计为默认在操作系统上是安全的，因为门户已经处理了大多数安全问题。</p>
+
+              
+            </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../fedora36-released/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Fedora 36 已正式发布" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              Fedora 36 已正式发布
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../blender-events-in-2022/" class="md-footer__link md-footer__link--next" aria-label="下一页: Blender 在 2022 年的活动" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              Blender 在 2022 年的活动
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Some copyright reserved. 2021-2022 Hanjingxue Boling.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
