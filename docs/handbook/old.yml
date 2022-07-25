@@ -14,7 +14,7 @@ nav:
   - 入门指南:
       - 序言:
           - 切换到 Linux: entry/prologue/switch-to-linux.md
-          - Linux 发行版: entry/prologue/choose-distro.md
+          - Linux 发行版: entry/wwwprologue/choose-distro.md
           - 桌面环境简介: entry/prologue/desktop-environment.md
       - 安装系统:
           - 安装前准备: entry/installation/pre-install.md

@@ -1,24 +1,50 @@
 ---
-title: "切换到 Linux"
-description: "切换到Linux之前应当了解的一些事项。"
-lead: "在开始非凡的 GNU/Linux 之旅之前，您应当了解这些。"
+title: "Linux 简介"
 ---
 
 ## 什么是 Linux ？
 
-Linux 是一种自由和开放源码的类 UNIX 操作系统。该操作系统的[内核](https://en.wikipedia.org/wiki/Kernel_(operating_system))由 [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) 在1991年10月5日首次发布，在加上[用户空间](https://en.wikipedia.org/wiki/User_space_and_kernel_space)的应用程序之后，成为 Linux 操作系统。只要遵循 [GNU 通用公共许可证](https://en.wikipedia.org/wiki/GNU_General_Public_License)（GPL），任何个人和机构都可以自由地使用 Linux 的所有底层源代码，也可以自由地修改和再发布。大多数 Linux 系统还包括像提供 GUI 的 X Window 之类的程序。除了一部分专家之外，大多数人都是直接使用 Linux 发行版，而不是自己选择每一样组件或自行设置。
+简而言之，Linux 与 Windows 一样，都是一类通用计算机操作系统的称呼。
 
-注意，严格意义上来说，Linux 狭义上指的是 [Linux Kernel](https://en.wikipedia.org/wiki/Linux_kernel)，因为操作系统中包含了许多用户图形接口和其他实用工具。如今 Linux 常用来指基于 Linux 的完整操作系统，内核则改以 Linux 内核称之。[^1]
+更为详细的介绍请参考：[Linux -Wikipedia](https://en.wikipedia.org/wiki/Linux)。
+
+注意，严格意义上来说，Linux 狭义上指的是一种操作系统内核，即 [Linux Kernel](https://en.wikipedia.org/wiki/Linux_kernel)，因为操作系统中包含了许多用户图形接口和其他实用工具。如今 Linux 常用来指基于 Linux 的完整操作系统，内核则改以 Linux 内核称之。[^1]
 
 ## 什么是 Linux 发行版？
 
-Linux 发行版（英语：Linux distribution，也被叫做 GNU/Linux 发行版），为一般用户预先集成好的 Linux 操作系统及各种应用软件。一般用户不需要重新编译，在直接安装之后，只需要小幅度更改设置就可以使用，通常以软件包管理系统来进行应用软件的管理。Linux 发行版通常包含了包括桌面环境、办公包、媒体播放器、数据库等应用软件。现在有超过 300 个 Linux 发行版（详见 Linux 发行版列表）。大部分都正处于活跃的开发中，不断地改进。
+Linux 发行版（英语：Linux distribution，也被叫做 GNU/Linux 发行版），为一般用户预先集成好的 Linux 操作系统及各种应用软件。一般用户不需要重新编译，在直接安装之后，只需要小幅度更改设置就可以使用，通常以软件包管理系统来进行应用软件的管理。Linux 发行版通常包含了包括桌面环境、办公包、媒体播放器、数据库等应用软件。现在有超过 300 个 Linux 发行版（详见 [Linux 发行版列表](https://en.wikipedia.org/wiki/List_of_Linux_distributions)）。大部分都正处于活跃的开发中，不断地改进。
 
 由于大多数软件包是自由软件和开源软件，所以 Linux 发行版的形式多种多样——从功能齐全的桌面系统以及服务器系统到小型系统（通常在嵌入式设备，或者启动软盘）。除了一些定制软件（如安装和配置工具），发行版通常只是将特定的应用软件安装在一堆函数库和内核上，以满足特定用户的需求。 [^2]
 
 ## 什么是 openSUSE？
 
-## 为什么选择 Linux 作为桌面操作系统？
+如上，openSUSE 也是众多流行的发行版之一，它具有稳定、系统管理员友好的特性。
+
+本指南所要描述的是 openSUSE 的分支，Tumbleweed。
+
+----
+
+## 常见问题
+
+### 我是否应该担心 openSUSE 受许可证影响的可用性？
+
+如果你只是一个普通人，偶然对 openSUSE 产生了兴趣，那你并不需要在意许可证相关的一连串冗长的法律问题。
+
+如果你是一名商业用户，那你应当向你所在单位的系统管理员咨询详细意见。
+
+### 我一定要用 Linux 完成 XXX
+
+从一座城市前往另一座城市，根据期望花费的时间、预算、路况和当地情况而言，有很多的交通方式（飞机、火车、自驾、自行车甚至步行）。
+
+不要指望 Linux 可以完成全部的事情，你的任务、数据和精力远比 Linux 本身珍贵得多。
+
+### XXX 发行版比 XXX 发行版棒
+
+实际上，除非个别的发行版（常年不更新、缺少贡献者和不修复安全漏洞等），很难断定某个发行版就一定优于其他发行版。特别要注意的是，一个发行版的诞生本身就是一群具有共同需求的用户协力推动的。如果你觉得某个发行版不行，或者不合你胃口，你应当考虑你是否应该换一个发行版（你可能不是该发行版的目标受众）。
+
+简言之，没有糟糕的发行版，只有需求和选择不匹配的糟糕组合。
+
+----
 
 ## 迁移前的准备
 
